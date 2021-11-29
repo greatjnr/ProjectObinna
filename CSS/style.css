@@ -1,0 +1,93 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+    background: #131212;
+    
+}
+li, a, button{
+    font-family: sans-serif;
+    font-weight:500px;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+.logo{
+    width: 200px;
+    cursor: pointer;
+    margin-right:auto;
+}
+
+.nav_links{
+    list-style: none;
+}
+
+.nav_links li{
+    display: inline-block;
+    padding: 0 20px;
+    color: white;
+    margin: 0 5px;
+
+}
+
+button{
+    background: #f58632;
+    padding: 9px 25px;
+    border-style: none;
+    border-radius: 50px;
+    }
+    section{
+        background: rgb(1,1,1);
+        background: linear-gradient(90deg, rgba(1,1,1,1) 38%, rgba(6,41,22,1) 54%, rgba(18,141,74,1) 73%);;
+        height: 400px;
+        width: 100%;
+        position: relative;
+    }
+
+    .Hero-contents{
+        display: inline-block;
+        margin:0 130px;
+        padding-top: 160px;
+         }
+
+    .Hero-img{
+        height: 1090px;
+        position: absolute;
+        top:2px;
+        right:20px;
+    }     
+
+h1{
+    margin-bottom: 10px;
+    font-size: 42px;
+    color: #edf0f1;
+}
+
+
+p{
+    line-height: 1.3;
+    width: 40%;
+    text-align: left;
+    color: white;
+}
+.orange_color{
+    color: #f58632;
+}
+
+a:hover{
+    border-bottom: 2px solid #f58632;
+    padding-bottom: 4px;
+    transition: 0.3s ease-in-out;
+  
+}
