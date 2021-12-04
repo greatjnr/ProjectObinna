@@ -6,7 +6,11 @@
 body{
     font-family: inter, sans-serif;
 }
-
+/**Generic styles**/
+.grey-color {
+    color: darkgray;
+}
+/**/
 
 header{
     display: flex;
@@ -153,19 +157,38 @@ section.about-obinna{
     width: 100%;
     margin-top: 50px;
     z-index: 1;
+    padding-left: 130px;
     position: relative;
 }
-
+.about-obinna h2 {
+    font-size: 30px;
+    line-height: 40px;
+    margin-right: 60px;
+    position: relative;
+}
+.about-obinna h2::after {
+    content: '';
+    position: absolute;
+    top: 110%;
+    width: 20px;
+    height: 5px;
+}
 .other{
     margin-top: 20px;
 }
 
 .other > p{
-    width: 60%;
-   margin-left: 150px;
-    
+    width: 70%;
+    margin-bottom: 60px;
 }
-.academics{
-    display: flex;
-    justify-content: space-around;
+.academics h3#academics {
+    line-height: 10px;
+}
+
+.academics > div.Schools{
+   float: left;
+   margin-right: 20px;
+}
+.Schools h4 {
+    margin: 5px 0 3px 0;
 }
