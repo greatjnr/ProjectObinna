@@ -117,7 +117,6 @@ button{
     display: inline-block;
     border-radius: 100%;
     position: relative;
-    /* left:0; */
     padding: 2px;
     margin-right: 8px;
 }
@@ -166,6 +165,17 @@ section.about-obinna{
     position: relative;
     top: 50px;
 }
+.about-header{
+    position: relative;
+}
+
+.about-header .border{
+    position: relative;
+    width: 50%;
+    top:0;
+    padding-top: 4px;
+}
+
 .about-obinna h2 {
     font-size: 30px;
     line-height: 40px;
