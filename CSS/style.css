@@ -60,7 +60,7 @@ button{
         height: 400px;
         width: 100% !important;
         position: relative;
-        top: 50px;
+        top: 100px;
     }
 
     .Hero-contents{
@@ -72,7 +72,7 @@ button{
     .Hero-img{
         height: 1090px;
         position: absolute;
-        top:160px;
+        top:100px;
         right:20px;
         
     } 
@@ -81,7 +81,7 @@ button{
         margin-left:150px;
         margin-top: 20px;
         position: relative;
-        top: 50px;
+        top: 120px;
     }
     .manifesto h2{
         font-size: 32px;
@@ -163,7 +163,7 @@ section.about-obinna{
     z-index: 1;
     padding-left: 130px;
     position: relative;
-    top: 50px;
+    top: 100px;
 }
 .about-header{
     position: relative;
