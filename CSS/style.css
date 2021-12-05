@@ -208,3 +208,7 @@ section.about-obinna{
 .Schools h4 {
     margin: 5px 0 3px 0;
 }
+.Schools P{
+    font-size: 16px;
+    font-weight: 400;
+}
