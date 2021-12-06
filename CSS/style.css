@@ -196,7 +196,7 @@ section.about-obinna{
 
 .other > p {
     width: 70%;
-    line-height: 21px;
+    line-height: 23px;
     margin-bottom: 60px;
 }
 .academics h3#academics {
@@ -215,7 +215,6 @@ section.about-obinna{
 	width: 100%;
 	height: 283px;
 	position: relative;
-	/* padding-bottom: 30px; */
 	background: #fff;
 }
 
@@ -231,6 +230,7 @@ section.about-obinna{
 	flex-direction: row;
 	align-items: center;
 }
+
 .fundings div.mx-1:first-child h4 {
 	margin-bottom: 5px;
 }
@@ -243,10 +243,13 @@ section.about-obinna{
 
 div.mx-1 div.lx {
 	float: left;
-	margin-right: 15px;
+	margin-right: 8px;
 }
 .mx-1#mx-pstack > div {
 	float: left;
+}
+.mx-1#mx-pstack h4 {
+	margin-bottom: 3px;
 }
 .cta_donate {
 	padding: 3.5px 7px;
@@ -415,12 +418,15 @@ div.mx-1 div.lx {
 	.manifesto p {
 	    font-size: 18px;
 	}
-	.other p {
+	.other > p {
 		font-size: 15.5px;
 		line-height: ;
 	}
 }
 @media screen and (max-width: 1024px) {
+	header.main_header {
+		padding: 30px 53px;
+	}
 	.logo {
 		width: 195px;
 	}
@@ -441,7 +447,7 @@ div.mx-1 div.lx {
     	height: 342px;
 	}
 	.Hero-contents {
-		padding-top: 100px;
+		padding-top: 110px;
 	}
 	.Hero-contents h1 {
 		font-size: 33px;
@@ -452,5 +458,50 @@ div.mx-1 div.lx {
 	}
    	.Hero-img {
 		height: 824px;
+	}
+	.manifesto h2 {
+	    font-size: 26px;
+	}
+	.manifesto p {
+		font-size: 17.7px;
+	}
+	.manifesto-list li {
+		font-size: 15.5px;
+	}
+	.other > p {
+		width: 75%;
+	    font-size: 15.7px;
+	}
+	.header_txt_props {
+	    font-size: 23px;
+	    line-height: 28px;
+	}
+	.other #academics {
+		font-size: 17px;
+	}
+	.Schools {
+		font-size: 95%;
+	}
+	.academics > div.Schools {
+		margin-right: 30px;
+	}
+	.fundings .lx img {
+		width: 60px;
+	}
+	div.mx-1 div.lx {
+		font-size: 97%;
+	}
+	#mx-pstack img {
+		width: 117px;
+	}
+	.footer_items > div {
+		margin-right: 64px;
+
+	}
+	.footer_items h5 {
+	    font-size: 16.1px;
+	}
+	.footer_items > div :not(h5) {
+		font-size: 13.8px;
 	}
 }
