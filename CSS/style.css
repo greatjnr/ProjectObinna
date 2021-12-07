@@ -39,6 +39,7 @@ header.main_header {
     align-items: center;
     padding: 30px 120px;
     background: #131212;
+    position: relative;
     /*position: fixed;*/
     /*z-index: 9999;*/
     width: 100%;
@@ -55,7 +56,19 @@ li, a, button{
     cursor: pointer;
     margin-right:auto;
 }
-
+.main_header > nav {
+	position: relative;
+}
+.navbar {
+	position: absolute;
+	/*right: 0;*/
+	cursor: pointer;
+	display: none;
+}
+.navbar > .bx {
+	color: #fff;
+	font-size: 40px;
+}
 .nav_links{
     list-style: none;
 }
@@ -130,6 +143,8 @@ button.Donate {
     list-style: none;
     color: black;
     margin: 10px 0;
+    display: flex;
+    align-items: center;
 }
 
 .manifesto li::before{
@@ -176,9 +191,10 @@ h1{
 }
 /* About Obinna starts */
 section.about-obinna{
+    padding-bottom: 47px;
+    padding-top: 20px;
     background-color: #1B1A1A;
-    color:#F3F2F2;
-    height: 353px;
+    color: #F3F2F2;
     width: 100%;
     z-index: 1;
     position: relative;
@@ -217,9 +233,10 @@ section.about-obinna{
 .fund_sec {
 	z-index: 3;
 	width: 100%;
-	height: 283px;
 	position: relative;
 	background: #fff;
+	padding-bottom: 30px;
+	padding-top: 20px;
 }
 
 .fund_sec > .other {
@@ -233,6 +250,7 @@ section.about-obinna{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	overflow: hidden;
 }
 
 .fundings div.mx-1:first-child h4 {
@@ -244,7 +262,9 @@ section.about-obinna{
 	align-items: flex-end;
 	margin-right: 80px;
 }
-
+div.mx-1 div.lx br {
+	display: none;
+}
 div.mx-1 div.lx {
 	float: left;
 	margin-right: 8px;
@@ -254,6 +274,9 @@ div.mx-1 div.lx {
 }
 .mx-1#mx-pstack h4 {
 	margin-bottom: 3px;
+}
+#mx-pstack h4 #alt {
+	display: none;
 }
 .cta_donate {
 	padding: 3.5px 7px;
@@ -282,8 +305,9 @@ div.mx-1 div.lx {
 	color: #C7C4C4;
 }
 .footer_main {
-	height: 159px;
+	/*height: 159px;*/
 	overflow: hidden;
+	padding: 40px 0;
 	width: 100%;
 	background: #3c3c3c;
 	display: flex;
@@ -346,6 +370,9 @@ div.mx-1 div.lx {
 .footer_items #adr address {
 	font-style: normal;
 	line-height: 20px;
+}
+#adr address br:first-child {
+	display: none;
 }
 .footer_items #contacts li {
 	line-height: 20px;
@@ -631,7 +658,7 @@ div.mx-1 div.lx {
 	}
 }
 
-/*Layout changes */
+/*Layout changes from here*/
 @media screen and (max-width: 864px) {
 
 	/* Generic styles here */
@@ -648,7 +675,7 @@ div.mx-1 div.lx {
 	.header_txt_props {
 		width: max-content;
 		margin: 0 auto;
-		padding-bottom: 5px;
+		padding-bottom: 3px;
 		text-align: center;
 	}
 	.border::after {
@@ -658,16 +685,36 @@ div.mx-1 div.lx {
 	    margin: 0 auto 60px auto;
 	    width: 100%;
 	    text-align: center;
+	    font-size: 14.49px;
 	}
 	/**/
-
+	.navbar {
+		display: block;
+	}
+	header.main_header {
+		padding: 12px 53px;
+	}
+	.main_header > nav, button.Donate {
+		display: none;
+	}
+	.logo {
+		width: 154px;
+	}
 	.hero {
 	    height: 319px;
+	}
+	.padding_left.Hero-contents {
+		padding-left: 47px;
+	}
+
+	.Hero-contents {
+	    padding-top: 111px;
 	}
 	.Hero-contents h1 {
 	    font-size: 27px;
 	}
 	.Hero-p {
+		width: 45%;
 	    font-size: 14px;
 	}
 	.Hero-img {
@@ -676,13 +723,6 @@ div.mx-1 div.lx {
 		right: 34px;
 	}
 	
-	.padding_left.Hero-contents {
-		padding-left: 47px;
-	}
-
-	.Hero-contents {
-	    padding-top: 125px;
-	}
 	.manifesto {
 		z-index: 4;
 		background: #fff;
@@ -694,6 +734,9 @@ div.mx-1 div.lx {
 	.manifesto h2 {
 		margin: 18px auto;
 	}
+	.manifesto p {
+		font-size: 16.49px;
+	}
 	.manifesto-list {
 		text-align: left;
 	    width: max-content;
@@ -702,35 +745,36 @@ div.mx-1 div.lx {
 	.manifesto-list li {
 		margin: 16px 0;
 	}
-	
+	/**/
 	.about-obinna {
-		padding-top: 20px;
+		padding-top: 30px !important;
 	}
 	
-	.about-obinna h2.header_txt_props {
-		text-align: center;
-	}
+	
 	.about-obinna h2.header_txt_props br {
 		display: none;
 	}
 	.about-obinna .other > p {
 		text-align: justify;
 	}
+	
 	.Schools {
 		margin-bottom: 15px;
+		font-size: 84.39%;
 	}
-	.fund_sec {
-		padding: 10px 0;
-	}
+	/**/
+	
 	.fund_sec .other> p {
 		width: 100%;
+		margin-top: 0px;
 		margin-bottom: 39px;
 	}	
 	.footer_main {
-		height: 204px;
 		display: block;
 		position: relative;
+		padding: 10px 0 0 0;
 	}
+	/**/
 	.footer_items {
 	    display: flex;
 	    flex-direction: column;
@@ -738,20 +782,330 @@ div.mx-1 div.lx {
 	    align-items: center;
 	    justify-content: space-evenly;
 	}
-	.footer_items > div:not(div:last-of-type) {
-		/* margin: 0 0 25px 0; */
+	.footer_items > div {
+		margin-bottom: 16px;
+	}
+	.footer_items > div:not(div#reachout), .footer_items #reachout > div {
+		margin-right: 0 !important;
 	}
 	.footer_items #author br {
 		display: none;
 	}
 	.footer_items #reachout {
 		order: 1;
+		display: flex;
+	    justify-content: space-evenly;
+	    width: 100%;
 	}
 	.footer_items #socials {
 		order: 2;
+	}
+	.footer_items #socials ol {
+		display: flex;
+		justify-content: space-evenly;
+	}
+	.footer_items #socials ol li {
+		margin-left: 0;
 	}
 	.footer_items #author {
 		order: 3;
 		margin-top: 5px;
 	}
+}
+@media screen and (max-width: 714px) {
+	.hero {
+		height: 312px;
+	}
+	.Hero-img {
+	    height: 510px;
+	    top: 20px;
+	    right: 20px;
+	}
+	.padding_left.Hero-contents {
+		padding-left: 41px;
+	}
+	.Hero-contents {
+		padding-top: 98px;
+	}
+	.Hero-p {
+		width: 46%;
+	}
+}
+@media screen and (max-width: 672px) {
+
+	section.about-obinna {
+	}
+	.about-obinna .other > p {
+		margin: 0 auto 49px auto;
+	}
+	.fund_sec {
+	}
+	.fund_sec .other> p {
+		margin-bottom: 46px;
+	}
+	div.mx-1 div.lx {
+		font-size: 95%;
+	}
+}
+
+@media screen and (max-width: 634px) {
+	header.main_header {
+	    padding: 12px 25px;
+	}
+	.logo {
+		width: 134px;
+	}
+	.Hero-p {
+		width: 46%;
+		font-size: 13.5px;
+	}
+	.Hero-img {
+	    height: 524px;
+	    top: 60px;
+	}
+	.padding_left.Hero-contents {
+		padding-left: 35px;
+	}
+	.fundings div.mx-1 {
+		margin-right: 16px;
+	}
+	.cta_donate {
+		font-size: 13px;
+		width: 97px;
+		height: 26px;
+		margin: 0 0 7px 12px;
+	}
+	.fundings div.mx-1#mx-pstack {
+		margin-right: 0;
+
+	}
+}
+@media screen and (max-width: 562px) {
+	.navbar > .bx {
+	    font-size: 35px;
+	}
+	.padding_left.Hero-contents {
+		padding-left: 27px;
+	}
+	.Hero-contents h1 {
+		font-size: 25.4px;
+	}
+	.Hero-p {
+		width: 46%;
+		font-size: 13.4px;
+	}
+	.Hero-img {
+	    right: 4px;
+	    height: 534px;
+	    top: 56px;
+	}
+	.fund_sec {
+		padding-bottom: 10px;
+	}
+	.fundings div.mx-1:last-of-type {
+		margin: 0 50px 20px 0;
+	}
+	.fundings div.mx-1 {
+		/*float: none;*/
+		flex-direction: column;
+    	align-items: flex-start;
+	}
+	div.mx-1 div.lx br {
+		display: block;
+	}
+	.fundings div.mx-1:first-child {
+		display: block;
+		margin-right: 57px;
+	}
+	.cta_donate {
+		margin: 8px 0 0 0;
+	}
+
+}
+@media screen and (max-width: 510px) {
+	.logo {
+	    width: 113px;
+	}
+	.navbar > .bx {
+	    font-size: 30px;
+	}
+	.hero {
+		height: 290px;
+	}
+	.Hero-img {
+	    height: 460px;
+	    top: 52px;
+	}
+	.Hero-contents {
+		padding-top: 76px;
+	}
+	.Hero-contents h1 > span {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 441px) {
+	.navbar > .bx {
+	    font-size: 30px;
+	}
+	.logo {
+	    width: 117px;
+	}
+	.Hero-img {
+	    height: 434px;
+	    top: 86px;
+	}
+	.padding_left.Hero-contents {
+		padding-left: 19px;
+	}
+	
+	.Hero-contents h1 {
+		font-size: 23px;
+	}
+	.Hero-p {
+		width: 44%;
+	}
+	.other > p {
+		font-size: 13.5px;
+	}
+	.manifesto h2 {
+		font-size: 24px;
+	}
+	.manifesto p {
+		font-size: 15px;
+	}
+	.manifesto-list {
+		width: 89%;
+		margin: 0 auto
+	}
+
+}
+@media screen and (max-width: 407px) {
+	.logo {
+	    width: 110px;
+	}
+	.fund_sec .other> p {
+		margin-bottom: 34px;
+	}
+	.fundings {
+		display: flex;
+		flex-direction: column;
+	}
+	.fundings div.mx-1 {
+		float: none;
+		margin-right: 0 !important;
+		width: 100%;
+		padding: 0 5px;
+		align-items: flex-end;
+	}
+	.fundings div.mx-1 div.lx:last-of-type {
+		display: flex;
+		text-align: left;
+		font-size: 90%;
+	}
+	.fundings div.mx-1:first-child h4 {
+		margin-right: 10px;
+	}
+	.fundings div.mx-1 div.lx p > strong {
+		display: block;
+	}
+	.fundings div.mx-1#mx-pstack {
+		float: none !important;
+		flex-direction: row;
+		margin-top: 20px;
+	}
+	.mx-1#mx-pstack h4 {
+		margin-bottom: 18px;
+	}
+	#mx-pstack h4 #alt {
+		display: inline;
+	}
+	.cta_donate {
+	    font-size: 12px;
+	    padding: 1.5px 11px;
+	    margin: 0px 0px 5px 15px;
+	    width: 96px;
+	    height: 21px;
+	}
+	.footer_items > div :not(h5) {
+		font-size: 12px;
+	}
+	#adr address br:first-child {
+		display: block;
+	}
+	.footer_items h5 {
+		font-size: 14px;
+	}
+@media screen and (max-width: 375px) {
+	.Hero-contents {
+		padding-top: 47px;
+	}
+	.hero {
+		height: 255px;
+	}
+	.Hero-contents h1 {
+		font-size: 21px;
+	}
+	.Hero-p {
+		font-size: 13.2px;
+	}
+	.Hero-img {
+	    height: 371px;
+	    top: 87px;
+	}
+
+}
+@media screen and (max-width: 349px) {
+	.Hero-img {
+	    height: 324px;
+	    top: 98px;
+	}
+	.hero {
+	    height: 281px;
+	}
+	.Hero-p {
+		width: 40%;
+	}
+	.other > p {
+		font-size: 13.5px;
+	}
+	.manifesto h2 {
+		font-size: 22px;
+	}
+	.manifesto p {
+		font-size: 14.9px;
+	}
+	.manifesto-list li {
+		font-size: 14px;
+	}
+}
+@media screen and (max-width: 319px) {
+	.Hero-contents h1 {
+		font-size: 20px;
+	}
+	.navbar > .bx {
+		font-size: 28px;
+	}
+	.Hero-p {
+		font-size: 12.8px;
+		width: 38%;
+	}
+}
+@media screen and (max-width: 295px) {
+	.Hero-img {
+	    height: 321px;
+	    top: 107px;
+	}
+	.manifesto p {
+		width: 90%;
+		margin: 0 auto;
+	}
+	.fundings div.mx-1#mx-pstack {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+	.cta_donate {
+		margin: 7px 0;
+	}
+
 }
