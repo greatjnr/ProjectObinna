@@ -3,11 +3,13 @@
     margin: 0;
     box-sizing: border-box;
     list-style: none;
+    letter-spacing: .13px !important;
     text-decoration: none;
 }
 body{
     font-family: inter, sans-serif;
 }
+
 /**Generic styles**/
 :root {
 	--orange_color: #f58632;
@@ -38,12 +40,12 @@ header.main_header {
     padding: 30px 120px;
     background: #131212;
     /*position: fixed;*/
-    z-index: 9999;
+    /*z-index: 9999;*/
     width: 100%;
 }
 li, a, button{
-    font-weight:500px;
-    font-size: 16px;
+    /*font-weight:500px;*/
+    /*font-size: 16px;*/
     color: #edf0f1;
     text-decoration: none;
 }
@@ -66,49 +68,51 @@ li, a, button{
 
 }
 
-button{
+button.Donate {
     background: var(--orange_color);
     padding: 9px 25px;
     border-style: none;
     border-radius: 50px;
-    }
-    .hero{
-        background: rgb(1,1,1);
-        background: linear-gradient(90deg, rgba(1,1,1,1) 38%, rgba(6,41,22,1) 54%, rgba(18,141,74,1) 73%);;
-        height: 400px;
-        width: 100% !important;
-        position: relative;
-    }
+    cursor: pointer;
+}
+.hero{
+    background: rgb(1,1,1);
+    background: linear-gradient(90deg, rgba(1,1,1,1) 38%, rgba(6,41,22,1) 54%, rgba(18,141,74,1) 73%);;
+    height: 400px;
+    width: 100% !important;
+    position: relative;
+}
 
-    .Hero-contents{
-        display: inline-block;
-        padding-top: 160px;
-        /*margin-left: 150px;*/
-         }
+.Hero-contents{
+    display: inline-block;
+    padding-top: 160px;
+    /*margin-left: 150px;*/
+}
 
-    .Hero-img{
-        height: 1090px;
-        position: absolute;
-        top:2px;
-        right:20px;
-        z-index: 0;
-        
-    } 
-    /* Manifesto Section Starts */
-    .manifesto{
-        /*margin-left:150px;*/
-        margin-top: 20px;
-        position: relative;
-    }
-    .manifesto h2{
-	    padding-bottom: 4px;
-	    font-size: 32px;
-	    margin: 30px 0 23px 0;
-	    position: relative;
-	   }
-    .manifesto-class{
-        color: #0B9444;
-    }
+.Hero-img{
+    height: 1090px;
+    position: absolute;
+    top:76px;
+    right:20px;
+    z-index: 0;
+    
+} 
+/* Manifesto Section Starts */
+.manifesto{
+    /*margin-left:150px;*/
+    padding-top: 20px;
+    padding-bottom: 38px;
+    position: relative;
+}
+.manifesto h2{
+    padding-bottom: 4px;
+    font-size: 32px;
+    margin: 20px 0 12px 0;
+    position: relative;
+   }
+.manifesto-class{
+    color: #0B9444;
+}
 /*.border{
     border-bottom:4px solid #f58632;
     width: 8%;
@@ -125,7 +129,7 @@ button{
     font-weight: bold;
     list-style: none;
     color: black;
-    margin: 16px 0;
+    margin: 10px 0;
 }
 
 .manifesto li::before{
@@ -173,10 +177,9 @@ h1{
 /* About Obinna starts */
 section.about-obinna{
     background-color: #1B1A1A;
-    color:#F3F2F2 ;
+    color:#F3F2F2;
     height: 353px;
     width: 100%;
-    margin-top: 50px;
     z-index: 1;
     position: relative;
 }
@@ -192,6 +195,7 @@ section.about-obinna{
 }
 .other{
     margin-top: 20px;
+    overflow: hidden;
 }
 
 .other > p {
@@ -278,7 +282,8 @@ div.mx-1 div.lx {
 	color: #C7C4C4;
 }
 .footer_main {
-	height: 139px;
+	height: 159px;
+	overflow: hidden;
 	width: 100%;
 	background: #3c3c3c;
 	display: flex;
@@ -289,9 +294,10 @@ div.mx-1 div.lx {
 .footer_items {
 	width: inherit;
 }
-.footer_items > div {
-	float: left;
+
+.footer_items > div:not(div#reachout) , .footer_items #reachout > div {
 	margin-right: 90px;
+	float: left;
 }
 .footer_items > div:last-of-type {
 	margin-right: 0;
@@ -339,6 +345,7 @@ div.mx-1 div.lx {
 }
 .footer_items #adr address {
 	font-style: normal;
+	line-height: 20px;
 }
 .footer_items #contacts li {
 	line-height: 20px;
@@ -352,7 +359,7 @@ div.mx-1 div.lx {
 @media screen and (max-width: 1220px) {
 	.Hero-img{
         height: 1000px;
-        top: 20px;
+        top: 95px;
     } 
     .header_txt_props {
 	    font-size: 25px;
@@ -368,6 +375,9 @@ div.mx-1 div.lx {
 	}
 	 .fundings div.mx-1 {
 		margin-right: 50px;
+	}
+	.footer_items > div:not(div#reachout) , .footer_items #reachout > div {
+		margin-right: 70px;
 	}
 }
 @media screen and (max-width: 1132px) {
@@ -387,9 +397,7 @@ div.mx-1 div.lx {
 	.header_txt_props {
 		margin-right: 70px;
 	}
-	.footer_items > div {
-		margin-right: 80px;
-	}
+	
 }
 @media screen and (max-width: 1090px) {
 	.nav_links li{
@@ -413,7 +421,6 @@ div.mx-1 div.lx {
 	}
 	.manifesto h2 {
 	    font-size: 28px;
-	    margin: 28px 0 23px 0;
 	}
 	.manifesto p {
 	    font-size: 18px;
@@ -422,6 +429,7 @@ div.mx-1 div.lx {
 		font-size: 15.5px;
 		line-height: ;
 	}
+	
 }
 @media screen and (max-width: 1024px) {
 	header.main_header {
@@ -489,19 +497,261 @@ div.mx-1 div.lx {
 		width: 60px;
 	}
 	div.mx-1 div.lx {
-		font-size: 97%;
+		font-size: 99%;
 	}
 	#mx-pstack img {
 		width: 117px;
 	}
-	.footer_items > div {
-		margin-right: 64px;
-
+	.footer_items > div:not(div#reachout) , .footer_items #reachout > div {
+		margin-right: 60px;
 	}
 	.footer_items h5 {
 	    font-size: 16.1px;
 	}
 	.footer_items > div :not(h5) {
 		font-size: 13.8px;
+	}
+}
+@media screen and (max-width: 986px) {
+	.hero {
+	    height: 307px;
+	}
+	.Hero-p {
+		font-size: 15.6px;
+		line-height: 1.4;
+	}
+	.Hero-img {
+    	top: 81px;    
+	    height: 761px;
+	}
+	.fundings div.mx-1 {
+		margin-right: 27px;
+	}
+	.footer_items > div:not(div#reachout), .footer_items #reachout > div {
+		margin-right: 50px;
+	}
+
+}
+@media screen and (max-width: 940px) {
+	.logo {
+	    width: 175px;
+	}
+	.hero {
+		height: 302px;
+	}
+	.Hero-contents {
+	    padding-top: 130px;
+	}
+	.Hero-contents h1 {
+	    font-size: 30px;
+	}
+	.Hero-p {
+		font-size: 14.7px;
+	}
+	.Hero-img {
+    	top: 72px;
+    	height: 723px;
+ 	}
+ 	.manifesto {
+   		/*padding: 20px 0 29px 0;*/
+   		padding-bottom: 29px;
+ 	}
+ 	.manifesto h2 {
+	    font-size: 23.4px;
+	    margin: 10px 0;
+	}
+	.manifesto p {
+		font-size: 17.13px;
+	}
+	.manifesto-list li {
+		font-size: 15.2px;
+	}
+	
+ 	.other > p {
+	    font-size: 15.2px;
+	}
+	.academics > div.Schools {
+	    margin-right: 23px;
+	}
+	.Schools {
+	    font-size: 90%;
+	}
+	.fundings .lx img {
+		width: 50px;
+	}
+	.footer_items > div:not(div#reachout) , .footer_items #reachout > div {
+		margin-right: 55px;
+	}
+	.footer_items h5 {
+	    font-size: 15.3px;
+	}
+	.footer_items > div :not(h5) {
+		font-size: 13.19px;
+	}
+	.header_txt_props {
+	    font-size: 21px;
+	    line-height: 28px;
+	}
+	.padding_left {
+		padding-left: 42px;
+	}
+	.header_txt_props {
+		margin-right: 40px;
+	}
+	.fund_sec .other > p {
+	    width: 80%;
+	    margin: 8px 0 59px 0;
+	}
+}
+@media screen and (max-width: 890px) {
+	.hero {
+		height: 280px;
+	}
+	.Hero-contents {
+	    padding-top: 98px;
+	}
+	.Hero-contents h1 {
+	    font-size: 30px;
+	}
+	.Hero-p {
+		font-size: 14.5px;
+	}
+	.Hero-img {
+    	top: 42px;
+    	height: 723px;
+ 	}
+ 	.nav_links li {
+		padding: 0 5px;
+	}
+	.nav_links li a {
+		font-size: 15.2px;
+	}
+	.footer_items > div:not(div#reachout) , .footer_items #reachout > div {
+		margin-right: 50px;
+	}
+}
+
+/*Layout changes */
+@media screen and (max-width: 864px) {
+
+	/* Generic styles here */
+	.padding_left {
+		padding-left: 0;
+	}
+	.other {
+		width: 90% !important;
+    	margin: 20px auto 0 auto !important;
+	}
+	.flex {
+		display: block;
+	}
+	.header_txt_props {
+		width: max-content;
+		margin: 0 auto;
+		padding-bottom: 5px;
+		text-align: center;
+	}
+	.border::after {
+		left: 0;
+	}/* This is the border after the header text */
+	.other > p {
+	    margin: 0 auto 60px auto;
+	    width: 100%;
+	    text-align: center;
+	}
+	/**/
+
+	.hero {
+	    height: 319px;
+	}
+	.Hero-contents h1 {
+	    font-size: 27px;
+	}
+	.Hero-p {
+	    font-size: 14px;
+	}
+	.Hero-img {
+		height: 553px;
+		top: 0;
+		right: 34px;
+	}
+	
+	.padding_left.Hero-contents {
+		padding-left: 47px;
+	}
+
+	.Hero-contents {
+	    padding-top: 125px;
+	}
+	.manifesto {
+		z-index: 4;
+		background: #fff;
+    	overflow: hidden;
+		text-align: center;
+		padding-top: 11px;
+		padding-bottom: 19px;
+	}
+	.manifesto h2 {
+		margin: 18px auto;
+	}
+	.manifesto-list {
+		text-align: left;
+	    width: max-content;
+	    margin: 0 auto;
+	}
+	.manifesto-list li {
+		margin: 16px 0;
+	}
+	
+	.about-obinna {
+		padding-top: 20px;
+	}
+	
+	.about-obinna h2.header_txt_props {
+		text-align: center;
+	}
+	.about-obinna h2.header_txt_props br {
+		display: none;
+	}
+	.about-obinna .other > p {
+		text-align: justify;
+	}
+	.Schools {
+		margin-bottom: 15px;
+	}
+	.fund_sec {
+		padding: 10px 0;
+	}
+	.fund_sec .other> p {
+		width: 100%;
+		margin-bottom: 39px;
+	}	
+	.footer_main {
+		height: 204px;
+		display: block;
+		position: relative;
+	}
+	.footer_items {
+	    display: flex;
+	    flex-direction: column;
+	    height: inherit;
+	    align-items: center;
+	    justify-content: space-evenly;
+	}
+	.footer_items > div:not(div:last-of-type) {
+		/* margin: 0 0 25px 0; */
+	}
+	.footer_items #author br {
+		display: none;
+	}
+	.footer_items #reachout {
+		order: 1;
+	}
+	.footer_items #socials {
+		order: 2;
+	}
+	.footer_items #author {
+		order: 3;
+		margin-top: 5px;
 	}
 }
