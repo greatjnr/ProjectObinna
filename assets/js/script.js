@@ -59,6 +59,7 @@
 	})
 	function hideNav() {
 		ovlay.classList.add('animate__fadeOut')
+		navbar.classList.remove('animate__fadeOut')
 
 		setTimeout(()=>{
 			ovlay.classList.remove('animate__fadeOut')
@@ -67,7 +68,6 @@
 	}
 	close.addEventListener('click', function () {
 		hideNav()
-		navbar.classList.remove('animate__fadeOut')
 
 	})//hide the overlay when the close elemt is clicked
 	
