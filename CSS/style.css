@@ -19,7 +19,7 @@ body{
     top: 0;
     z-index: 10;
     visibility: hidden;
-    background: #262626c7;
+    background: #262626de;
 }
 #nav_overlay #nav_close {
     color: #fff;
@@ -27,14 +27,12 @@ body{
     width: 90%;
     margin: 54px auto 30px auto;
     font-size: 50px;
-    /*visibility: hidden;*/
 }
 #nav_close .fa {
 	cursor: pointer;
 }
 .fa {
 	font-family: fontAwesome;
-	/*font-size: 12px;*/
 }
 
 nav#resp_nav {
@@ -373,7 +371,7 @@ div.mx-1 div.lx {
 
 }
 .cta_donate .fa  {
-    font-size: 13px;
+    font-size: 12px;
 }
 .cta_donate a {
     display: flex;
@@ -988,7 +986,7 @@ div.mx-1 div.lx {
 	    top: 56px;
 	}
 	.fund_sec {
-		padding-bottom: 10px;
+		padding-bottom: 25px;
 	}
 	.fundings div.mx-1:last-of-type {
 		margin: 0 50px 20px 0;
@@ -1109,11 +1107,11 @@ div.mx-1 div.lx {
 		display: inline;
 	}
 	.cta_donate {
-	    font-size: 12px;
-	    padding: 1.5px 11px;
+		font-size: 12px;
+	    padding: 3.5px 9px;
 	    margin: 0px 0px 5px 15px;
-	    width: 96px;
-	    height: 21px;
+	    width: 95px;
+	    height: 24px;
 	}
 	.footer_items > div :not(h5) {
 		font-size: 12px;
