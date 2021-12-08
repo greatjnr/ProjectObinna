@@ -8,7 +8,20 @@
 }
 body{
     font-family: inter, sans-serif;
+    
 }
+.main {
+	height: 100vh;
+    scroll-snap-type: y;
+    /*scroll-padding-top: 15vh;*/
+    overflow-y: scroll;
+    overscroll-behavior-x: contain;
+}
+.main > section {
+	scroll-snap-align: start;
+}
+
+
 #nav_overlay:active {
 	visibility: visible;
 }

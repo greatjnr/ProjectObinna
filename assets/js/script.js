@@ -28,17 +28,15 @@
 	cloneElements()
 	
 	//handles the nav properties
+	const nav = ovlay.querySelector('nav')
 	navbar.addEventListener('click', function () {
-		const nav = ovlay.querySelector('nav')
 		const a = ovlay.querySelectorAll('a')
 
 		navbar.classList.add('animate__animated')
-		navbar.classList.add('animate__fadeOut')
-
 		ovlay.classList.add('animate__animated')
-		// close.classList.add('animate__animated')
 		nav.classList.add('animate__animated')
 
+		navbar.classList.add('animate__fadeOut')
 		ovlay.classList.add('animate__fadeIn')
 		ovlay.style.visibility = 'visible'
 
@@ -52,24 +50,28 @@
 
 		setTimeout(()=>{
 			ovlay.classList.remove('animate__fadeIn')
-			nav.classList.remove('animate__animated')
 			nav.classList.remove('animate__fadeInDown')
 
 		}, 1000)//remove the classes in case of next animation
 	})
 	function hideNav() {
-		ovlay.classList.add('animate__fadeOut')
-		navbar.classList.remove('animate__fadeOut')
+		nav.classList.add('animate__backOutDown')
+
+		setTimeout(()=>{
+			ovlay.classList.add('animate__fadeOut')
+			navbar.classList.remove('animate__fadeOut')
+		}, 700)
 
 		setTimeout(()=>{
 			ovlay.classList.remove('animate__fadeOut')
 			ovlay.style.visibility = 'hidden'
-		}, 1000)
+			nav.classList.remove('animate__backOutDown')
+		}, 1400)
 	}
 	close.addEventListener('click', function () {
 		hideNav()
 
-	})//hide the overlay when the close elemt is clicked
+	})//hide the overlay when the close elemt/a link is clicked
 	
 	
 
