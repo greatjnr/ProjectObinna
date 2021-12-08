@@ -32,7 +32,7 @@ body{
     top: 0;
     z-index: 10;
     visibility: hidden;
-    background: #262626de;
+    background: #000;
 }
 #nav_overlay #nav_close {
     color: #fff;
