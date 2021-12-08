@@ -15,34 +15,61 @@ body{
 #nav_overlay {
     height: 100vh;
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 10;
-    /*visibility: visible;*/
+    visibility: hidden;
     background: #262626c7;
 }
 #nav_overlay #nav_close {
     color: #fff;
     text-align: center;
     width: 90%;
-    margin: 54px auto 0 auto;
+    margin: 54px auto 30px auto;
     font-size: 50px;
+    /*visibility: hidden;*/
 }
 #nav_close .fa {
 	cursor: pointer;
 }
+.fa {
+	font-family: fontAwesome;
+	/*font-size: 12px;*/
+}
+
 nav#resp_nav {
 	text-align: center;
 	padding: 5px 0;
+	overflow: hidden;
 }
 nav#resp_nav ul {
 	display: flex;
 	flex-direction: column;
 }
 nav#resp_nav ul li {
-	margin: 20px 0;
+	font-weight: 700;
+	margin: 14px 0;
+	font-size: 23px;
 }
-
+nav#resp_nav ul li a:hover {
+	color: #e1e1e1;
+}
+nav#resp_nav ul li a {
+    padding: 5px 10px;
+    transition: .7s ease color;
+    display: block;
+    width: max-content;
+    color: #fff;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+nav#resp_nav ul li a:after {
+	/*content: "\f078";*/
+	font-family: fontAwesome;
+	font-size: 15px;
+	margin-left: 10px;
+}
 /**Generic styles**/
 :root {
 	--orange_color: #f58632;
@@ -98,9 +125,10 @@ li, a, button{
 	cursor: pointer;
 	display: none;
 }
-#navbar > .fa {
+#navbar > .fa  {
 	color: #fff;
 	font-size: 35px;
+	font-style: normal;
 }
 .nav_links{
     list-style: none;
@@ -341,10 +369,10 @@ div.mx-1 div.lx {
 	position: relative;
 }
 
-.cta_donate:hover .fa {
+.cta_donate:hover .fa  {
 
 }
-.cta_donate .fa {
+.cta_donate .fa  {
     font-size: 13px;
 }
 .cta_donate a {
@@ -387,7 +415,7 @@ div.mx-1 div.lx {
 .footer_items #socials ol li:hover {
 	background: var(--orange_color);
 }
-.footer_items #socials ol li:hover i.fa {
+.footer_items #socials ol li:hover i.fa  {
 	color: #fff;
 }
 .footer_items #socials ol li {
@@ -402,17 +430,17 @@ div.mx-1 div.lx {
 	transition: .9s ease all;
 	justify-content: center;
 }
-.footer_items #socials ol li i.fa {
+.footer_items #socials ol li i.fa  {
 	font-size: 18px;
 	color: #3c3c3c;
 }
-.footer_items #socials ol li i.fa.fal-linkedin {
+.footer_items #socials ol li i.fa .fal-linkedin {
 	font-size: 16px;
 }
-.footer_items #socials ol li i.fa.fal-twitter {
+.footer_items #socials ol li i.fa .fal-twitter {
 	margin-top: 2px;
 }
-.footer_items #socials ol li i.fa.fal-facebook {
+.footer_items #socials ol li i.fa .fal-facebook {
 	margin-top: 2px;
 	font-size: 23px;
 }
@@ -864,7 +892,15 @@ div.mx-1 div.lx {
 		margin-top: 5px;
 	}
 }
+
 @media screen and (max-width: 714px) {
+	#nav_overlay #nav_close {
+		font-size: 40px;
+	}
+	nav#resp_nav ul li {
+	    margin: 11px 0;
+	    font-size: 20px;
+	}
 	.hero {
 		height: 312px;
 	}
@@ -933,7 +969,7 @@ div.mx-1 div.lx {
 	}
 }
 @media screen and (max-width: 562px) {
-	#navbar > .fa {
+	#navbar > .fa  {
 	    font-size: 35px;
 	}
 	.padding_left.Hero-contents {
@@ -978,7 +1014,7 @@ div.mx-1 div.lx {
 	.logo {
 	    width: 113px;
 	}
-	#navbar > .fa {
+	#navbar > .fa  {
 	    font-size: 30px;
 	}
 	.hero {
@@ -997,7 +1033,7 @@ div.mx-1 div.lx {
 }
 
 @media screen and (max-width: 452px) {
-	#navbar > .fa {
+	#navbar > .fa  {
 	    font-size: 30px;
 	}
 	.logo {
@@ -1135,7 +1171,7 @@ div.mx-1 div.lx {
 	.Hero-contents h1 {
 		font-size: 20px;
 	}
-	#navbar > .fa {
+	#navbar > .fa  {
 		font-size: 28px;
 	}
 	.Hero-p {
