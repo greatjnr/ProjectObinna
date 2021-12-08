@@ -1,4 +1,3 @@
-
 (function() {
 	const bankDets = document.querySelector('.mx-1 > .lx:last-of-type')
 	const ovlay = document.querySelector('#nav_overlay')
@@ -30,18 +29,48 @@
 	
 	//handles the nav properties
 	navbar.addEventListener('click', function () {
-		window.onscroll = function() {
-			updatePos(window.scrollY)
-		}
+		const nav = ovlay.querySelector('nav')
+		const a = ovlay.querySelectorAll('a')
+
+		navbar.classList.add('animate__animated')
+		navbar.classList.add('animate__fadeOut')
+
+		ovlay.classList.add('animate__animated')
+		// close.classList.add('animate__animated')
+		nav.classList.add('animate__animated')
+
+		ovlay.classList.add('animate__fadeIn')
 		ovlay.style.visibility = 'visible'
+
+		nav.classList.add('animate__fadeInDown')
+
+		for (let i = 0; i<a.length;i+=1) {
+			a[i].addEventListener('click', function () {
+				hideNav()
+			})
+		}//hide the overlay when a link is clicked
+
+		setTimeout(()=>{
+			ovlay.classList.remove('animate__fadeIn')
+			nav.classList.remove('animate__animated')
+			nav.classList.remove('animate__fadeInDown')
+
+		}, 1000)//remove the classes in case of next animation
 	})
+	function hideNav() {
+		ovlay.classList.add('animate__fadeOut')
+
+		setTimeout(()=>{
+			ovlay.classList.remove('animate__fadeOut')
+			ovlay.style.visibility = 'hidden'
+		}, 1000)
+	}
 	close.addEventListener('click', function () {
-		ovlay.style.visibility = 'hidden'
-	})
+		hideNav()
+		navbar.classList.remove('animate__fadeOut')
+
+	})//hide the overlay when the close elemt is clicked
 	
-	function updatePos(val) {
-		ovlay.style.top = val + 'px'
-	}//update the overlay position while scrolling
 	
 
 	//Handles copy-to-clipboard feature on the bank details
