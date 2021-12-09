@@ -11,7 +11,7 @@ body{
     
 }
 .main {
-    scroll-padding-top: 13vh;
+    scroll-padding-top: 25vh;
     overflow-y: scroll;
 	height: 100vh;
     scroll-snap-type: y;
@@ -444,7 +444,7 @@ div.mx-1 div.lx {
 	justify-content: center;
 }
 .footer_items #socials ol li i.fa  {
-	font-size: 18px;
+	font-size: 16px;
 	color: #3c3c3c;
 }
 .footer_items #socials ol li i.fa .fal-linkedin {
@@ -753,7 +753,9 @@ div.mx-1 div.lx {
 
 /*Layout changes from here*/
 @media screen and (max-width: 864px) {
-
+	.main {
+	    scroll-padding-top: 13vh;
+}
 	/* Generic styles here */
 	.padding_left {
 		padding-left: 0;

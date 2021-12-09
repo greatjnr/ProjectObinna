@@ -9,8 +9,7 @@
 	ovlay.querySelector('nav').appendChild(ul)
 
 	//Re-position the box based on the parent position
-	box.style.left = (bankDets.offsetLeft + 50) + 'px'
-	box.style.top = '-25px'
+	
 
 	function cloneElements() {
 		const shadw = document.querySelectorAll('.nav_links > li')
@@ -99,6 +98,14 @@
 	}
 	bankDets.addEventListener('click', function (e) {
 		const nodes = bankDets.querySelectorAll('h4,p')
+		box.style.left = (bankDets.offsetLeft + 50) + 'px'
+		box.style.top = '-25px'
+		bankDets.classList.add('animate__animated')
+		bankDets.classList.add('animate__bounceIn')
+		setTimeout(()=>{
+			bankDets.classList.remove('animate__bounceIn')
+		}, 400)
+		
 
 		box.classList.add('animate__animated')
 		box.classList.add('animate__bounceInUp')
