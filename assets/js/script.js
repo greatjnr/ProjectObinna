@@ -60,13 +60,13 @@
 		setTimeout(()=>{
 			ovlay.classList.add('animate__fadeOut')
 			navbar.classList.remove('animate__fadeOut')
-		}, 700)
+		}, 200)
 
 		setTimeout(()=>{
 			ovlay.classList.remove('animate__fadeOut')
 			ovlay.style.visibility = 'hidden'
 			nav.classList.remove('animate__backOutDown')
-		}, 1400)
+		}, 1000)
 	}
 	close.addEventListener('click', function () {
 		hideNav()
@@ -74,6 +74,20 @@
 	})//hide the overlay when the close elemt/a link is clicked
 	
 	
+	//sticky navbar
+	// function turnSticky() {
+	// 	const nav = document.querySelector('header.main_header')
+	// 	const sticky = document.querySelectorAll('.snap')
+	// 	const body = document.querySelectorAll('.main')[0]
+	// 	body.onscroll = function (e) {
+			// if (e.target.scrollTop >= nav.offsetHeight) {
+			// 	nav.classList.add('sticky')
+			// } else {
+			// 	nav.classList.remove('sticky')
+			// }
+		// }
+	// }
+	// turnSticky()
 
 	//Handles copy-to-clipboard feature on the bank details
 	function details(nodes) {
