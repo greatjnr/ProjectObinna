@@ -8,7 +8,19 @@
 }
 body{
     font-family: inter, sans-serif;
+    
 }
+.main {
+    scroll-padding-top: 25vh;
+    overflow-y: scroll;
+	height: 100vh;
+    scroll-snap-type: y;
+    overscroll-behavior-x: contain;
+}
+.main > section.snap  {
+	scroll-snap-align: start;
+}
+
 #nav_overlay:active {
 	visibility: visible;
 }
@@ -17,9 +29,9 @@ body{
     width: 100%;
     position: fixed;
     top: 0;
-    z-index: 10;
+    z-index: 20;
     visibility: hidden;
-    background: #262626c7;
+    background: #000;
 }
 #nav_overlay #nav_close {
     color: #fff;
@@ -27,14 +39,12 @@ body{
     width: 90%;
     margin: 54px auto 30px auto;
     font-size: 50px;
-    /*visibility: hidden;*/
 }
 #nav_close .fa {
 	cursor: pointer;
 }
 .fa {
 	font-family: fontAwesome;
-	/*font-size: 12px;*/
 }
 
 nav#resp_nav {
@@ -92,21 +102,24 @@ nav#resp_nav ul li a:after {
     padding-left: 130px;
 }
 /**/
-
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+}
 header.main_header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding: 30px 110px;
     background: #131212;
-    position: relative;
-    /*position: fixed;*/
-    /*z-index: 9999;*/
+    z-index: 10;
     width: 100%;
+    position: sticky;
+    top: 0;
 }
 li, a, button{
-    /*font-weight:500px;*/
-    /*font-size: 16px;*/
     color: #edf0f1;
     text-decoration: none;
 }
@@ -278,8 +291,7 @@ section.about-obinna{
 .other > p {
     width: 70%;
     line-height: 23px;
-    margin-bottom: 60px;
-}
+    margin-bottom: 60px; jus}
 .academics h3#academics {
     line-height: 10px;
 }
@@ -296,8 +308,8 @@ section.about-obinna{
 	width: 100%;
 	position: relative;
 	background: #fff;
-	padding-bottom: 30px;
-	padding-top: 20px;
+	padding-bottom: 41px;
+	padding-top: 35px;
 }
 
 .fund_sec > .other {
@@ -373,7 +385,7 @@ div.mx-1 div.lx {
 
 }
 .cta_donate .fa  {
-    font-size: 13px;
+    font-size: 12px;
 }
 .cta_donate a {
     display: flex;
@@ -431,7 +443,7 @@ div.mx-1 div.lx {
 	justify-content: center;
 }
 .footer_items #socials ol li i.fa  {
-	font-size: 18px;
+	font-size: 16px;
 	color: #3c3c3c;
 }
 .footer_items #socials ol li i.fa .fal-linkedin {
@@ -740,7 +752,9 @@ div.mx-1 div.lx {
 
 /*Layout changes from here*/
 @media screen and (max-width: 864px) {
-
+	.main {
+	    scroll-padding-top: 13vh;
+}
 	/* Generic styles here */
 	.padding_left {
 		padding-left: 0;
@@ -835,7 +849,7 @@ div.mx-1 div.lx {
 		display: none;
 	}
 	.about-obinna .other > p {
-		text-align: justify;
+		text-align: left;
 	}
 	
 	.Schools {
@@ -849,6 +863,12 @@ div.mx-1 div.lx {
 		margin-top: 0px;
 		margin-bottom: 39px;
 	}	
+	.cta_donate {
+		font-size: 12px;
+	    padding: 3.5px 9px;
+	    width: 95px;
+	    height: 24px;
+	}
 	.footer_main {
 		display: block;
 		position: relative;
@@ -938,7 +958,7 @@ div.mx-1 div.lx {
 
 @media screen and (max-width: 634px) {
 	header.main_header {
-	    padding: 12px 18px;
+	    padding: 12px 13px;
 	}
 	.logo {
 		width: 134px;
@@ -958,9 +978,6 @@ div.mx-1 div.lx {
 		margin-right: 16px;
 	}
 	.cta_donate {
-		font-size: 13px;
-		width: 97px;
-		height: 26px;
 		margin: 0 0 7px 12px;
 	}
 	.fundings div.mx-1#mx-pstack {
@@ -988,7 +1005,7 @@ div.mx-1 div.lx {
 	    top: 56px;
 	}
 	.fund_sec {
-		padding-bottom: 10px;
+		padding-bottom: 25px;
 	}
 	.fundings div.mx-1:last-of-type {
 		margin: 0 50px 20px 0;
@@ -1109,11 +1126,11 @@ div.mx-1 div.lx {
 		display: inline;
 	}
 	.cta_donate {
-	    font-size: 12px;
-	    padding: 1.5px 11px;
 	    margin: 0px 0px 5px 15px;
-	    width: 96px;
-	    height: 21px;
+		/*font-size: 12px;
+	    padding: 3.5px 9px;
+	    width: 95px;
+	    height: 24px;*/
 	}
 	.footer_items > div :not(h5) {
 		font-size: 12px;
@@ -1161,7 +1178,7 @@ div.mx-1 div.lx {
 		font-size: 22px;
 	}
 	.manifesto p {
-		font-size: 14.9px;
+		font-size: 14.6px;
 	}
 	.manifesto-list li {
 		font-size: 14px;
