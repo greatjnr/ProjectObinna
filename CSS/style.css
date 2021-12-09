@@ -291,8 +291,7 @@ section.about-obinna{
 .other > p {
     width: 70%;
     line-height: 23px;
-    margin-bottom: 60px;
-}
+    margin-bottom: 60px; jus}
 .academics h3#academics {
     line-height: 10px;
 }
@@ -850,7 +849,7 @@ div.mx-1 div.lx {
 		display: none;
 	}
 	.about-obinna .other > p {
-		text-align: justify;
+		text-align: left;
 	}
 	
 	.Schools {
