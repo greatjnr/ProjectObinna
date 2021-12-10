@@ -59,6 +59,9 @@ nav#resp_nav ul {
 	display: flex;
 	flex-direction: column;
 }
+nav#resp_nav ul li:last-of-type a {
+	color: var(--orange_color)
+}
 nav#resp_nav ul li {
 	font-weight: 700;
 	margin: 14px 0;
