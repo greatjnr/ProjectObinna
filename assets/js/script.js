@@ -35,11 +35,19 @@
 		ovlay.classList.add('animate__animated')
 		nav.classList.add('animate__animated')
 
-		navbar.classList.add('animate__fadeOut')
-		ovlay.classList.add('animate__fadeIn')
-		ovlay.style.visibility = 'visible'
 
-		nav.classList.add('animate__fadeInDown')
+		if (navbar.getAttribute('active')) {//checks if the nav icon has been clicked to open nav
+			navbar.removeAttribute('active')//if user wants to close the nav
+
+			hideNav()//calls hidenav
+		} else {
+			navbar.setAttribute('active', 'true')//else if user opens the nav
+
+			ovlay.classList.add('animate__slideInRight')	
+			ovlay.classList.remove('animate__fadeOut')
+			
+			ovlay.style.visibility = 'visible'
+		}
 
 		for (let i = 0; i<a.length;i+=1) {
 			a[i].addEventListener('click', function () {
@@ -54,7 +62,11 @@
 		}, 1000)//remove the classes in case of next animation
 	})
 	function hideNav() {
+
 		nav.classList.add('animate__backOutDown')
+
+		ovlay.classList.remove('animate__slideInRight')
+		ovlay.classList.add('animate__fadeOut')
 
 		setTimeout(()=>{
 			ovlay.classList.add('animate__fadeOut')
