@@ -5,8 +5,13 @@
 	const navbar = document.querySelector('#navbar')
 	const close = document.querySelectorAll('#nav_close > .fa')[0]
 
+	box.style.left = (bankDets.offsetLeft + 60) + 'px'
+	box.style.top = (bankDets.offsetTop) + 'px'
+
 	navbar.classList.add('animate__animated')
 	ovlay.classList.add('animate__animated')
+	bankDets.classList.add('animate__animated')
+	box.classList.add('animate__animated')
 
 	const ul = document.createElement('ul')
 	ovlay.querySelector('nav').appendChild(ul)
@@ -21,7 +26,6 @@
 			const a = document.createElement('a')
 			
 			if (i >= shadw.length) {
-				console.log(i, shadw.length)
 				a.setAttribute('href', '#')
 				a.textContent = 'Donate'
 			} else {
@@ -47,7 +51,7 @@
 			navbar.setAttribute('active', 'true')
 
 			ovlay.classList.add('animate__fadeIn')
-			nav.classList.add('animate__fadeInRight')	
+			nav.classList.add('animate__slideInRight')	
 			ovlay.style.visibility = 'visible'
 
 		} else {
@@ -63,7 +67,7 @@
 	})
 	function hideNav() {
 		navbar.removeAttribute('active')//if user to closes the nav
-		nav.classList.remove('animate__fadeInRight')
+		nav.classList.remove('animate__slideInRight')
 
 		ovlay.classList.remove('animate__fadeIn')
 		ovlay.classList.add('animate__fadeOut')
@@ -72,7 +76,7 @@
 			ovlay.classList.remove('animate__fadeOut')
 			ovlay.style.visibility = 'hidden'
 			nav.classList.remove('animate__backOutDown')
-		}, 1000)
+		}, 500)
 	}
 	close.addEventListener('click', function () {
 		hideNav()
@@ -91,22 +95,15 @@
 	bankDets.addEventListener('click', function (e) {
 		const nodes = bankDets.querySelectorAll('h4,p')
 		
-		box.style.left = (bankDets.offsetLeft + 50) + 'px'
-		box.style.top = '-25px'
-		
-		bankDets.classList.add('animate__animated')
-		bankDets.classList.add('animate__bounceIn')
+		bankDets.classList.add('animate__pulse')
+		box.classList.add('animate__rubberBand')
 		setTimeout(()=>{
-			bankDets.classList.remove('animate__bounceIn')
+			bankDets.classList.remove('animate__pulse')
+			box.style.visibility = 'visible'
 		}, 400)
 		
 
-		box.classList.add('animate__animated')
-		box.classList.add('animate__bounceInUp')
-		box.style.visibility = 'visible'
-
 		setTimeout(()=>{
-			box.classList.add('animate__bounceOutDown')
 			box.classList = ['alertBox']
 			box.style.visibility = 'hidden'
 		}, 2000)
