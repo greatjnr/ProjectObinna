@@ -56,7 +56,7 @@
 		}//hide the overlay when a link is clicked
 
 		setTimeout(()=>{
-			ovlay.classList.remove('animate__fadeIn')
+			ovlay.classList.remove('animate__slideInRight')
 			nav.classList.remove('animate__fadeInDown')
 
 		}, 1000)//remove the classes in case of next animation
