@@ -10,8 +10,12 @@ body{
     font-family: inter, sans-serif;
     
 }
+#btop {
+	
+}
 .main {
     scroll-padding-top: 25vh;
+    position: relative;
     overflow-y: scroll;
 	height: 100vh;
     scroll-snap-type: y;
@@ -25,10 +29,11 @@ body{
 	visibility: visible;
 }
 #nav_overlay {
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    top: 0;
+    right: 0;
+    /* height: 100vh; */
+    width: 45%;
+    position: absolute;
+    top: 100%;
     z-index: 20;
     visibility: hidden;
     background: #000;
@@ -36,6 +41,7 @@ body{
 #nav_overlay #nav_close {
     color: #fff;
     text-align: center;
+    display: none;
     width: 90%;
     margin: 54px auto 30px auto;
     font-size: 50px;
@@ -56,10 +62,13 @@ nav#resp_nav ul {
 	display: flex;
 	flex-direction: column;
 }
+nav#resp_nav ul li:last-of-type a {
+	color: var(--orange_color)
+}
 nav#resp_nav ul li {
 	font-weight: 700;
 	margin: 14px 0;
-	font-size: 23px;
+	font-size: 19px;
 }
 nav#resp_nav ul li a:hover {
 	color: #e1e1e1;
@@ -68,11 +77,9 @@ nav#resp_nav ul li a {
     padding: 5px 10px;
     transition: .7s ease color;
     display: block;
-    width: max-content;
+    width: 100%;
     color: #fff;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
 }
 nav#resp_nav ul li a:after {
 	/*content: "\f078";*/
@@ -929,7 +936,6 @@ div.mx-1 div.lx {
 	}
 	nav#resp_nav ul li {
 	    margin: 11px 0;
-	    font-size: 20px;
 	}
 	.hero {
 		height: 312px;
