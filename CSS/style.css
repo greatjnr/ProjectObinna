@@ -42,39 +42,26 @@ body{
     z-index: 15;
      visibility: hidden; 
     background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-#nav_overlay ul {
-	/**height: inherit;**/
-}
-#nav_overlay #nav_close {
-    color: #fff;
-    text-align: center;
-    display: none;
-    width: 90%;
-    margin: 54px auto 30px auto;
-    font-size: 50px;
-}
-#nav_close .fa {
-	cursor: pointer;
-}
-.fa {
-	font-family: fontAwesome;
+#nav_overlay nav + ul {
+	/*height: inherit;*/
 }
 
+
 nav#resp_nav {
-        display: flex;
-        justify-contents: center;
-        align-items: center;
 	text-align: center;
 	padding: 5px 0;
-	height: inherit;
+	height: 80%;
 	overflow: hidden;
 }
 nav#resp_nav ul {
 	display: flex;
 	flex-direction: column;
-	height: 80%;
-	justify-content: space-evenly;
+	height: 100%;
+	justify-content: space-around;
 }
 nav#resp_nav ul li:last-of-type a {
 	color: var(--orange_color)
@@ -94,15 +81,31 @@ nav#resp_nav ul li a {
     color: #fff;
     margin: 0 auto;
 }
+#nav_overlay #nav_close {
+    color: #fff;
+    text-align: center;
+    display: none;
+    width: 90%;
+    margin: 54px auto 30px auto;
+    font-size: 50px;
+}
+#nav_close .fa {
+	cursor: pointer;
+}
+.fa {
+	font-family: fontAwesome;
+}
 nav#resp_nav ul li a:after {
 	/*content: "\f078";*/
 	font-family: fontAwesome;
 	font-size: 15px;
 	margin-left: 10px;
 }
+
 /**Generic styles**/
 :root {
 	--orange_color: #f58632;
+	/*--headeer_height: 151;*/
 }
 .white_color {
 	color: #fff;
@@ -122,6 +125,7 @@ nav#resp_nav ul li a:after {
     padding-left: 130px;
 }
 /**/
+
 .sticky {
 	position: fixed;
 	top: 0;
@@ -784,8 +788,8 @@ div.mx-1 div.lx {
 /*Layout changes from here*/
 @media screen and (max-width: 864px) {
 	.main {
-	    scroll-padding-top: 13vh;
-}
+	    scroll-padding-top: 17vh;
+	}
 	/* Generic styles here */
 	.padding_left {
 		padding-left: 0;
@@ -986,6 +990,9 @@ div.mx-1 div.lx {
 }
 
 @media screen and (max-width: 634px) {
+	.main {
+	    scroll-padding-top: 15vh;
+	}
 	header.main_header {
 	    padding: 12px 13px;
 	}
@@ -1072,6 +1079,9 @@ div.mx-1 div.lx {
 
 }
 @media screen and (max-width: 510px) {
+	.main {
+	    scroll-padding-top: 13vh;
+	}
 	#nav_overlay {
 		height: calc(100vh - 83px);
 		width: 50%;
