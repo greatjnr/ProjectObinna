@@ -73,21 +73,6 @@
 	})//hide the overlay when the close elemt/a link is clicked
 	
 	
-	//sticky navbar
-	// function turnSticky() {
-	// 	const nav = document.querySelector('header.main_header')
-	// 	const sticky = document.querySelectorAll('.snap')
-	// 	const body = document.querySelectorAll('.main')[0]
-	// 	body.onscroll = function (e) {
-			// if (e.target.scrollTop >= nav.offsetHeight) {
-			// 	nav.classList.add('sticky')
-			// } else {
-			// 	nav.classList.remove('sticky')
-			// }
-		// }
-	// }
-	// turnSticky()
-
 	//Handles copy-to-clipboard feature on the bank details
 	function details(nodes) {
 		var txt = '';
@@ -98,8 +83,10 @@
 	}
 	bankDets.addEventListener('click', function (e) {
 		const nodes = bankDets.querySelectorAll('h4,p')
+		
 		box.style.left = (bankDets.offsetLeft + 50) + 'px'
 		box.style.top = '-25px'
+		
 		bankDets.classList.add('animate__animated')
 		bankDets.classList.add('animate__bounceIn')
 		setTimeout(()=>{

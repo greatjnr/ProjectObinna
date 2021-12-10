@@ -320,7 +320,12 @@ section.about-obinna{
 	margin: 15px 0 40px 0;
 }
 .fundings {
+	grid-auto-flow: column;
 	position: relative;
+	overflow: hidden;
+	grid-column: 2;
+	display: grid;
+	width: 100%;
 }
 .fundings div.mx-1:first-child {
 	display: flex;
@@ -336,7 +341,7 @@ section.about-obinna{
 	float: left;
 	display: flex;
 	align-items: flex-end;
-	margin-right: 80px;
+	/*margin-right: 80px;*/
 }
 .alertBox {
     /* z-index: 5; */
@@ -355,6 +360,7 @@ div.mx-1 div.lx br {
 }
 div.mx-1 div.lx {
 	float: left;
+	cursor: copy;
 	margin-right: 8px;
 }
 .mx-1#mx-pstack > div {
@@ -367,30 +373,32 @@ div.mx-1 div.lx {
 	display: none;
 }
 .cta_donate {
-	padding: 3.5px 7px;
+	/* padding: 3.5px 7px; */
 	width: 100px;
+	display: flex;
 	height: 26px;
-	background: #000;
+	background: #011b33;
 	color: #fff;
 	font-size: 14px;
-	/* position: relative; */
 	border-radius: 20px;
-	margin: 0 0 8px 18px;
+	margin: 0 0 6px 10px;
 	cursor: pointer;
-	box-shadow: 1px 1px 9px 2px #9999996b;
+	box-shadow: 1px 1px 9px 2px #e1f1ff;
 	position: relative;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
 
-.cta_donate:hover .fa  {
-
-}
 .cta_donate .fa  {
     font-size: 12px;
 }
 .cta_donate a {
     display: flex;
     align-items: flex-end;
-    justify-content: space-around;
+    width: 100%;
+    justify-content: space-evenly;
 }
 /**/
 .footer_primary_color {
@@ -493,7 +501,7 @@ div.mx-1 div.lx {
 	    padding: 30px 90px;
 	}
 	 .fundings div.mx-1 {
-		margin-right: 50px;
+		/*margin-right: 50px;*/
 	}
 	.footer_items > div:not(div#reachout) , .footer_items #reachout > div {
 		margin-right: 70px;
@@ -506,10 +514,10 @@ div.mx-1 div.lx {
 	.Hero-img {
         height: 900px;
         /*top: 67px;*/
-    }
+    }/*
     .fundings div.mx-1 {
 		margin-right: 50px;
-	}
+	}*/
 	.nav_links li{
 		padding: 0 15px;
 	}
@@ -644,7 +652,7 @@ div.mx-1 div.lx {
 	    height: 761px;
 	}
 	.fundings div.mx-1 {
-		margin-right: 27px;
+		/*margin-right: 0;*/
 	}
 	.footer_items > div:not(div#reachout), .footer_items #reachout > div {
 		margin-right: 50px;
@@ -760,7 +768,7 @@ div.mx-1 div.lx {
 		padding-left: 0;
 	}
 	.other {
-		width: 90% !important;
+		width: 86% !important;
     	margin: 20px auto 0 auto !important;
 	}
 	.flex {
@@ -775,6 +783,7 @@ div.mx-1 div.lx {
 	.border::after {
 		left: 0;
 	}/* This is the border after the header text */
+
 	.other > p {
 	    margin: 0 auto 60px auto;
 	    width: 100%;
@@ -857,7 +866,9 @@ div.mx-1 div.lx {
 		font-size: 84.39%;
 	}
 	/**/
-	
+	.fundings {
+		justify-content: space-around;
+	}
 	.fund_sec .other> p {
 		width: 100%;
 		margin-top: 0px;
@@ -865,9 +876,8 @@ div.mx-1 div.lx {
 	}	
 	.cta_donate {
 		font-size: 12px;
-	    padding: 3.5px 9px;
-	    width: 95px;
-	    height: 24px;
+		width: 88px;
+		height: 24px;
 	}
 	.footer_main {
 		display: block;
@@ -974,18 +984,20 @@ div.mx-1 div.lx {
 	.padding_left.Hero-contents {
 		padding-left: 35px;
 	}
+	.fundings {
+		justify-content: space-between;
+	}
 	.fundings div.mx-1 {
-		margin-right: 16px;
+		/*margin-right: 0;*/
 	}
 	.cta_donate {
 		margin: 0 0 7px 12px;
 	}
 	.fundings div.mx-1#mx-pstack {
-		margin-right: 0;
-
+		/*margin-right: 0;*/
 	}
 }
-@media screen and (max-width: 562px) {
+@media screen and (max-width: 575px) {
 	#navbar > .fa  {
 	    font-size: 35px;
 	}
@@ -1007,8 +1019,11 @@ div.mx-1 div.lx {
 	.fund_sec {
 		padding-bottom: 25px;
 	}
+	.fundings {
+		justify-content: space-around;
+	}
 	.fundings div.mx-1:last-of-type {
-		margin: 0 50px 20px 0;
+		/*margin: 0 50px 20px 0;*/
 	}
 	.fundings div.mx-1 {
 		/*float: none;*/
@@ -1020,7 +1035,7 @@ div.mx-1 div.lx {
 	}
 	.fundings div.mx-1:first-child {
 		display: block;
-		margin-right: 57px;
+		/*margin-right: 57px;*/
 	}
 	.cta_donate {
 		margin: 8px 0 0 0;
@@ -1117,10 +1132,10 @@ div.mx-1 div.lx {
 	.fundings div.mx-1#mx-pstack {
 		float: none !important;
 		flex-direction: row;
-		margin-top: 20px;
+		margin-top: 31px;
 	}
 	.mx-1#mx-pstack h4 {
-		margin-bottom: 18px;
+		margin-bottom: 5px;
 	}
 	#mx-pstack h4 #alt {
 		display: inline;
