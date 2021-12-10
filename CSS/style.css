@@ -42,7 +42,7 @@ body{
     z-index: 15;
      visibility: hidden; 
     background: #000;
-    display: flex;
+    display: grid;
     flex-direction: column;
     justify-content: center;
 }
