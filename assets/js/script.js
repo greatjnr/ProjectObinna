@@ -100,13 +100,13 @@
 		setTimeout(()=>{
 			bankDets.classList.remove('animate__pulse')
 			box.style.visibility = 'visible'
-		}, 400)
+		}, 1000)
 		
 
 		setTimeout(()=>{
-			box.classList = ['alertBox']
+			box.classList.remove('animate__rubberBand')
 			box.style.visibility = 'hidden'
-		}, 2000)
+		}, 1000)
 		details(nodes)
 	})
 
