@@ -43,8 +43,8 @@ body{
      visibility: hidden; 
     background: #000;
 }
-#nav_overlay nav + ul {
-	height: inherit;
+#nav_overlay ul {
+	/**height: inherit;**/
 }
 #nav_overlay #nav_close {
     color: #fff;
@@ -62,6 +62,9 @@ body{
 }
 
 nav#resp_nav {
+        display: flex;
+        justify-contents: center;
+        align-items: center;
 	text-align: center;
 	padding: 5px 0;
 	height: inherit;
@@ -70,7 +73,7 @@ nav#resp_nav {
 nav#resp_nav ul {
 	display: flex;
 	flex-direction: column;
-	height: inherit;
+	height: 80%;
 	justify-content: space-evenly;
 }
 nav#resp_nav ul li:last-of-type a {
