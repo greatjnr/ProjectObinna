@@ -5,42 +5,54 @@
 	const navbar = document.querySelector('#navbar')
 	const close = document.querySelectorAll('#nav_close > .fa')[0]
 
+	navbar.classList.add('animate__animated')
+	ovlay.classList.add('animate__animated')
+
 	const ul = document.createElement('ul')
 	ovlay.querySelector('nav').appendChild(ul)
 
 	//Re-position the box based on the parent position
-	box.style.left = (bankDets.offsetLeft + 50) + 'px'
-	box.style.top = '-25px'
+	
 
 	function cloneElements() {
 		const shadw = document.querySelectorAll('.nav_links > li')
-		for (let i = 0; i<shadw.length; i+=1) {
-			const shdw_link = shadw[i].querySelector('a');
+		for (let i = 0; i<shadw.length + 1; i+=1) {
 			const li = document.createElement('li')
 			const a = document.createElement('a')
-			a.setAttribute('href', shdw_link.getAttribute('href'))
-			a.textContent = shdw_link.textContent.toUpperCase()
+			
+			if (i >= shadw.length) {
+				console.log(i, shadw.length)
+				a.setAttribute('href', '#')
+				a.textContent = 'Donate'
+			} else {
+				const shdw_link = shadw[i].querySelector('a');
+				a.setAttribute('href', shdw_link.getAttribute('href'))
+				a.textContent = shdw_link.textContent
 
+			}
 			li.appendChild(a)
 			ul.appendChild(li)
 		}
+
 	}// Clones the original nav elements 
 	cloneElements()
 	
 	//handles the nav properties
 	const nav = ovlay.querySelector('nav')
 	navbar.addEventListener('click', function () {
+	nav.classList.add('animate__animated')
 		const a = ovlay.querySelectorAll('a')
 
-		navbar.classList.add('animate__animated')
-		ovlay.classList.add('animate__animated')
-		nav.classList.add('animate__animated')
+		if (!navbar.getAttribute('active')) {//if the user opens the nav
+			navbar.setAttribute('active', 'true')
 
-		navbar.classList.add('animate__fadeOut')
-		ovlay.classList.add('animate__fadeIn')
-		ovlay.style.visibility = 'visible'
+			ovlay.classList.add('animate__fadeIn')
+			nav.classList.add('animate__fadeInRight')	
+			ovlay.style.visibility = 'visible'
 
-		nav.classList.add('animate__fadeInDown')
+		} else {
+			hideNav()//calls hidenav
+		}
 
 		for (let i = 0; i<a.length;i+=1) {
 			a[i].addEventListener('click', function () {
@@ -48,19 +60,13 @@
 			})
 		}//hide the overlay when a link is clicked
 
-		setTimeout(()=>{
-			ovlay.classList.remove('animate__fadeIn')
-			nav.classList.remove('animate__fadeInDown')
-
-		}, 1000)//remove the classes in case of next animation
 	})
 	function hideNav() {
-		nav.classList.add('animate__backOutDown')
+		navbar.removeAttribute('active')//if user to closes the nav
+		nav.classList.remove('animate__fadeInRight')
 
-		setTimeout(()=>{
-			ovlay.classList.add('animate__fadeOut')
-			navbar.classList.remove('animate__fadeOut')
-		}, 200)
+		ovlay.classList.remove('animate__fadeIn')
+		ovlay.classList.add('animate__fadeOut')
 
 		setTimeout(()=>{
 			ovlay.classList.remove('animate__fadeOut')
@@ -74,21 +80,6 @@
 	})//hide the overlay when the close elemt/a link is clicked
 	
 	
-	//sticky navbar
-	// function turnSticky() {
-	// 	const nav = document.querySelector('header.main_header')
-	// 	const sticky = document.querySelectorAll('.snap')
-	// 	const body = document.querySelectorAll('.main')[0]
-	// 	body.onscroll = function (e) {
-			// if (e.target.scrollTop >= nav.offsetHeight) {
-			// 	nav.classList.add('sticky')
-			// } else {
-			// 	nav.classList.remove('sticky')
-			// }
-		// }
-	// }
-	// turnSticky()
-
 	//Handles copy-to-clipboard feature on the bank details
 	function details(nodes) {
 		var txt = '';
@@ -99,6 +90,16 @@
 	}
 	bankDets.addEventListener('click', function (e) {
 		const nodes = bankDets.querySelectorAll('h4,p')
+		
+		box.style.left = (bankDets.offsetLeft + 50) + 'px'
+		box.style.top = '-25px'
+		
+		bankDets.classList.add('animate__animated')
+		bankDets.classList.add('animate__bounceIn')
+		setTimeout(()=>{
+			bankDets.classList.remove('animate__bounceIn')
+		}, 400)
+		
 
 		box.classList.add('animate__animated')
 		box.classList.add('animate__bounceInUp')
