@@ -68,6 +68,7 @@
 	function hideNav() {
 		navbar.removeAttribute('active')//if user to closes the nav
 		nav.classList.remove('animate__slideInRight')
+                nav.classList.add('animate__slideOutDown')
 
 		ovlay.classList.remove('animate__fadeIn')
 		ovlay.classList.add('animate__fadeOut')
@@ -75,7 +76,7 @@
 		setTimeout(()=>{
 			ovlay.classList.remove('animate__fadeOut')
 			ovlay.style.visibility = 'hidden'
-			nav.classList.remove('animate__backOutDown')
+			nav.classList.remove('animate__slideOutDown')
 		}, 500)
 	}
 	close.addEventListener('click', function () {
