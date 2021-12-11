@@ -51,7 +51,7 @@
 			navbar.setAttribute('active', 'true')
 
 			ovlay.classList.add('animate__fadeIn')
-			nav.classList.add('animate__fadeIn)	
+			nav.classList.add('animate__fadeIn')	
 			ovlay.style.visibility = 'visible'
 
 		} else {
