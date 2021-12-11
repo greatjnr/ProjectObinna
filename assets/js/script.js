@@ -51,7 +51,7 @@
 			navbar.setAttribute('active', 'true')
 
 			ovlay.classList.add('animate__fadeIn')
-			nav.classList.add('animate__slideInRight')	
+			nav.classList.add('animate__fadeIn)	
 			ovlay.style.visibility = 'visible'
 
 		} else {
@@ -67,7 +67,7 @@
 	})
 	function hideNav() {
 		navbar.removeAttribute('active')//if user to closes the nav
-		nav.classList.remove('animate__slideInRight')
+		nav.classList.remove('animate__slideInUp')
                 nav.classList.add('animate__slideOutDown')
 
 		ovlay.classList.remove('animate__fadeIn')
