@@ -1053,7 +1053,11 @@ div.mx-1 div.lx {
 	    top: 56px;
 	}
 	.fund_sec {
+<<<<<<< HEAD
 		padding-bottom: 40px;
+=======
+		padding-bottom: 25px;
+>>>>>>> 41a6ab5751d4c145a7352017c2a687157b8de6af
 	}
 	.fundings {
 		justify-content: space-around;

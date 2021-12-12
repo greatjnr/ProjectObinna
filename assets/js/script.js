@@ -8,10 +8,17 @@
 	box.style.left = (bankDets.offsetLeft + 60) + 'px'
 	box.style.top = (bankDets.offsetTop) + 'px'
 
+<<<<<<< HEAD
 	const willAnimate = [navbar, ovlay, bankDets, box]
 	for (let i=0; i<willAnimate.length; i+=1) {
 		willAnimate[i].classList.add('animate__animated')
 	}
+=======
+	navbar.classList.add('animate__animated')
+	ovlay.classList.add('animate__animated')
+	bankDets.classList.add('animate__animated')
+	box.classList.add('animate__animated')
+>>>>>>> 41a6ab5751d4c145a7352017c2a687157b8de6af
 
 	const ul = document.createElement('ul')
 	ovlay.querySelector('nav').appendChild(ul)
@@ -65,6 +72,7 @@
 		}//hide the overlay when a link is clicked
 
 	})
+<<<<<<< HEAD
 	function clearUsedClass(nodes) {
 		if (!Array.isArray(nodes)) {
 			nodes = [nodes]
@@ -90,6 +98,20 @@
 		setTimeout(()=>{
 			clearUsedClass([ovlay, nav])
 			ovlay.style.visibility = 'hidden'
+=======
+	function hideNav() {
+		navbar.removeAttribute('active')//if user to closes the nav
+		nav.classList.remove('animate__fadeIn')
+                nav.classList.add('animate__slideOutDown')
+
+		ovlay.classList.remove('animate__fadeIn')
+		ovlay.classList.add('animate__fadeOut')
+
+		setTimeout(()=>{
+			ovlay.classList.remove('animate__fadeOut')
+			ovlay.style.visibility = 'hidden'
+			nav.classList.remove('animate__slideOutDown')
+>>>>>>> 41a6ab5751d4c145a7352017c2a687157b8de6af
 		}, 500)
 	}
 	close.addEventListener('click', function () {
@@ -112,6 +134,7 @@
 		bankDets.classList.add('animate__pulse')
 		box.classList.add('animate__rubberBand')
 		setTimeout(()=>{
+<<<<<<< HEAD
 			clearUsedClass(bankDets)
 			box.style.visibility = 'visible'
 		}, 1000)
@@ -121,6 +144,17 @@
 			clearUsedClass(box)
 			box.style.visibility = 'hidden'
 		}, 1000)
+=======
+			bankDets.classList.remove('animate__pulse')
+			box.style.visibility = 'visible'
+		}, 400)
+		
+
+		setTimeout(()=>{
+			box.classList = ['alertBox']
+			box.style.visibility = 'hidden'
+		}, 2000)
+>>>>>>> 41a6ab5751d4c145a7352017c2a687157b8de6af
 		details(nodes)
 	})
 
