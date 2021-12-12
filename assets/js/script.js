@@ -80,18 +80,16 @@
 		}
 	}
 	function hideNav() {
+		clearUsedClass([ovlay, nav])
 		navbar.removeAttribute('active')//if user to closes the nav
-		// nav.classList.remove('animate__fadeIn')
         nav.classList.add('animate__slideOutDown')
 
-		clearUsedClass([ovlay, nav])
 		nav.classList.add('animate__slideOutDown')
 		ovlay.classList.add('animate__fadeOut')
 
 		setTimeout(()=>{
 			clearUsedClass([ovlay, nav])
 			ovlay.style.visibility = 'hidden'
-			// nav.classList.remove('animate__slideOutDown')
 		}, 500)
 	}
 	close.addEventListener('click', function () {
