@@ -73,16 +73,16 @@
 			const cl = Array.from(nodes[i].classList)//convert to iterable
 			for (let a=0; a<cl.length; a+=1) {//loop tru the current node classlist
 				if (/a*__[^a]/.test(cl[a])) {//check if the current class matches...
-					cl.splice(a,1)//reassign the current node classlist
+					cl.splice(a,1)
 				}
 			}
-			nodes[i].classList = cl.join(' ')
+			nodes[i].classList = cl.join(' ')//reassign the current node classlist
 		}
 	}
 	function hideNav() {
 		clearUsedClass([ovlay, nav])
 		navbar.removeAttribute('active')//if user to closes the nav
-		
+
         nav.classList.add('animate__slideOutDown')
 		ovlay.classList.add('animate__fadeOut')
 
@@ -93,7 +93,6 @@
 	}
 	close.addEventListener('click', function () {
 		hideNav()
-
 	})//hide the overlay when the close elemt/a link is clicked
 	
 	
@@ -107,20 +106,15 @@
 	}
 	bankDets.addEventListener('click', function (e) {
 		const nodes = bankDets.querySelectorAll('h4,p')
+		details(nodes)
 		
 		bankDets.classList.add('animate__pulse')
 		box.classList.add('animate__rubberBand')
+		box.style.visibility = 'visible'
 		setTimeout(()=>{
-			clearUsedClass(bankDets)
-			box.style.visibility = 'visible'
-		}, 1000)
-		
-
-		setTimeout(()=>{
-			clearUsedClass(box)
+			clearUsedClass([bankDets, box])
 			box.style.visibility = 'hidden'
 		}, 1000)
-		details(nodes)
 	})
 
 })()

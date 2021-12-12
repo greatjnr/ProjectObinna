@@ -368,7 +368,7 @@ section.about-obinna{
 	/*margin-right: 80px;*/
 }
 .alertBox {
-    /* z-index: 5; */
+     z-index: 5; 
     visibility: hidden;
     top: 0;
     box-shadow: 0px 1px 15px 0px #011b335e;
