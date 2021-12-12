@@ -42,7 +42,7 @@ body{
     z-index: 15;
      visibility: hidden; 
     background: #000;
-    display: flex;
+    display: grid;
     flex-direction: column;
     justify-content: center;
 }
@@ -1053,7 +1053,7 @@ div.mx-1 div.lx {
 	    top: 56px;
 	}
 	.fund_sec {
-		padding-bottom: 25px;
+		padding-bottom: 40px;
 	}
 	.fundings {
 		justify-content: space-around;
