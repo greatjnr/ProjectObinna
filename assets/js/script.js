@@ -8,10 +8,10 @@
 	box.style.left = (bankDets.offsetLeft + 60) + 'px'
 	box.style.top = (bankDets.offsetTop) + 'px'
 
-	navbar.classList.add('animate__animated')
-	ovlay.classList.add('animate__animated')
-	bankDets.classList.add('animate__animated')
-	box.classList.add('animate__animated')
+	const willAnimate = [navbar, ovlay, bankDets, box]
+	for (let i=0; i<willAnimate.length; i+=1) {
+		willAnimate[i].classList.add('animate__animated')
+	}
 
 	const ul = document.createElement('ul')
 	ovlay.querySelector('nav').appendChild(ul)
@@ -51,7 +51,7 @@
 			navbar.setAttribute('active', 'true')
 
 			ovlay.classList.add('animate__fadeIn')
-			nav.classList.add('animate__slideInRight')	
+			nav.classList.add('animate__fadeIn')	
 			ovlay.style.visibility = 'visible'
 
 		} else {
@@ -65,17 +65,30 @@
 		}//hide the overlay when a link is clicked
 
 	})
+	function clearUsedClass(nodes) {
+		if (!Array.isArray(nodes)) {
+			nodes = [nodes]
+		}
+		for (let i=0; i<nodes.length; i+=1) {//loop tru the node list
+			const cl = Array.from(nodes[i].classList)//convert to iterable
+			for (let a=0; a<cl.length; a+=1) {//loop tru the current node classlist
+				if (/a*__[^a]/.test(cl[a])) {//check if the current class matches...
+					cl.splice(a,1)//reassign the current node classlist
+				}
+			}
+			nodes[i].classList = cl.join(' ')
+		}
+	}
 	function hideNav() {
 		navbar.removeAttribute('active')//if user to closes the nav
-		nav.classList.remove('animate__slideInRight')
 
-		ovlay.classList.remove('animate__fadeIn')
+		clearUsedClass([ovlay, nav])
+		nav.classList.add('animate__slideOutDown')
 		ovlay.classList.add('animate__fadeOut')
 
 		setTimeout(()=>{
-			ovlay.classList.remove('animate__fadeOut')
+			clearUsedClass([ovlay, nav])
 			ovlay.style.visibility = 'hidden'
-			nav.classList.remove('animate__backOutDown')
 		}, 500)
 	}
 	close.addEventListener('click', function () {
@@ -98,13 +111,13 @@
 		bankDets.classList.add('animate__pulse')
 		box.classList.add('animate__rubberBand')
 		setTimeout(()=>{
-			bankDets.classList.remove('animate__pulse')
+			clearUsedClass(bankDets)
 			box.style.visibility = 'visible'
 		}, 1000)
 		
 
 		setTimeout(()=>{
-			box.classList.remove('animate__rubberBand')
+			clearUsedClass(box)
 			box.style.visibility = 'hidden'
 		}, 1000)
 		details(nodes)
