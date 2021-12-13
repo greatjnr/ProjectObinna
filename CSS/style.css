@@ -21,8 +21,8 @@ body{
 .main {
     scroll-padding-top: 25vh;
     position: relative;
-    overflow-y: scroll;
-	height: 100vh;
+    /* overflow-y: scroll; */
+    height: 100vh;
     scroll-snap-type: y;
     overscroll-behavior-x: contain;
 }
@@ -273,9 +273,10 @@ h1{
 
 .Hero-p{
     line-height: 1.3;
-    width: 40%;
+    width: 45%;
     text-align: left;
     color: white;
+    font-size: 17.8px;
 }
 .orange_color{
     color: #f58632;
@@ -700,7 +701,7 @@ div.mx-1 div.lx {
 	    font-size: 30px;
 	}
 	.Hero-p {
-		font-size: 14.7px;
+		/*font-size: 14.7px;*/
 	}
 	.Hero-img {
     	top: 72px;
@@ -768,7 +769,7 @@ div.mx-1 div.lx {
 	    font-size: 30px;
 	}
 	.Hero-p {
-		font-size: 14.5px;
+		/*font-size: 14.5px;*/
 	}
 	.Hero-img {
     	top: 42px;
@@ -845,7 +846,7 @@ div.mx-1 div.lx {
 	}
 	.Hero-p {
 		width: 45%;
-	    font-size: 14px;
+	    /*font-size: 14px;*/
 	}
 	.Hero-img {
 		height: 553px;
@@ -1004,7 +1005,7 @@ div.mx-1 div.lx {
 	}
 	.Hero-p {
 		width: 46%;
-		font-size: 13.5px;
+		font-size: 14.8px;
 	}
 	.Hero-img {
 	    height: 524px;
@@ -1045,7 +1046,6 @@ div.mx-1 div.lx {
 	}
 	.Hero-p {
 		width: 46%;
-		font-size: 13.4px;
 	}
 	.Hero-img {
 	    right: 4px;
@@ -1150,6 +1150,10 @@ div.mx-1 div.lx {
 
 }
 @media screen and (max-width: 415px) {
+	.Hero-p {
+	    width: 46%;
+	    font-size: 14px;
+	}
 	#nav_overlay {
 		height: calc(100vh - 81px);
 		width: 60%;
@@ -1223,7 +1227,7 @@ div.mx-1 div.lx {
 		font-size: 21px;
 	}
 	.Hero-p {
-		font-size: 13.2px;
+		font-size: 13.9px;
 	}
 	.Hero-img {
 	    height: 371px;
