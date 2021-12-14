@@ -10,7 +10,7 @@ body{
     font-family: inter, sans-serif;
     
 }
-section.snap:not(.snap.manifesto) {
+#generic_sec > section.snap {
  	opacity: 0;
 }
 
@@ -230,6 +230,12 @@ button.Donate {
     z-index: 0;
     
 } 
+#generic_sec {
+    z-index: 20;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
 /* Manifesto Section Starts */
 .manifesto{
     /*margin-left:150px;*/
