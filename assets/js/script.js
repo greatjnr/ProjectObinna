@@ -12,7 +12,7 @@
 	const heroH1 = document.querySelectorAll('.hero h1')[0]
 	const heroP = document.querySelectorAll('.hero p')[0]
 	const header = document.querySelectorAll('.main_header')[0]
-	const snaps = document.querySelectorAll('.main > section.snap:not(.manifesto)')
+	const snaps = document.querySelectorAll('#generic_sec > section.snap')
 
 	box.style.left = (bankDets.offsetLeft + 60) + 'px'
 	box.style.top = (bankDets.offsetTop) + 'px'
@@ -24,6 +24,7 @@
 
 	window.addEventListener('DOMContentLoaded', ()=>{
 		initAnimations()
+		handleIntersecting()
 	})
 	function initAnimations() {
 		function animateLev1() {
@@ -34,39 +35,36 @@
 			heroH1.classList.add('animate__slideInDown')
 			heroP.classList.add('animate__slideInDown')
 		}
-		// function animateLev2(argument) {
-		// }
 		setTimeout(()=>{
 			animateLev1()
 		}, 500)
-		// setTimeout(()=>{
-		// 	animateLev2()
-		// }, 1000)
 
 		setTimeout(()=>{
 			clearUsedClass([header, hero, heroH1, heroP])
 		}, 1000)
 	}
-	
-	var options = {
-		root: body,
-		rootMargin: '0px',
-		threshold: .28
-	}
-	
-	function callback(e) {
+	function handleIntersecting() {
+		var options = {
+			root: body,
+			rootMargin: '0px',
+			threshold: .28
+		}
+		
+		function callback(e) {
+			snaps.forEach(i=>{
+				var snap = e[0]
+				if (snap.isIntersecting) {
+					snap.target.classList.add('fade-in')
+				}
+			})
+		}
+
+		var observer = new IntersectionObserver(callback, options);
 		snaps.forEach(i=>{
-			var snap = e[0]
-			if (snap.isIntersecting) {
-				snap.target.classList.add('fade-in')
-			}
+			observer.observe(i)
 		})
 	}
 
-	var observer = new IntersectionObserver(callback, options);
-	snaps.forEach(i=>{
-		observer.observe(i)
-	})
 
 	const ul = document.createElement('ul')
 	ovlay.querySelector('nav').appendChild(ul)
