@@ -10,18 +10,39 @@ body{
     font-family: inter, sans-serif;
     
 }
-/*#btop {
-	position: absolute;
-	top: 0;
-	z-index: 12;
-	background: #eee;
-	height: 100vh;
-	width: 100%;
-}*/
+section.snap:not(.snap.manifesto) {
+ 	opacity: 0;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fade-in {
+	animation: fade-in 3s forwards;
+}
+div#btop, #fill {
+    top: 0;
+    height: 100vh;
+    position: fixed;
+    z-index: 20;
+    width: 100%; 
+    visibility: hidden;
+    background: #0a0303ad;
+}
+#fill {
+	background: #fff;
+	visibility: visible;
+	z-index: 40;
+}
 .main {
-    scroll-padding-top: 25vh;
+    scroll-padding-top: 28vh;
     position: relative;
-    /* overflow-y: scroll; */
+     overflow-y: scroll; 
     height: 100vh;
     scroll-snap-type: y;
     overscroll-behavior-x: contain;
@@ -40,6 +61,7 @@ body{
     position: absolute;
     top: 100%;
     z-index: 15;
+    overflow-y: scroll;
      visibility: hidden; 
     background: #000;
     display: grid;
@@ -138,7 +160,7 @@ header.main_header {
     align-items: center;
     padding: 30px 110px;
     background: #131212;
-    z-index: 20;
+    z-index: 30;
     width: 100%;
     position: sticky;
     top: 0;
@@ -1005,7 +1027,7 @@ div.mx-1 div.lx {
 	}
 	.Hero-p {
 		width: 46%;
-		font-size: 14.8px;
+		font-size: 13.5px;
 	}
 	.Hero-img {
 	    height: 524px;
@@ -1152,7 +1174,7 @@ div.mx-1 div.lx {
 @media screen and (max-width: 415px) {
 	.Hero-p {
 	    width: 46%;
-	    font-size: 14px;
+	    font-size: 13.1px;
 	}
 	#nav_overlay {
 		height: calc(100vh - 81px);
@@ -1225,9 +1247,6 @@ div.mx-1 div.lx {
 	}
 	.Hero-contents h1 {
 		font-size: 21px;
-	}
-	.Hero-p {
-		font-size: 13.9px;
 	}
 	.Hero-img {
 	    height: 371px;

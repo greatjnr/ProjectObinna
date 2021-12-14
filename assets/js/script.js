@@ -4,20 +4,72 @@
 	const box = document.querySelector('#box')
 	const navbar = document.querySelector('#navbar')
 	const close = document.querySelectorAll('#nav_close > .fa')[0]
+	const body = document.querySelectorAll('.main')[0]
+	const heroText = document.querySelectorAll('.Hero-contents')[0]
+	const navFill = document.querySelector('#btop')
+	const pageFill = document.querySelector('#fill')
+	const hero = document.querySelectorAll('.hero')[0]
+	const heroH1 = document.querySelectorAll('.hero h1')[0]
+	const heroP = document.querySelectorAll('.hero p')[0]
+	const header = document.querySelectorAll('.main_header')[0]
+	const snaps = document.querySelectorAll('.main > section.snap:not(.manifesto)')
 
 	box.style.left = (bankDets.offsetLeft + 60) + 'px'
 	box.style.top = (bankDets.offsetTop) + 'px'
 
-	const willAnimate = [navbar, ovlay, bankDets, box]
+	const willAnimate = [navbar, ovlay, bankDets, box, heroText, hero, header, heroH1, heroP]
 	for (let i=0; i<willAnimate.length; i+=1) {
 		willAnimate[i].classList.add('animate__animated')
 	}
 
+	window.addEventListener('DOMContentLoaded', ()=>{
+		initAnimations()
+	})
+	function initAnimations() {
+		function animateLev1() {
+			pageFill.style.visibility = 'hidden'
+			header.classList.add('animate__fadeIn')
+			hero.classList.add('animate__fadeIn')
+
+			heroH1.classList.add('animate__slideInDown')
+			heroP.classList.add('animate__slideInDown')
+		}
+		// function animateLev2(argument) {
+		// }
+		setTimeout(()=>{
+			animateLev1()
+		}, 500)
+		// setTimeout(()=>{
+		// 	animateLev2()
+		// }, 1000)
+
+		setTimeout(()=>{
+			clearUsedClass([header, hero, heroH1, heroP])
+		}, 1000)
+	}
+	
+	var options = {
+		root: body,
+		rootMargin: '0px',
+		threshold: .28
+	}
+	
+	function callback(e) {
+		snaps.forEach(i=>{
+			var snap = e[0]
+			if (snap.isIntersecting) {
+				snap.target.classList.add('fade-in')
+			}
+		})
+	}
+
+	var observer = new IntersectionObserver(callback, options);
+	snaps.forEach(i=>{
+		observer.observe(i)
+	})
+
 	const ul = document.createElement('ul')
 	ovlay.querySelector('nav').appendChild(ul)
-
-	//Re-position the box based on the parent position
-	
 
 	function cloneElements() {
 		const shadw = document.querySelectorAll('.nav_links > li')
@@ -49,9 +101,16 @@
 
 		if (!navbar.getAttribute('active')) {//if the user opens the nav
 			navbar.setAttribute('active', 'true')
+			body.style.overflowY = 'hidden'
+			navFill.classList.add('animate__fadeIn')
+			navFill.style.visibility = 'visible'
+
+			navFill.addEventListener('click', ()=>{
+				hideNav()
+			})
 
 			ovlay.classList.add('animate__fadeIn')
-			nav.classList.add('animate__fadeIn')	
+			nav.classList.add('animate__slideInUp')	
 			ovlay.style.visibility = 'visible'
 
 		} else {
@@ -80,8 +139,10 @@
 		}
 	}
 	function hideNav() {
-		clearUsedClass([ovlay, nav])
+		clearUsedClass([ovlay, nav, navFill])
+		navFill.style.visibility = 'hidden'
 		navbar.removeAttribute('active')//if user to closes the nav
+		body.style.overflowY = 'scroll'
 
         nav.classList.add('animate__slideOutDown')
 		ovlay.classList.add('animate__fadeOut')
