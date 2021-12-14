@@ -5,7 +5,6 @@
 	const navbar = document.querySelector('#navbar')
 	const close = document.querySelectorAll('#nav_close > .fa')[0]
 	const body = document.querySelectorAll('.main')[0]
-	const heroText = document.querySelectorAll('.Hero-contents')[0]
 	const navFill = document.querySelector('#btop')
 	const pageFill = document.querySelector('#fill')
 	const hero = document.querySelectorAll('.hero')[0]
@@ -17,7 +16,7 @@
 	box.style.left = (bankDets.offsetLeft + 60) + 'px'
 	box.style.top = (bankDets.offsetTop) + 'px'
 
-	const willAnimate = [navbar, ovlay, bankDets, box, heroText, hero, header, heroH1, heroP]
+	const willAnimate = [navbar, ovlay, bankDets, box, header, heroH1, heroP]
 	for (let i=0; i<willAnimate.length; i+=1) {
 		willAnimate[i].classList.add('animate__animated')
 	}
@@ -27,17 +26,17 @@
 		handleIntersecting()
 	})
 	function initAnimations() {
-		function animateLev1() {
-			pageFill.style.visibility = 'hidden'
-			header.classList.add('animate__fadeIn')
-			hero.classList.add('animate__fadeIn')
-
-			heroH1.classList.add('animate__slideInDown')
-			heroP.classList.add('animate__slideInDown')
-		}
 		setTimeout(()=>{
-			animateLev1()
-		}, 500)
+			header.classList.add('animate__slideInDown')
+			// hero.classList.add('animate__slideInDown')
+		}, 700)
+		setTimeout(()=>{
+
+			pageFill.style.visibility = 'hidden'
+
+			heroH1.classList.add('animate__fadeInDown')
+			heroP.classList.add('animate__fadeInDown')
+		}, 900)
 
 		setTimeout(()=>{
 			clearUsedClass([header, hero, heroH1, heroP])
