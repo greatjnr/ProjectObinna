@@ -29,7 +29,7 @@ div#btop, #fill {
     top: 0;
     height: 100vh;
     position: fixed;
-    z-index: 20;
+    z-index: 25;
     width: 100%; 
     visibility: hidden;
     background: #0a0303ad;
@@ -102,6 +102,7 @@ nav#resp_nav ul li a {
     width: 100%;
     color: #fff;
     margin: 0 auto;
+    font-kerning: none;
 }
 #nav_overlay #nav_close {
     color: #fff;
@@ -252,12 +253,6 @@ button.Donate {
 .manifesto-class{
     color: #0B9444;
 }
-/*.border{
-    border-bottom:4px solid #f58632;
-    width: 8%;
-    position: absolute;
-    top: 40px;
-}*/
 
 .manifesto p{
     font-size: 20px;
