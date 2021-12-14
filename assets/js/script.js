@@ -111,6 +111,10 @@
 			nav.classList.add('animate__slideInUp')	
 			ovlay.style.visibility = 'visible'
 
+			setTimeout(()=>{
+				clearUsedClass([nav, ovlay])
+			}, 1000)
+
 		} else {
 			hideNav()//calls hidenav
 		}
@@ -142,13 +146,13 @@
 		navbar.removeAttribute('active')//if user to closes the nav
 		body.style.overflowY = 'scroll'
 
-        nav.classList.add('animate__slideOutDown')
+        // nav.classList.add('animate__slideOutDown')
 		ovlay.classList.add('animate__fadeOut')
 
 		setTimeout(()=>{
 			clearUsedClass([ovlay, nav])
 			ovlay.style.visibility = 'hidden'
-		}, 500)
+		}, 800)
 	}
 	close.addEventListener('click', function () {
 		hideNav()
