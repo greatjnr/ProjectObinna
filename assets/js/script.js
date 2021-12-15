@@ -16,7 +16,7 @@
 	box.style.left = (bankDets.offsetLeft + 60) + 'px'
 	box.style.top = (bankDets.offsetTop) + 'px'
 
-	const willAnimate = [navbar, ovlay, bankDets, box, header, heroH1, heroP]
+	const willAnimate = [navbar, ovlay, bankDets, box, heroH1, heroP, hero]
 	for (let i=0; i<willAnimate.length; i+=1) {
 		willAnimate[i].classList.add('animate__animated')
 	}
@@ -26,38 +26,56 @@
 		handleIntersecting()
 	})
 	function initAnimations() {
-		setTimeout(()=>{
-			header.classList.add('animate__slideInDown')
-			// hero.classList.add('animate__slideInDown')
-		}, 700)
-		setTimeout(()=>{
-
+		function animateLev1() {
 			pageFill.style.visibility = 'hidden'
+			// header.classList.add('animate__slideInDown')
+			hero.classList.add('animate__fadeIn')
 
 			heroH1.classList.add('animate__fadeInDown')
 			heroP.classList.add('animate__fadeInDown')
-		}, 900)
+		}
+		setTimeout(()=>{
+			animateLev1()
+		}, 500)
 
 		setTimeout(()=>{
 			clearUsedClass([header, hero, heroH1, heroP])
-		}, 1000)
+		}, 2000)
 	}
+	
+	/*Refactor*/
+	function handleScrolling(argument) {
+		const ft = snaps[snaps.length-1]
+		if (body.scrollTop >= ft.offsetTop && !ft.classList.contains('animate__zoomIn')) {
+			console.log('oops')
+			ft.classList.add('animate__animated')
+			ft.classList.add('animate__zoomIn')
+			ft.style.opacity = 1
+		}
+	}
+	body.addEventListener('scroll', ()=>{
+		handleScrolling()
+	})
+	/**/
+
 	function handleIntersecting() {
 		var options = {
 			root: body,
 			rootMargin: '0px',
-			threshold: .28
+			threshold: 0
 		}
 		
 		function callback(e) {
 			snaps.forEach(i=>{
 				var snap = e[0]
 				if (snap.isIntersecting) {
-					snap.target.classList.add('fade-in')
+					snap.target.classList.add('animate__animated')
+					snap.target.classList.add('animate__zoomIn')
+					snap.target.style.opacity = 1
+					// snap.target.classList.add('fade-in')
 				}
 			})
 		}
-
 		var observer = new IntersectionObserver(callback, options);
 		snaps.forEach(i=>{
 			observer.observe(i)
