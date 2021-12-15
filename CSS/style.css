@@ -5,6 +5,8 @@
     list-style: none;
     letter-spacing: .13px !important;
     text-decoration: none;
+    border: none;
+    outline: none;
 }
 body{
     font-family: inter, sans-serif;
@@ -211,7 +213,9 @@ button.Donate {
 }
 .hero{
     background: rgb(1,1,1);
-    background: linear-gradient(90deg, rgba(1,1,1,1) 38%, rgba(6,41,22,1) 54%, rgba(18,141,74,1) 73%);;
+    background: linear-gradient(90deg, rgba(1,1,1,1) 38%, rgba(6,41,22,1) 54%, rgba(18,141,74,1) 73%);
+    /*background:	-webkit-linear-gradient(90deg, rgba(1,1,1,1) 38%, rgba(6,41,22,1) 54%, rgba(18,141,74,1) 73%);*/
+    background: -moz-linear-(90deg, rgba(1,1,1,1) 38%, rgba(6,41,22,1) 54%, rgba(18,141,74,1) 73%);
     height: 400px;
     width: 100% !important;
     position: relative;
@@ -339,9 +343,24 @@ section.about-obinna{
 .other > p {
     width: 70%;
     line-height: 23px;
-    margin-bottom: 60px; jus}
+    margin-bottom: 42px;
+}
 .academics h3#academics {
     line-height: 10px;
+}
+.other > p > button{
+    font-size: 12.6px;
+    border-radius: 2px;
+    background: #fff;
+    margin: 5px 0;
+}
+.other > p > button > a {
+    width: 100%;
+    color: #120e0c;
+    font-weight: 500;
+    padding: 5px;
+    display: block;
+    height: inherit;
 }
 
 .academics > div.Schools{
@@ -500,6 +519,11 @@ div.mx-1 div.lx {
 	align-items: center;
 	transition: .9s ease all;
 	justify-content: center;
+}
+.footer_items #socials ol li a {
+    display: block;
+    height: inherit;
+    width: 100%;
 }
 .footer_items #socials ol li i.fa  {
 	font-size: 16px;
@@ -819,8 +843,8 @@ div.mx-1 div.lx {
 		padding-left: 0;
 	}
 	.other {
-		width: 86% !important;
-    	margin: 20px auto 0 auto !important;
+		width: 90% !important;
+		margin: 20px auto 0 auto !important;
 	}
 	.flex {
 		display: block;
