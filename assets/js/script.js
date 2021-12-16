@@ -48,7 +48,7 @@
 		const ft = snaps[snaps.length-1]
 		if (body.scrollTop >= (ft.offsetTop + 100) && !ft.classList.contains('animate__zoomIn')) {
 			ft.classList.add('animate__animated')
-			ft.classList.add('animate__zoomIn')
+			ft.classList.add('animate__fadeIn')
 			ft.style.opacity = 1
 		}
 	}
@@ -68,7 +68,7 @@
 				var snap = e[0]
 				if (snap.isIntersecting) {
 					snap.target.classList.add('animate__animated')
-					snap.target.classList.add('animate__zoomIn')
+					snap.target.classList.add('animate__fadeIn')
 					snap.target.style.opacity = 1
 					// snap.target.classList.add('fade-in')
 				}
