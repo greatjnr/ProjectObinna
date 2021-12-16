@@ -1,6 +1,6 @@
 (function() {
 	const bankDets = document.querySelector('.mx-1 > .lx:last-of-type')
-	const ovlay = document.querySelector('#nav_overlay')
+	const respNav = document.querySelector('#nav_overlay')
 	const box = document.querySelector('#box')
 	const navbar = document.querySelector('#navbar')
 	const close = document.querySelectorAll('#nav_close > .fa')[0]
@@ -16,7 +16,7 @@
 	box.style.left = (bankDets.offsetLeft + 60) + 'px'
 	box.style.top = (bankDets.offsetTop) + 'px'
 
-	const willAnimate = [navbar, ovlay, bankDets, box, heroH1, heroP, hero]
+	const willAnimate = [navbar, respNav, bankDets, box, heroH1, heroP, hero]
 	for (let i=0; i<willAnimate.length; i+=1) {
 		willAnimate[i].classList.add('animate__animated')
 	}
@@ -46,7 +46,7 @@
 	/*Refactor*/
 	function handleScrolling(argument) {
 		const ft = snaps[snaps.length-1]
-		if (body.scrollTop >= ft.offsetTop && !ft.classList.contains('animate__zoomIn')) {
+		if (body.scrollTop >= (ft.offsetTop + 100) && !ft.classList.contains('animate__zoomIn')) {
 			ft.classList.add('animate__animated')
 			ft.classList.add('animate__zoomIn')
 			ft.style.opacity = 1
@@ -55,7 +55,6 @@
 	body.addEventListener('scroll', ()=>{
 		handleScrolling()
 	})
-	/**/
 
 	function handleIntersecting() {
 		var options = {
@@ -83,7 +82,7 @@
 
 
 	const ul = document.createElement('ul')
-	ovlay.querySelector('nav').appendChild(ul)
+	respNav.querySelector('nav').appendChild(ul)
 
 	function cloneElements() {
 		const shadw = document.querySelectorAll('.nav_links > li')
@@ -108,10 +107,10 @@
 	cloneElements()
 	
 	//handles the nav properties
-	const nav = ovlay.querySelector('nav')
+	const nav = respNav.querySelector('nav')
 	navbar.addEventListener('click', function () {
 	nav.classList.add('animate__animated')
-		const a = ovlay.querySelectorAll('a')
+		const navLinks = respNav.querySelectorAll('li')
 
 		if (!navbar.getAttribute('active')) {//if the user opens the nav
 			navbar.setAttribute('active', 'true')
@@ -123,21 +122,42 @@
 				hideNav()
 			})
 
-			ovlay.classList.add('animate__fadeIn')
-			nav.classList.add('animate__slideInUp')	
-			ovlay.style.visibility = 'visible'
+			respNav.classList.add('animate__fadeIn')
+			nav.classList.add('animate__zoomIn')	
+			respNav.style.visibility = 'visible'
 
 			setTimeout(()=>{
-				clearUsedClass([nav, ovlay])
+				clearUsedClass([nav, respNav])
 			}, 1000)
 
 		} else {
 			hideNav()//calls hidenav
 		}
 
-		for (let i = 0; i<a.length;i+=1) {
-			a[i].addEventListener('click', function () {
-				hideNav()
+		for (let i = 0; i<navLinks.length;i+=1) {
+			navLinks[i].addEventListener('click', function () {
+				for (let u=0; u<navLinks.length;u+=1) {
+					var link = index=>{
+						return navLinks[index].querySelectorAll('a')[0]
+					}
+					if (u === i) {
+						link(u).style.color = '#fff'
+					} else if (u === navLinks.length-1) {
+						console.log(u, i)
+						continue
+					} else {
+						link(u).style.color = '#cdcbcb'
+					}
+					
+				}
+				setTimeout(()=>{
+					for (let i=0; i<navLinks.length; i+=1) {
+						if (i !== navLinks.length-1) {
+							navLinks[i].querySelectorAll('a')[0].style.color = '#fff'
+						}
+					}
+					hideNav()
+				}, 500)
 			})
 		}//hide the overlay when a link is clicked
 
@@ -157,17 +177,17 @@
 		}
 	}
 	function hideNav() {
-		clearUsedClass([ovlay, nav, navFill])
-		navFill.style.visibility = 'hidden'
+		clearUsedClass([respNav, nav, navFill])
 		navbar.removeAttribute('active')//if user to closes the nav
 		body.style.overflowY = 'scroll'
 
         // nav.classList.add('animate__slideOutDown')
-		ovlay.classList.add('animate__fadeOut')
-
+		respNav.classList.add('animate__fadeOut')
+		nav.classList.add('animate__zoomOut')	
+		navFill.style.visibility = 'hidden'
 		setTimeout(()=>{
-			clearUsedClass([ovlay, nav])
-			ovlay.style.visibility = 'hidden'
+			clearUsedClass([respNav, nav])
+			respNav.style.visibility = 'hidden'
 		}, 800)
 	}
 	close.addEventListener('click', function () {
