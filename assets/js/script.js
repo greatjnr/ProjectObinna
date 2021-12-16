@@ -140,7 +140,7 @@
 					var link = index=>{
 						return navLinks[index].querySelectorAll('a')[0]
 					}
-					if (u === i && I !== navLinks.length-1) {
+					if (u === i && i !== navLinks.length-1) {
 						link(u).style.color = '#fff'
 					} else if (u === navLinks.length-1) {
 						console.log(u, i)
