@@ -213,9 +213,9 @@ button.Donate {
 }
 .hero{
     background: rgb(1,1,1);
-    background: linear-gradient(90deg, rgba(1,1,1,1) 38%, rgba(6,41,22,1) 54%, rgba(18,141,74,1) 73%);
-    /*background:	-webkit-linear-gradient(90deg, rgba(1,1,1,1) 38%, rgba(6,41,22,1) 54%, rgba(18,141,74,1) 73%);*/
-    background: -moz-linear-gradient(90deg, rgba(1,1,1,1) 38%, rgba(6,41,22,1) 54%, rgba(18,141,74,1) 73%);
+    background: linear-gradient(0deg, rgba(1,1,1,1) 38%, rgba(6,41,22,1) 54%, rgba(18,141,74,1) 73%);
+    background:	-webkit-linear-gradient(0deg, rgba(1,1,1,1) 38%, rgba(6,41,22,1) 54%, rgba(18,141,74,1) 73%);
+    background: -moz-linear-gradient(0deg, rgba(1,1,1,1) 38%, rgba(6,41,22,1) 54%, rgba(18,141,74,1) 73%);
     height: 400px;
     width: 100% !important;
     position: relative;
@@ -358,7 +358,7 @@ section.about-obinna{
     width: 100%;
     color: #120e0c;
     font-weight: 500;
-    padding: 5px;
+    padding: 5px 8px;
     display: block;
     height: inherit;
 }
