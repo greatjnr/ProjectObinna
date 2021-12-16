@@ -215,7 +215,7 @@ button.Donate {
     background: rgb(1,1,1);
     background: linear-gradient(90deg, rgba(1,1,1,1) 38%, rgba(6,41,22,1) 54%, rgba(18,141,74,1) 73%);
     /*background:	-webkit-linear-gradient(90deg, rgba(1,1,1,1) 38%, rgba(6,41,22,1) 54%, rgba(18,141,74,1) 73%);*/
-    background: -moz-linear-(90deg, rgba(1,1,1,1) 38%, rgba(6,41,22,1) 54%, rgba(18,141,74,1) 73%);
+    background: -moz-linear-gradient(90deg, rgba(1,1,1,1) 38%, rgba(6,41,22,1) 54%, rgba(18,141,74,1) 73%);
     height: 400px;
     width: 100% !important;
     position: relative;
@@ -414,6 +414,8 @@ section.about-obinna{
      z-index: 5; 
     visibility: hidden;
     top: 0;
+    -webkit-box-shadow: 0px 1px 15px 0px #011b335e;
+    -moz-box-shadow: 0px 1px 15px 0px #011b335e;
     box-shadow: 0px 1px 15px 0px #011b335e;
     color: #000000;
     text-align: center;
@@ -454,6 +456,8 @@ div.mx-1 div.lx {
 	margin: 0 0 6px 10px;
 	cursor: pointer;
 	box-shadow: 1px 1px 9px 2px #e1f1ff;
+	-moz-box-shadow: 1px 1px 9px 2px #e1f1ff;
+	-webkit-box-shadow: 1px 1px 9px 2px #e1f1ff;
 	position: relative;
 	text-align: center;
 	align-items: center;
@@ -510,20 +514,20 @@ div.mx-1 div.lx {
 }
 .footer_items #socials ol li {
 	float: left;
-	display: flex;
 	background: #fff;
 	height: 25px;
 	width: 25px;
 	margin: 5px 3px 0 10px;
 	border-radius: 30px;
-	align-items: center;
 	transition: .9s ease all;
-	justify-content: center;
 }
 .footer_items #socials ol li a {
-    display: block;
     height: inherit;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .footer_items #socials ol li i.fa  {
 	font-size: 16px;
