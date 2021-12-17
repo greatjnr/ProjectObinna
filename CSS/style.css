@@ -8,6 +8,17 @@
     border: none;
     outline: none;
 }
+*::-webkit-scrollbar {
+	width: 7px;
+}
+*::-webkit-scrollbar-thumb {
+	cursor: pointer;
+	background: #adadad78;
+}
+*::-webkit-scrollbar-track {
+	background: #eee;
+}
+
 body{
     font-family: inter, sans-serif;
     
@@ -64,6 +75,7 @@ div#btop, #fill {
     top: 100%;
     z-index: 15;
     overflow-y: scroll;
+    overflow-x: hidden;
      visibility: hidden; 
     background: #000;
     display: grid;
@@ -259,7 +271,7 @@ button.Donate {
 #mx_manifest {
 	width: calc(100vw - 24vw);
 	margin: 0 auto;
-	padding: 5em 0 3em 0;
+	padding: 3em 0;
 	font-size: 19.2px !important;
 }
 div#mx_headerText {
@@ -732,10 +744,10 @@ div.mx-1 div.lx {
 	    font-size: 26px;
 	}
 	.manifesto p {
-		font-size: 17.7px;
+		font-size: 17.49px;
 	}
 	.manifesto-list li {
-		font-size: 15.5px;
+		font-size: 15.4px;
 	}
 	.other > p {
 		width: 75%;
@@ -994,7 +1006,7 @@ div.mx-1 div.lx {
 	    margin: 0 auto;
 	}
 	.manifesto-list li {
-		margin: 16px 0;
+		margin: 16px 0 !important;
 	}
 	/**/
 	.about-obinna {
@@ -1272,7 +1284,7 @@ div.mx-1 div.lx {
 		font-size: 24px;
 	}
 	.manifesto p {
-		font-size: 15px;
+		/*font-size: 15px;*/
 	}
 	.manifesto-list {
 		width: 89%;
