@@ -39,7 +39,7 @@ function hideNav() {
 	nav.classList.add('animate__fadeOutRight')
 	setTimeout(()=>{
 		respNav.classList.add('animate__fadeOut')
-	}, 400)	
+	}, 90)	
 	setTimeout(()=>{
 		clearUsedClass([respNav, nav])
 		respNav.style.visibility = 'hidden'
@@ -52,6 +52,7 @@ const nav = respNav.querySelector('nav')
 navbar.addEventListener('click', function () {
 
 	nav.classList.add('animate__animated')
+	respNav.classList.add('animate__animated')
 	const navLinks = respNav.querySelectorAll('li')
 
 	if (!navbar.getAttribute('active')) {//if the user opens the nav
@@ -63,7 +64,6 @@ navbar.addEventListener('click', function () {
 			hideNav()
 		})
 
-		respNav.classList.add('animate__animated')
 		respNav.classList.add('animate__fadeIn')
 		nav.classList.add('animate__fadeInRight')	
 		respNav.style.visibility = 'visible'
