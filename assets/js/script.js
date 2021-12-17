@@ -26,7 +26,6 @@ import { respNav, navbar, close, body, navFill, pageFill, clearUsedClass } from 
 	function initAnimations() {
 		function animateLev1() {
 			pageFill.style.visibility = 'hidden'
-			// header.classList.add('animate__slideInDown')
 			hero.classList.add('animate__fadeIn')
 
 			heroH1.classList.add('animate__fadeInDown')
@@ -50,7 +49,8 @@ import { respNav, navbar, close, body, navFill, pageFill, clearUsedClass } from 
 			ft.classList.add('animate__fadeIn')
 			ft.style.opacity = 1
 		}
-	}
+	}/**/
+	
 	body.addEventListener('scroll', ()=>{
 		handleScrolling()
 	})

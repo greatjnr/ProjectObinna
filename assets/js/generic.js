@@ -32,6 +32,21 @@ cloneElements()
 
 
 //handles the nav properties
+function hideNav() {
+	navbar.removeAttribute('active')//if user to closes the nav
+	body.style.overflowY = 'scroll'
+
+	nav.classList.add('animate__fadeOutRight')
+	setTimeout(()=>{
+		respNav.classList.add('animate__fadeOut')
+	}, 400)	
+	setTimeout(()=>{
+		clearUsedClass([respNav, nav])
+		respNav.style.visibility = 'hidden'
+	}, 800)
+	navFill.style.visibility = 'hidden'
+}
+
 const nav = respNav.querySelector('nav')
 
 navbar.addEventListener('click', function () {
@@ -42,7 +57,6 @@ navbar.addEventListener('click', function () {
 	if (!navbar.getAttribute('active')) {//if the user opens the nav
 		navbar.setAttribute('active', 'true')
 		body.style.overflowY = 'hidden'
-		navFill.classList.add('animate__fadeIn')
 		navFill.style.visibility = 'visible'
 
 		navFill.addEventListener('click', ()=>{
@@ -104,20 +118,7 @@ export function clearUsedClass(nodes) {
 		nodes[i].classList = cl.join(' ')//reassign the current node classlist
 	}
 }
-function hideNav() {
-	clearUsedClass([respNav, nav, navFill])
-	navbar.removeAttribute('active')//if user to closes the nav
-	body.style.overflowY = 'scroll'
 
-    // nav.classList.add('animate__slideOutDown')
-	respNav.classList.add('animate__fadeOut')
-	nav.classList.add('animate__fadeOutRight')	
-	navFill.style.visibility = 'hidden'
-	setTimeout(()=>{
-		clearUsedClass([respNav, nav])
-		respNav.style.visibility = 'hidden'
-	}, 800)
-}
 close.addEventListener('click', function () {
 	hideNav()
 })//hide the overlay when the close elemt/a link is clicked
