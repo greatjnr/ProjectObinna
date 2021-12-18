@@ -265,6 +265,16 @@ button.Donate {
     position: relative;
     overflow: hidden;
 }
+/* Read More button */
+.ReadMore{
+	font-size: 16px;
+	padding: 5px;
+	font-weight: 600;
+	background-color: #f58632;
+	color: #fff;
+	border-radius: 5px;
+	border-style: none;
+}
 
 /* Specific styling for manifesto page*/
 
@@ -333,7 +343,7 @@ div#mx_contentList p {
 }
 
 .manifesto p{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
 }
 
@@ -374,7 +384,7 @@ h1{
 
 .Hero-p{
     line-height: 1.3;
-    width: 45%;
+    width: 100%;
     text-align: left;
     color: white;
     font-size: 17.8px;
