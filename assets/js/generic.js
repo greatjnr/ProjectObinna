@@ -4,10 +4,16 @@ const close = document.querySelectorAll('#nav_close > .fa')[0]
 const body = document.querySelectorAll('.main')[0]
 const navFill = document.querySelector('#btop')
 const pageFill = document.querySelector('#fill')
+const bankDets = document.querySelectorAll('.bank_dets')[0]
 
 const ul = document.createElement('ul')
 respNav.querySelector('nav').appendChild(ul)
 
+setTimeout(()=>{
+	pageFill.style.visibility = 'hidden'
+	body.classList.add('animate__animated')
+	body.classList.add('animate__fadeIn')
+}, 500)
 function cloneElements() {
 	const shadw = document.querySelectorAll('.nav_links > li')
 	for (let i = 0; i<shadw.length + 1; i+=1) {
@@ -122,7 +128,5 @@ export function clearUsedClass(nodes) {
 close.addEventListener('click', function () {
 	hideNav()
 })//hide the overlay when the close elemt/a link is clicked
-
-
 
 export { respNav, navbar, close, body, navFill, pageFill }

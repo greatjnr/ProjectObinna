@@ -149,7 +149,6 @@ nav#resp_nav ul li a:after {
 	--mx_h2: 20px;
 	--gray: #9aa0a6ad;
 	--cta_donate_bg: #011b33;
-	/*--headeer_height: 151;*/
 }
 .white_color {
 	color: #fff;
@@ -558,7 +557,7 @@ div#transfer_paystack > .txt:last-of-type a {
 .fundings {
 	grid-auto-flow: column;
 	/*position: relative;*/
-	overflow: hidden;
+	overflow: visible;
 	grid-column: 2;
 	display: grid;
 	width: 100%;
@@ -567,7 +566,7 @@ div#transfer_paystack > .txt:last-of-type a {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	overflow: hidden;
+	position: relative;
 }
 
 .fundings div.mx-1:first-child h4 {
@@ -577,24 +576,29 @@ div#transfer_paystack > .txt:last-of-type a {
 	float: left;
 	display: flex;
 	align-items: flex-end;
-	/*margin-right: 80px;*/
+	overflow: visible;
+}
+div#box:hover {
+    box-shadow: 0px 1px 8px 0px #011b335e;
 }
 .alertBox {
-     z-index: 5; 
-    visibility: hidden;
-    top: 0;
-    -webkit-box-shadow: 0px 1px 15px 0px #011b335e;
-    -moz-box-shadow: 0px 1px 15px 0px #011b335e;
-    box-shadow: 0px 1px 15px 0px #011b335e;
-    color: #000000;
-    text-align: center;
-    font-weight: bold;
-    padding: 5px 0;
-    background: #ffffff;
-    width: 70px;
-    font-size: 14px;
-    position: absolute;
-    border-radius: 10px;
+     z-index: 5;
+     visibility: hidden;
+     -webkit-box-shadow: 0px 1px 9px 0px #011b335e;
+     -moz-box-shadow: 0px 1px 15px 0px #011b335e;
+     box-shadow: 0px 1px 15px 0px #011b335e;
+     color: #000000;
+     text-align: center;
+     cursor: pointer;
+     font-weight: bold;
+     left: 100px;
+     top: -26px;
+     padding: 5px 0;
+     background: #ffffff;
+     width: 70px;
+     font-size: 14px;
+     position: absolute;
+     border-radius: 10px;
 }
 div.mx-1 div.lx br {
 	display: none;
@@ -648,7 +652,6 @@ div.mx-1 div.lx {
 	color: #C7C4C4;
 }
 .footer_main {
-	/*height: 159px;*/
 	overflow: hidden;
 	padding: 40px 0;
 	width: 100%;
@@ -1447,6 +1450,12 @@ div.mx-1 div.lx {
 	.logo {
 	    width: 110px;
 	}
+	.manifesto p {
+	    font-size: 16.3px;
+	}
+	.manifesto-list li {
+	    font-size: 15.2px;
+	}
 	.fund_sec .other> p {
 		margin-bottom: 34px;
 	}
@@ -1457,7 +1466,7 @@ div.mx-1 div.lx {
 	.fundings div.mx-1 {
 		float: none;
 		margin-right: 0 !important;
-		width: 100%;
+		width: max-content;
 		padding: 0 5px;
 		align-items: flex-end;
 	}
