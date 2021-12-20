@@ -18,7 +18,9 @@
 *::-webkit-scrollbar-track {
 	background: #eee;
 }
-
+p {
+	line-height: 1.6 !important;
+}
 body{
     font-family: inter, sans-serif;
     
@@ -304,8 +306,13 @@ div#mx_headerText {
 div#mx_headerText h1 {
     font-size: 28px;
 }
+#mx_headerText h3{
+	margin-bottom: 5px;
+	font-weight: 600;
+}	
 div#mx_headerText p {
 	line-height: 1.5;
+	margin: 10px 0;
 	font-size: 16px;
 }
 section#mx_content {
@@ -329,7 +336,7 @@ div#mx_contentList h2 {
 }
 div#mx_contentList p {
     font-size: 15.8px !important;
-    line-height: 1.4;
+    line-height: 1.6;
 }
 /* Manifesto Section Starts */
 .manifesto {
@@ -352,7 +359,7 @@ div#manifesto_content {
     margin: auto;
 }
 .manifesto p{
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 500;
 }
 
@@ -393,7 +400,7 @@ h1{
 
 .Hero-p{
     line-height: 1.3;
-    width: 45%;
+    width: 50%;
     text-align: left;
     color: white;
     font-size: 17.8px;
