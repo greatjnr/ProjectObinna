@@ -485,10 +485,13 @@ div#transfers_inner > div:first-child {
 div#transfers_inner > div:last-of-type {
     padding-top: 1.4em;
 }
+div#transfer_paystack .d_heading {
+	color: var(--cta_donate_bg) !important;
+}
 div#transfer_paystack:before {
     position: absolute;
     content: '';
-    border: 1px solid #00000057;
+    border: 1px solid #dddddd;
     width: 180px;
     display: none;
 }
