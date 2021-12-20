@@ -1,18 +1,41 @@
-import { respNav, navbar, close, body, navFill, pageFill, clearUsedClass } from "./generic.js"
+import { respNav, navbar, close, body, navFill, pageFill, clearUsedClass} from "./generic.js"
 
 (function() {
-	const bankDets = document.querySelector('.mx-1 > .lx:last-of-type')
 	const box = document.querySelector('#box')
 	const hero = document.querySelectorAll('.hero')[0]
 	const heroH1 = document.querySelectorAll('.hero h1')[0]
 	const heroP = document.querySelectorAll('.hero p')[0]
 	const header = document.querySelectorAll('.main_header')[0]
-	const snaps = document.querySelectorAll('#generic_sec > section.snap')
+	const snaps = document.querySelectorAll('.generic_sec > .snap')
+	const bankDets = document.querySelector('.bank_dets > .lx:last-of-type')
 
-	if (box) {
-		box.style.left = (bankDets.offsetLeft + 60) + 'px'
-		box.style.top = (bankDets.offsetTop) + 'px'
+	//Handles copy-to-clipboard feature on the bank details
+	function animateCopyPaste(obj) {
+		const nodes = obj.querySelectorAll('h4,p')
+		if (box) {
+			box.style.left = (obj.offsetLeft + 60) + 'px'
+			box.style.top = (obj.offsetTop) + 'px'
+		}
+		function details(nodes) {
+			var txt = '';
+			for (let i = 0; i < nodes.length; i += 1) {
+				txt += nodes[i].outerText + '\n'
+			}
+			navigator.clipboard.writeText(txt)
+		}
+		details(nodes)
+		
+		obj.classList.add('animate__pulse')
+		box.classList.add('animate__rubberBand')
+		box.style.visibility = 'visible'
+		setTimeout(()=>{
+			clearUsedClass([obj, box])
+			box.style.visibility = 'hidden'
+		}, 1000)
 	}
+	bankDets.addEventListener('click', function (e) {
+		animateCopyPaste(bankDets)
+	})
 
 	const willAnimate = [body, navbar, respNav, bankDets, box, heroH1, heroP, hero]
 	for (let i=0; i<willAnimate.length; i+=1) {
@@ -78,26 +101,5 @@ import { respNav, navbar, close, body, navFill, pageFill, clearUsedClass } from 
 			observer.observe(i)
 		})
 	}
-
-	//Handles copy-to-clipboard feature on the bank details
-	function details(nodes) {
-		var txt = '';
-		for (let i = 0; i < nodes.length; i += 1) {
-			txt += nodes[i].outerText + '\n'
-		}
-		navigator.clipboard.writeText(txt)
-	}
-	bankDets.addEventListener('click', function (e) {
-		const nodes = bankDets.querySelectorAll('h4,p')
-		details(nodes)
-		
-		bankDets.classList.add('animate__pulse')
-		box.classList.add('animate__rubberBand')
-		box.style.visibility = 'visible'
-		setTimeout(()=>{
-			clearUsedClass([bankDets, box])
-			box.style.visibility = 'hidden'
-		}, 1000)
-	})
 
 })()

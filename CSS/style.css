@@ -23,7 +23,7 @@ body{
     font-family: inter, sans-serif;
     
 }
-#generic_sec > section.snap {
+.generic_sec > .snap {
  	opacity: 0;
 }
 
@@ -145,6 +145,8 @@ nav#resp_nav ul li a:after {
 	--active_color: #f58632;
 	--mx_p_font: 16px;
 	--mx_h2: 20px;
+	--gray: #9aa0a6ad;
+	--cta_donate_bg: #011b33;
 	/*--headeer_height: 151;*/
 }
 .white_color {
@@ -259,29 +261,42 @@ button.Donate {
     z-index: 0;
     
 } 
-#generic_sec {
+.generic_sec {
     z-index: 20;
     background: #ffffff;
     position: relative;
     overflow: hidden;
 }
+.ReadMore{
+	margin: 8px 0 0 0;
+	font-size: 16px;
+	padding: 5px;
+	font-weight: 600;
+	background-color: #f58632;
+	color: #fff;
+	border-radius: 5px;
+	border-style: none;
+}
 
 /* Specific styling for manifesto page*/
-
-#mx_manifest {
+#sec_page {
 	width: calc(100vw - 24vw);
 	margin: 0 auto;
 	padding: 3em 0;
 	font-size: 19.2px !important;
 }
+
 div#mx_headerText {
     margin: 2em 0;
     font-size: 16px;
 }
-#mx_manifest > header {
+#sec_page > header {
 	width: 100%;
 }
-#mx_manifest > header #mx_header {
+#sec_page > header #mx_header.d_header {
+	background: var(--gray)
+}
+#sec_page > header #mx_header {
 	height: 300px;
 	width: 100%;
 	background: var(--orange_color)
@@ -290,6 +305,7 @@ div#mx_headerText h1 {
     font-size: 28px;
 }
 div#mx_headerText p {
+	line-height: 1.5;
 	font-size: 16px;
 }
 section#mx_content {
@@ -308,7 +324,7 @@ div#mx_contentList h2 {
 	font-size: 20px;
 	margin: 0 0 .5em 0;
 }
-#mx_manifest .manifesto-list .items::before {
+#sec_page .manifesto-list .items::before {
     margin-right: 13px;
 }
 div#mx_contentList p {
@@ -331,9 +347,12 @@ div#mx_contentList p {
 .manifesto-class{
     color: #0B9444;
 }
-
+div#manifesto_content {
+    width: 95%;
+    margin: auto;
+}
 .manifesto p{
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 500;
 }
 
@@ -416,17 +435,11 @@ section.about-obinna{
 .academics h3#academics {
     line-height: 10px;
 }
-.other > p > button{
-    font-size: 12.6px;
-    border-radius: 2px;
-    background: #fff;
-    margin: 8px 0 0 0;
-}
-.other > p > button > a {
+
+.ReadMore > a {
     width: 100%;
-    color: #120e0c;
     font-weight: 500;
-    padding: 5px;
+    padding: 3px;
     display: block;
     height: inherit;
 }
@@ -438,6 +451,73 @@ section.about-obinna{
 .Schools h4 {
     margin: 5px 0 3px 0;
 }
+
+/**Donate Page*/
+section#transfers {
+    background: #fff;
+    margin-top: 3em;
+}
+
+.d_heading {
+    letter-spacing: 1px !important;
+    font-size: 17.5px !important;
+    color: var(--orange_color);
+}
+
+#transfer_bank .txt:first-child p {
+    font-size: 15px;
+}
+
+#transfer_bank .txt:last-of-type p {
+    font-size: 14.6px;
+    line-height: 1.3;
+}
+div#transfers_inner > div:first-child {
+	margin-bottom: 2.5em;
+}
+#transfers_inner > div {
+    grid-auto-flow: column;
+    display: grid;
+    width: 100%;
+    justify-items: start;
+    justify-content: start;
+}
+
+#transfer_bank .txt {
+    width: 100%;
+}
+#transfers_inner > div .txt:first-child {
+    margin-right: 30px;
+    width: 300px;
+}
+#transfer_bank .txt:last-of-type {
+    display: flex;
+    align-items: center;
+}
+#transfer_bank .txt:last-of-type div {
+	float: left;
+	margin: 0 10px 0 0; 
+}
+#transfer_bank .txt:last-of-type div br {
+	margin-bottom: 10px;
+}
+div#transfer_paystack > .txt:last-of-type {
+    display: flex;
+    align-items: center;
+}
+div#transfer_paystack > .txt:last-of-type button {
+    padding: 7px 10px;
+    background: var(--cta_donate_bg);
+    border-radius: 8px;
+    margin-left: 20px;
+}
+div#transfer_paystack > .txt:last-of-type a {
+    display: block;
+    widows: inherit;
+    height: inherit;
+}
+
+/**/
 .fund_sec {
 	z-index: 3;
 	width: 100%;
@@ -697,7 +777,7 @@ div.mx-1 div.lx {
 	    font-size: 28px;
 	}
 	.manifesto p {
-	    font-size: 18px;
+	    font-size: 17.5px;
 	}
 	.other > p {
 		font-size: 15.5px;
@@ -747,7 +827,7 @@ div.mx-1 div.lx {
 		font-size: 17.49px;
 	}
 	.manifesto-list li {
-		font-size: 15.4px;
+		/* font-size: 15.4px; */
 	}
 	.other > p {
 		width: 75%;
@@ -837,7 +917,7 @@ div.mx-1 div.lx {
 		font-size: 17.13px;
 	}
 	.manifesto-list li {
-		font-size: 15.2px;
+		/* font-size: 15.2px; */
 	}
 	
  	.other > p {
@@ -907,8 +987,20 @@ div.mx-1 div.lx {
 /*Layout changes from here*/
 @media screen and (max-width: 864px) {
 
-	#mx_manifest {
-		width: 80%;
+	#sec_page {
+		width: 85%;
+	}
+	div#transfer_paystack > .txt:last-of-type {
+	    flex-direction: column;
+	    align-items: baseline;
+	}
+	div#transfer_paystack > .txt:last-of-type button {
+	    margin-left: 0;
+	    display: block;
+	    margin-top: 11px;
+	}
+	.d_gtb img {
+	    width: 60px;
 	}
 	div#mx_headerText h1 {
 		font-size: 27px;
@@ -918,7 +1010,7 @@ div.mx-1 div.lx {
 	    margin: 0 0 0.5em 0;
 	}
 	div#mx_headerText p {
-	    font-size: 16px;
+	    font-size: 15.5px;
 	}
 	.main {
 	    scroll-padding-top: 17vh;
@@ -948,7 +1040,6 @@ div.mx-1 div.lx {
 	    margin: 0 auto 50px auto;
 	    width: 100%;
 	    text-align: center;
-	    font-size: 14.49px;
 	}
 	/**/
 	#navbar {
@@ -1084,6 +1175,16 @@ div.mx-1 div.lx {
 }
 
 @media screen and (max-width: 714px) {
+	div#transfer_paystack > .txt:last-of-type {
+	    width: 245px;
+	}
+	#transfers_inner > div .txt:first-child {
+	     margin-right: 0; 
+	    width: 225px;
+	}
+	#transfers_inner > div {
+	    justify-content: space-between;
+	}
 	#nav_overlay #nav_close {
 		font-size: 40px;
 	}
@@ -1123,6 +1224,9 @@ div.mx-1 div.lx {
 }
 
 @media screen and (max-width: 634px) {
+		#sec_page {
+	    width: 90%;
+	}
 	.main {
 	    scroll-padding-top: 15vh;
 	}
@@ -1160,7 +1264,22 @@ div.mx-1 div.lx {
 	}
 }
 @media screen and (max-width: 575px) {
-	#mx_manifest {
+
+	section#transfers {
+		text-align: initial !important; 
+	}
+	#transfers_inner > div {
+	    grid-auto-flow: row;
+	}
+	div#transfer_bank .txt {
+	    /*display: flex;*/
+	    width: 80% !important;
+	}
+	#transfers_inner > div .txt:first-child {
+	    width: 193px;
+	    margin-bottom: 1em;
+	}
+	#sec_page {
 		text-align: center;
 	}
 	div#mx_headerText h1 {
@@ -1278,7 +1397,7 @@ div.mx-1 div.lx {
 		width: 44%;
 	}
 	.other > p {
-		font-size: 13.5px;
+		font-size: 15px;
 	}
 	.manifesto h2 {
 		font-size: 24px;
@@ -1357,11 +1476,15 @@ div.mx-1 div.lx {
 		font-size: 14px;
 	}
 @media screen and (max-width: 375px) {
+	div#transfer_bank .txt {
+	    /*display: flex;*/
+	    width: 100% !important;
+	}
 	div#mx_headerText h1 {
 	    font-size: 24px;
 	}
 	div#mx_headerText p {
-	    font-size: 15.9px;
+	    font-size: 15.5px;
 	}
 	div#mx_contentList h2 {
 	    font-size: 17px;
@@ -1398,9 +1521,7 @@ div.mx-1 div.lx {
 	.Hero-p {
 		width: 40%;
 	}
-	.other > p {
-		font-size: 13.5px;
-	}
+	
 	.manifesto h2 {
 		font-size: 22px;
 	}

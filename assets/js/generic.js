@@ -15,7 +15,7 @@ function cloneElements() {
 		const a = document.createElement('a')
 		
 		if (i >= shadw.length) {
-			a.setAttribute('href', '#')
+			a.setAttribute('href', 'donate.html')
 			a.textContent = 'Donate'
 		} else {
 			const shdw_link = shadw[i].querySelector('a');
@@ -122,7 +122,6 @@ export function clearUsedClass(nodes) {
 close.addEventListener('click', function () {
 	hideNav()
 })//hide the overlay when the close elemt/a link is clicked
-
 
 
 
