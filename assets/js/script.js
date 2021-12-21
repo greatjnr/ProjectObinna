@@ -1,4 +1,4 @@
-import { respNav, navbar, close, body, navFill, pageFill, clearUsedClass} from "./generic.js"
+import { respNav, navbar, close, body, navFill, pageFill, clearUsedClass,animateCopyPaste} from "./generic.js"
 
 (function() {
 	const box = document.querySelector('#box')
@@ -8,42 +8,11 @@ import { respNav, navbar, close, body, navFill, pageFill, clearUsedClass} from "
 	const header = document.querySelectorAll('.main_header')[0]
 	const snaps = document.querySelectorAll('.generic_sec > .snap')
 	const bankDets = document.querySelectorAll('.bank_dets')[0]
+    const nodes = bankDets.querySelectorAll('h4,p')
 
-	//Handles copy-to-clipboard feature on the bank details
-	function animateCopyPaste(obj) {
-		const nodes = obj.querySelectorAll('h4,p')
-		// box.style.left = (obj.offsetLeft + 60) + 'px'
-		// box.style.top = (obj.offsetTop) + 'px'
-		box.textContent = 'Copied'
-		function details(nodes) {
-			var txt = '';
-			for (let i = 0; i < nodes.length; i += 1) {
-				txt += nodes[i].outerText + '\n'
-			}
-			navigator.clipboard.writeText(txt)
-		}
-		details(nodes)
-		
-		box.classList.add('animate__rubberBand')
-		box.style.visibility = 'visible !important'
-		setTimeout(()=>{
-			clearUsedClass([obj, box])
-		}, 1000)
-	}
-	box.addEventListener('click', function (e) {
-		animateCopyPaste(bankDets)
-	})
-	bankDets.addEventListener('mouseenter',()=>{
-		box.style.visibility = 'visible'
-	})
-	bankDets.addEventListener('mouseleave',()=>{
-		box.style.visibility = 'hidden'
-		box.textContent = 'Copy'
-		box.style.left = '100px'
-		box.style.top = '-26px'
-	})
+	animateCopyPaste(bankDets, nodes, box)
 
-	const willAnimate = [body, navbar, respNav, bankDets, box, heroH1, heroP, hero]
+	const willAnimate = [body, navbar, respNav, bankDets, heroH1, heroP, hero]
 	for (let i=0; i<willAnimate.length; i+=1) {
 		willAnimate[i].classList.add('animate__animated')
 	}

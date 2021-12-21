@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="assets/animate.min.css" />
     <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css" />
 
-
     <title>Obinna Nwosu for Abia 2023</title>
 </head>
 <body>
@@ -70,6 +69,7 @@
                                 <img src="img/Zenith Logo.jpg" width="80" alt="Zenith logo">
                             </div>
                             <div class="bank_dets">
+                                <div class="alertBox" id="box">Copy</div>
                                 <p><strong> Zenith Bank <br> 002346789028 <br> Obinna Nwosu Campaign</strong></p>
                             </div>
 
@@ -113,6 +113,16 @@
             </section>
         </section>
     </article>
+    <script type="module">
+        import { animateCopyPaste } from './assets/js/generic.js'
+        const bds = document.querySelectorAll('.bank_dets')[0]
+        const box = document.querySelector('#box')
+        
+        animateCopyPaste(bds, [bds.querySelectorAll('p')[0].querySelectorAll('strong')[0]],  box)
+
+
+        // import { animateCopyPaste } from './assets/js/script.js'
+    </script>
     <script src="assets/js/generic.js" type="module"></script>
     <script src="https://use.fontawesome.com/f57c820a9e.js" defer></script>
 </body>

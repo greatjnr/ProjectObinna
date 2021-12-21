@@ -4,7 +4,31 @@ const close = document.querySelectorAll('#nav_close > .fa')[0]
 const body = document.querySelectorAll('.main')[0]
 const navFill = document.querySelector('#btop')
 const pageFill = document.querySelector('#fill')
-const bankDets = document.querySelectorAll('.bank_dets')[0]
+
+//Handles copy-to-clipboard feature on the bank details
+export function animateCopyPaste(parent, obj, subj) {
+    function performCopy() {
+        var txt = '';
+        for (let i = 0; i < obj.length; i += 1) {
+            txt += obj[i].outerText + '\n'
+        }
+        navigator.clipboard.writeText(txt)
+    }
+    parent.addEventListener('mouseenter', ()=>{
+    	subj.style.visibility = 'visible'
+    })
+    parent.addEventListener('mouseleave',()=>{
+    	subj.style.visibility = 'hidden'
+    	subj.textContent = 'Copy'
+    	clearUsedClass([subj])
+    })
+    subj.addEventListener('click', ()=>{
+    	performCopy()
+    	subj.textContent = 'Copied'
+    	subj.classList.add('animate__animated')
+    	subj.classList.add('animate__rubberBand')
+    })
+}
 
 const ul = document.createElement('ul')
 respNav.querySelector('nav').appendChild(ul)
@@ -91,7 +115,6 @@ navbar.addEventListener('click', function () {
 				if (u === i && u !== navLinks.length-1) {
 					link(u).style.color = '#fff'
 				} else if (u === navLinks.length-1) {
-					console.log(u, i)
 					continue
 				} else {
 					link(u).style.color = '#cdcbcb'
