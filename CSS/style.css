@@ -20,6 +20,7 @@
 }
 p {
 	line-height: 1.6 !important;
+	user-select: none;
 }
 body{
     font-family: inter, sans-serif;
@@ -478,6 +479,7 @@ section#transfers {
     font-size: 14.6px;
     line-height: 1.3;
 }
+
 div#transfers_inner > div:first-child {
     padding-bottom: 1.5em;
 }
@@ -486,6 +488,9 @@ div#transfers_inner > div:last-of-type {
 }
 div#transfer_paystack .d_heading {
 	color: var(--cta_donate_bg) !important;
+}
+div#transfer_paystack > div.txt:first-child {
+	width: auto !important;
 }
 div#transfer_paystack:before {
     position: absolute;
@@ -499,7 +504,7 @@ div#transfer_paystack:before {
     display: grid;
     width: 100%;
     position: relative;
-    justify-items: start;
+    justify-items: center;
     justify-content: start;
 }
 
@@ -507,7 +512,7 @@ div#transfer_paystack:before {
     width: 100%;
 }
 #transfers_inner > div .txt:first-child {
-    margin-right: 30px;
+    margin-right: 39px;
     width: 300px;
 }
 #transfer_bank .txt:last-of-type {
@@ -1015,13 +1020,13 @@ div.mx-1 div.lx {
 		width: 85%;
 	}
 	div#transfer_paystack > .txt:last-of-type {
-	    flex-direction: column;
-	    align-items: baseline;
+	    /* flex-direction: column; */
+	    /* align-items: baseline; */
 	}
 	div#transfer_paystack > .txt:last-of-type button {
-	    margin-left: 0;
+	    /* margin-left: 0; */
 	    display: block;
-	    margin-top: 11px;
+	    /* margin-top: 11px; */
 	}
 	.d_gtb img {
 	    width: 60px;
@@ -1203,11 +1208,10 @@ div.mx-1 div.lx {
 	    width: 245px;
 	}
 	#transfers_inner > div .txt:first-child {
-	     margin-right: 0; 
-	    width: 225px;
+	     width: 225px;
 	}
 	#transfers_inner > div {
-	    justify-content: space-between;
+	    /* justify-content: space-between; */
 	}
 	#nav_overlay #nav_close {
 		font-size: 40px;
@@ -1294,6 +1298,7 @@ div.mx-1 div.lx {
 	}
 	#transfers_inner > div {
 	    grid-auto-flow: row;
+	    justify-items: initial;
 	}
 	div#transfer_bank .txt {
 	    /*display: flex;*/
@@ -1307,14 +1312,13 @@ div.mx-1 div.lx {
 	    margin-bottom: 1em;
 	}
 	#sec_page {
-		text-align: center;
+		text-align: left;
 	}
 	div#mx_headerText h1 {
 	    font-size: 25px;
 	}
 	div#mx_contentList h2 {
 	    font-size: 18px;
-	    justify-content: center;
 	}
 
 	#nav_overlay {
