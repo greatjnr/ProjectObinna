@@ -63,9 +63,7 @@ div#btop, #fill {
     scroll-snap-type: y;
     overscroll-behavior-x: contain;
 }
-.main > section.snap  {
-	/*scroll-snap-align: start;*/
-}
+
 
 #nav_overlay:active {
 	visibility: visible;
@@ -85,11 +83,6 @@ div#btop, #fill {
     flex-direction: column;
     justify-content: center;
 }
-#nav_overlay nav + ul {
-	/*height: inherit;*/
-}
-
-
 nav#resp_nav {
 	text-align: center;
 	padding: 5px 0;
@@ -136,7 +129,6 @@ nav#resp_nav ul li a {
 	font-family: fontAwesome;
 }
 nav#resp_nav ul li a:after {
-	/*content: "\f078";*/
 	font-family: fontAwesome;
 	font-size: 15px;
 	margin-left: 10px;
@@ -202,7 +194,6 @@ li, a, button{
 }
 #navbar {
 	position: absolute;
-	/*right: 0;*/
 	cursor: pointer;
 	display: none;
 }
@@ -252,7 +243,6 @@ button.Donate {
 .Hero-contents{
     display: inline-block;
     padding-top: 160px;
-    /*margin-left: 150px;*/
 }
 
 .Hero-img{
@@ -364,15 +354,14 @@ div#mx_contentList p {
 }
 /* Manifesto Section Starts */
 .manifesto {
-    /*margin-left:150px;*/
-    padding-top: 20px;
-    padding-bottom: 38px;
+    padding-top: 2px;
+    padding-bottom: 17px;
     position: relative;
 }
 .manifesto h2{
     padding-bottom: 4px;
     font-size: 32px;
-    margin: 20px 0 12px 0;
+    margin: 18px 0 13px 0;
     position: relative;
    }
 .manifesto-class{
@@ -383,6 +372,7 @@ div#manifesto_content {
     margin: auto;
 }
 .manifesto p{
+	line-height: 1.2 !important;
     font-size: 18px;
     font-weight: 500;
 }
@@ -404,12 +394,11 @@ div#manifesto_content {
     display: inline-block;
     border-radius: 100%;
     position: relative;
-    /* left:0; */
     padding: 2px;
     margin-right: 8px;
 }
 .manifesto-list{
-    margin-top: 17px;
+    margin-top: 13px;
 }
 
 h1{
@@ -534,6 +523,10 @@ div#transfer_paystack:before {
 
 #transfer_bank .txt {
     width: 100%;
+    position: relative;
+}
+#transfer_bank .alertBox {
+	left: 0 !important;
 }
 #transfers_inner > div .txt:first-child {
     margin-right: 39px;
@@ -543,11 +536,12 @@ div#transfer_paystack:before {
     display: flex;
     align-items: center;
 }
-#transfer_bank .txt:last-of-type div {
+#transfer_bank .txt:last-of-type > div {
 	float: left;
 	margin: 0 10px 0 0; 
+	position: relative;
 }
-#transfer_bank .txt:last-of-type div br {
+#transfer_bank .txt:last-of-type > div br {
 	margin-bottom: 10px;
 }
 div#transfer_paystack > .txt:last-of-type {
@@ -585,7 +579,6 @@ div#transfer_paystack > .txt:last-of-type a {
 }
 .fundings {
 	grid-auto-flow: column;
-	/*position: relative;*/
 	overflow: visible;
 	grid-column: 2;
 	display: grid;
@@ -596,6 +589,7 @@ div#transfer_paystack > .txt:last-of-type a {
 	flex-direction: row;
 	align-items: center;
 	position: relative;
+	width: max-content;
 }
 
 .fundings div.mx-1:first-child h4 {
@@ -647,7 +641,6 @@ div.mx-1 div.lx {
 	display: none;
 }
 .cta_donate {
-	/* padding: 3.5px 7px; */
 	width: 100px;
 	display: flex;
 	height: 26px;
@@ -780,9 +773,6 @@ div.mx-1 div.lx {
 	header.main_header {
 	    padding: 30px 90px;
 	}
-	 .fundings div.mx-1 {
-		/*margin-right: 50px;*/
-	}
 	.footer_items > div:not(div#reachout) , .footer_items #reachout > div {
 		margin-right: 70px;
 	}
@@ -792,12 +782,8 @@ div.mx-1 div.lx {
 		padding-left: 90px;
 	}
 	.Hero-img {
-        height: 900px;
-        /*top: 67px;*/
-    }/*
-    .fundings div.mx-1 {
-		margin-right: 50px;
-	}*/
+        /* height: 900px; */
+    }
 	.nav_links li{
 		padding: 0 15px;
 	}
@@ -830,7 +816,7 @@ div.mx-1 div.lx {
 	    font-size: 28px;
 	}
 	.manifesto p {
-	    font-size: 17.5px;
+	    font-size: 17.4px;
 	}
 	.other > p {
 		font-size: 15.5px;
@@ -871,7 +857,8 @@ div.mx-1 div.lx {
 		width: 50%;
 	}
    	.Hero-img {
-		height: 824px;
+		/* height: 824px; */
+		top: 100px;
 	}
 	.manifesto h2 {
 	    font-size: 26px;
@@ -879,9 +866,7 @@ div.mx-1 div.lx {
 	.manifesto p {
 		font-size: 17.49px;
 	}
-	.manifesto-list li {
-		/* font-size: 15.4px; */
-	}
+	
 	.other > p {
 		width: 75%;
 	    font-size: 15.7px;
@@ -930,9 +915,19 @@ div.mx-1 div.lx {
     	top: 81px;    
 	    height: 761px;
 	}
-	.fundings div.mx-1 {
-		/*margin-right: 0;*/
+	.header_txt_props {
+	    line-height: 25px;
 	}
+	.manifesto-list {
+	    margin-top: 5px;
+	}
+	.manifesto h2 {
+	    padding-bottom: 4px;
+	    margin: 15px 0 12px 0;
+	}
+	.manifesto-list .items {
+	    margin: 8px 0;
+	
 	.footer_items > div:not(div#reachout), .footer_items #reachout > div {
 		margin-right: 50px;
 	}
@@ -951,26 +946,20 @@ div.mx-1 div.lx {
 	.Hero-contents h1 {
 	    font-size: 30px;
 	}
-	.Hero-p {
-		/*font-size: 14.7px;*/
-	}
+	
 	.Hero-img {
-    	top: 72px;
+    	top: 88px;
     	height: 723px;
- 	}
+  }
  	.manifesto {
-   		/*padding: 20px 0 29px 0;*/
-   		padding-bottom: 29px;
- 	}
+   		padding-bottom: 9px;
+  }
  	.manifesto h2 {
 	    font-size: 23.4px;
 	    margin: 10px 0;
 	}
 	.manifesto p {
 		font-size: 17.13px;
-	}
-	.manifesto-list li {
-		/* font-size: 15.2px; */
 	}
 	
  	.other > p {
@@ -1019,13 +1008,11 @@ div.mx-1 div.lx {
 	.Hero-contents h1 {
 	    font-size: 30px;
 	}
-	.Hero-p {
-		/*font-size: 14.5px;*/
-	}
+	
 	.Hero-img {
-    	top: 42px;
+    	top: 66px;
     	height: 723px;
- 	}
+  }
  	.nav_links li {
 		padding: 0 5px;
 	}
@@ -1043,14 +1030,8 @@ div.mx-1 div.lx {
 	#sec_page {
 		width: 85%;
 	}
-	div#transfer_paystack > .txt:last-of-type {
-	    /* flex-direction: column; */
-	    /* align-items: baseline; */
-	}
 	div#transfer_paystack > .txt:last-of-type button {
-	    /* margin-left: 0; */
 	    display: block;
-	    /* margin-top: 11px; */
 	}
 	.d_gtb img {
 	    width: 60px;
@@ -1122,7 +1103,6 @@ div.mx-1 div.lx {
 	}
 	.Hero-p {
 		width: 45%;
-	    /*font-size: 14px;*/
 	}
 	.Hero-img {
 		height: 553px;
@@ -1234,9 +1214,6 @@ div.mx-1 div.lx {
 	#transfers_inner > div .txt:first-child {
 	     width: 225px;
 	}
-	#transfers_inner > div {
-	    /* justify-content: space-between; */
-	}
 	#nav_overlay #nav_close {
 		font-size: 40px;
 	}
@@ -1305,14 +1282,9 @@ div.mx-1 div.lx {
 	.fundings {
 		justify-content: space-between;
 	}
-	.fundings div.mx-1 {
-		/*margin-right: 0;*/
-	}
+	
 	.cta_donate {
 		margin: 0 0 7px 12px;
-	}
-	.fundings div.mx-1#mx-pstack {
-		/*margin-right: 0;*/
 	}
 }
 @media screen and (max-width: 575px) {
@@ -1325,7 +1297,6 @@ div.mx-1 div.lx {
 	    justify-items: initial;
 	}
 	div#transfer_bank .txt {
-	    /*display: flex;*/
 	    width: 80% !important;
 	}
 	div#transfer_paystack:before {
@@ -1349,7 +1320,6 @@ div.mx-1 div.lx {
 		width: 47%;
 	}
 	nav#resp_nav ul li {
-	    /*margin: 14px 0;*/
 	    font-size: 18px;
 	}
 	#navbar > .fa  {
@@ -1375,11 +1345,8 @@ div.mx-1 div.lx {
 	.fundings {
 		justify-content: space-around;
 	}
-	.fundings div.mx-1:last-of-type {
-		/*margin: 0 50px 20px 0;*/
-	}
+	
 	.fundings div.mx-1 {
-		/*float: none;*/
 		flex-direction: column;
     	align-items: flex-start;
 	}
@@ -1388,7 +1355,6 @@ div.mx-1 div.lx {
 	}
 	.fundings div.mx-1:first-child {
 		display: block;
-		/*margin-right: 57px;*/
 	}
 	.cta_donate {
 		margin: 8px 0 0 0;
@@ -1457,9 +1423,6 @@ div.mx-1 div.lx {
 	.manifesto h2 {
 		font-size: 24px;
 	}
-	.manifesto p {
-		/*font-size: 15px;*/
-	}
 	.manifesto-list {
 		width: 89%;
 		margin: 0 auto
@@ -1522,10 +1485,7 @@ div.mx-1 div.lx {
 	}
 	.cta_donate {
 	    margin: 0px 0px 5px 15px;
-		/*font-size: 12px;
-	    padding: 3.5px 9px;
-	    width: 95px;
-	    height: 24px;*/
+		
 	}
 	.footer_items > div :not(h5) {
 		font-size: 12px;
@@ -1538,7 +1498,6 @@ div.mx-1 div.lx {
 	}
 @media screen and (max-width: 375px) {
 	div#transfer_bank .txt {
-	    /*display: flex;*/
 	    width: 100% !important;
 	}
 	div#mx_headerText h1 {
