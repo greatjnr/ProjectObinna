@@ -287,10 +287,32 @@ button.Donate {
 	padding: 3em 0;
 	font-size: 19.2px !important;
 }
+.mx-h1{
+	display: inline-block;
+	margin: 100px 200px 0;
+	font-size: 42px;
+	color: #fff;
+}
+.mx-image{
+	height: 400px;
+	position: absolute;
+	z-index: 0;
+	right: 150px;
+	bottom: 0;
+}
+.mx-headerp{
+	display: inline-block;
+	margin-left: 200px;
+	color: #fff;
+	border-bottom: 2px solid white;
+
+}
 
 div#mx_headerText {
     margin: 2em 0;
     font-size: 16px;
+	position: relative;
+	z-index: 2;
 }
 #sec_page > header {
 	width: 100%;
@@ -301,6 +323,8 @@ div#mx_headerText {
 #sec_page > header #mx_header {
 	height: 300px;
 	width: 100%;
+	position: relative;
+	margin-top: 80px;
 	background: var(--orange_color)
 }
 div#mx_headerText h1 {
