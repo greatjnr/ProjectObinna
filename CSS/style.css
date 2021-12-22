@@ -420,6 +420,7 @@ h1{
     height: inherit;
     align-items: center;
     align-content: center;
+    /* padding: 7% 0; */
 }
 #mx_hdWrap p, h1 {
 	color: #fff;
@@ -452,11 +453,26 @@ h1{
 	margin-bottom: .6em;
 }
 /**/
-
+.banner {
+	position: relative;
+}
+.banner .img {
+	position: absolute;
+	width: auto;
+	right: 7%;
+	float: left;
+	width: 35%;
+	bottom: -4px;
+}
+.banner .img img {
+	width: 100%;
+}
 /* Join page **/
 #mx_joinInner #mx_hd {
-	margin: 4.5em 0 0 0;
-	background: var(--orange_color)
+	margin: 5.5em 0 0 0;
+	padding: 9% 0;
+	height: auto;
+	background: var(--orange_color);
 }
 
 #mx_joinContent > header h2 {
@@ -504,14 +520,17 @@ h1{
 	width: 100%;
 	border: 1px solid #00000047;
 	font-size: 17px;
-	height: 34px;
+	/*height: 34px;*/
 	background: #f5863205;
-	padding: 10px;
+	padding: 5px 10px;
 	border-radius: 5px;
 }
 #form_main ol:last-of-type {
 	justify-content: flex-start;
 	margin-left: 5%;
+}
+#form_main ol:last-of-type li {
+	width: 100%;
 }
 #form_main ol button {
     cursor: pointer;
@@ -547,7 +566,7 @@ h1{
 #ct_ft ol {margin-left: 2%;}
 #ct_ft ol li {
 	font-size: 15px;
-	margin: 10px 0;
+	margin: 10px 0 0 0;
 	float: left;
 }
 #ct_ft ol li:first-child {
@@ -557,10 +576,16 @@ h1{
 	color: #000;
 	display: flex;
 	align-items: center;
+	transition: .4s ease all;
 }
-#ct_ft ol li:first-child i {
-	background: #444;
+#ct_ft ol a:hover {
+	text-decoration: underline;
+	color: var(--orange_color)
 }
+#ct_ft ol a img {
+	margin-right: 3px;
+}
+/*
 
 #ct_ft ol li i {
     display: flex;
@@ -571,7 +596,7 @@ h1{
     margin-right: 10px;
     justify-content: center;
     align-items: center;
-}
+}*/
 
 /**/
 
@@ -1056,7 +1081,7 @@ div.mx-1 div.lx {
 		font-size: 13.8px;
 	}
 }
-@media screen and (max-width: 986px) {
+@media  {
 	.hero {
 	    height: 307px;
 	}
@@ -1097,7 +1122,7 @@ div.mx-1 div.lx {
 	    padding-top: 130px;
 	}
 	.Hero-contents h1,.bannerHead {
-	    font-size: 30px;
+	    /* font-size: 30px; */
 	}
 	
 	.Hero-img {
@@ -1151,15 +1176,12 @@ div.mx-1 div.lx {
 	    margin: 8px 0 59px 0;
 	}
 }
-@media screen and (max-width: 890px) {
+@media  {
 	.hero {
 		height: 280px;
 	}
 	.Hero-contents {
 	    padding-top: 98px;
-	}
-	.Hero-contents h1,.bannerHead {
-	    font-size: 30px;
 	}
 	
 	.Hero-img {
@@ -1190,7 +1212,7 @@ div.mx-1 div.lx {
 	    width: 60px;
 	}
 	.pageH1 {
-		font-size: 27px;
+		font-size: 24px;
 	}
 	div#mx_contentList h2, .pageH2 {
 	    font-size: 18px;
@@ -1387,6 +1409,14 @@ div.mx-1 div.lx {
 	.Hero-p {
 		width: 46%;
 	}
+	/*Join */
+	div#mx_hdTxt {
+	     width: 50%; 
+	}
+	.banner .img {
+		width: 40%;
+		right: 5%;
+	}
 }
 @media screen and (max-width: 672px) {
 
@@ -1402,6 +1432,10 @@ div.mx-1 div.lx {
 	}
 	div.mx-1 div.lx {
 		font-size: 95%;
+	}
+	/*Join*/
+	#mx_joinInner #mx_hd {
+	    margin: 0 0 0 0;
 	}
 }
 
@@ -1463,7 +1497,7 @@ div.mx-1 div.lx {
 		text-align: left;
 	}
 	.pageH1 {
-	    font-size: 25px;
+	font-size: 22px;
 	}
 	div#mx_contentList h2, .pageH2 {
 	    font-size: 18px;
@@ -1580,6 +1614,24 @@ div.mx-1 div.lx {
 		width: 89%;
 		margin: 0 auto
 	}
+	/*Join*/
+	#form_main ol {
+		flex-direction: column;
+	}
+	#form_main ol li {
+    	width: 100%;
+    	float: none;
+    }
+    #form_main ol:last-of-type {
+	     margin-left: 0; 
+	}
+	#form_main ol button {
+		display: block;
+		width: 100%;
+	}
+	#form_main ol button#submit {
+		margin-bottom: 10px;
+	}
 
 }
 @media screen and (max-width: 415px) {
@@ -1649,12 +1701,29 @@ div.mx-1 div.lx {
 	.footer_items h5 {
 		font-size: 14px;
 	}
+
+	/*Join*/
+	#mx_joinInner #mx_hd {
+	    padding: 4% 0;
+	}
+	/*#mx_hdWrap {
+	    flex-direction: column-reverse;
+	    align-content: center;
+	}
+	div#mx_hdTxt {
+	    width: 100%;
+	}
+	.banner .img {
+		position: initial;
+	    width: 45%;
+	    right: 3%;
+	}*/
 @media screen and (max-width: 375px) {
 	div#transfer_bank .txt {
 	    width: 100% !important;
 	}
 	.pageH1 {
-	    font-size: 24px;
+	    font-size: 21.4px;
 	}
 	div#mx_headerText p {
 	    font-size: 15.5px;
@@ -1680,6 +1749,20 @@ div.mx-1 div.lx {
 	.Hero-img {
 	    height: 371px;
 	    top: 87px;
+	}
+	/*Join*/
+	#mx_joinInner #mx_hd {
+	    padding: 8% 0;
+	}
+	.banner .img {
+	    bottom: -4px;
+	    width: 55%;
+	    right: 0%;
+	    height: auto;
+	    overflow: hidden;
+	}
+	div#mx_hdTxt {
+	    width: 35%;
 	}
 
 }
