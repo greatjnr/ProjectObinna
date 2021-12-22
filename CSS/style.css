@@ -142,6 +142,7 @@ nav#resp_nav ul li a:after {
 	--mx_h2: 20px;
 	--gray: #9aa0a6ad;
 	--cta_donate_bg: #011b33;
+	--green: #0B9444;
 }
 .white_color {
 	color: #fff;
@@ -271,8 +272,10 @@ button.Donate {
 }
 
 /* Specific styling for manifesto page*/
-#sec_page {
+.fixed_width {
 	width: calc(100vw - 24vw);
+}
+#sec_page {
 	margin: 0 auto;
 	padding: 3em 0;
 	font-size: 19.2px !important;
@@ -293,7 +296,7 @@ div#mx_headerText {
 	width: 100%;
 	background: var(--orange_color)
 }
-div#mx_headerText h1 {
+.pageH1 {
     font-size: 28px;
 }
 #mx_headerText h3{
@@ -317,7 +320,7 @@ div#mx_contentList {
 #mx_contentList .manifesto-list {
 	width: 100% !important;
 }
-div#mx_contentList h2 {
+div#mx_contentList h2, .pageH2 {
 	font-size: 20px;
 	margin: 0 0 .5em 0;
 }
@@ -362,7 +365,7 @@ div#manifesto_content {
     align-items: center;
 }
 
-.manifesto-list .items::before{
+.items::before{
     content: "";
     height: 10px;
     width: 10px;
@@ -397,6 +400,57 @@ h1{
 .orange_color{
     color: #f58632;
 }
+
+/**style for about page */
+#mx_abt {
+	width: 100%;
+}
+
+#mx_abt .fixed_width {
+	margin: 0 auto
+}
+#mx_hd {
+	width: 100%;
+	height: 300px;
+	background: var(--green)
+}
+#mx_hdWrap {
+    display: flex;
+    height: inherit;
+    align-items: center;
+    align-content: center;
+}
+#mx_hdWrap p, h1 {
+	color: #fff;
+}
+#mx_hdTxt .Hero-p {
+	width: 100% !important;
+}
+#mx_abtContent {
+	padding: 2em 0;
+}
+#mx_abtText::after {
+    border: 1px solid #eee;
+    height: 10px;
+    width: 90%;
+}
+#mx_abtText {
+    padding-bottom: 4em;
+}
+#mx_abtText h2 {
+    margin: 0 0 0.3em 0;
+}
+#mx_abtText p {
+	margin-top: 1em;
+}
+#eduList ul {
+	margin-left: 23px;
+}
+#eduList ul li {
+	color: #000;
+	margin-bottom: .6em;
+}
+/**/
 
 /* About Obinna starts */
 section.about-obinna{
@@ -784,7 +838,7 @@ div.mx-1 div.lx {
 	.header_txt_props {
 		margin-right: 50px;
 	}
-	.Hero-contents h1 {
+	.Hero-contents h1,.bannerHead {
 		font-size: 35px;
 		margin-bottom: 8px;
 	}
@@ -825,7 +879,7 @@ div.mx-1 div.lx {
 	.Hero-contents {
 		padding-top: 110px;
 	}
-	.Hero-contents h1 {
+	.Hero-contents h1,.bannerHead {
 		font-size: 33px;
 		margin-bottom: 8px;
 	}
@@ -919,7 +973,7 @@ div.mx-1 div.lx {
 	.Hero-contents {
 	    padding-top: 130px;
 	}
-	.Hero-contents h1 {
+	.Hero-contents h1,.bannerHead {
 	    font-size: 30px;
 	}
 	
@@ -981,7 +1035,7 @@ div.mx-1 div.lx {
 	.Hero-contents {
 	    padding-top: 98px;
 	}
-	.Hero-contents h1 {
+	.Hero-contents h1,.bannerHead {
 	    font-size: 30px;
 	}
 	
@@ -1003,7 +1057,7 @@ div.mx-1 div.lx {
 /*Layout changes from here*/
 @media screen and (max-width: 864px) {
 
-	#sec_page {
+	.fixed_width {
 		width: 85%;
 	}
 	div#transfer_paystack > .txt:last-of-type button {
@@ -1012,10 +1066,10 @@ div.mx-1 div.lx {
 	.d_gtb img {
 	    width: 60px;
 	}
-	div#mx_headerText h1 {
+	.pageH1 {
 		font-size: 27px;
 	}
-	div#mx_contentList h2 {
+	div#mx_contentList h2, .pageH2 {
 	    font-size: 18px;
 	    margin: 0 0 0.5em 0;
 	}
@@ -1074,7 +1128,7 @@ div.mx-1 div.lx {
 	.Hero-contents {
 	    padding-top: 111px;
 	}
-	.Hero-contents h1 {
+	.Hero-contents h1,.bannerHead {
 	    font-size: 27px;
 	}
 	.Hero-p {
@@ -1229,7 +1283,7 @@ div.mx-1 div.lx {
 }
 
 @media screen and (max-width: 634px) {
-		#sec_page {
+		.fixed_width {
 	    width: 90%;
 	}
 	.main {
@@ -1285,10 +1339,10 @@ div.mx-1 div.lx {
 	#sec_page {
 		text-align: left;
 	}
-	div#mx_headerText h1 {
+	.pageH1 {
 	    font-size: 25px;
 	}
-	div#mx_contentList h2 {
+	div#mx_contentList h2, .pageH2 {
 	    font-size: 18px;
 	}
 
@@ -1304,7 +1358,7 @@ div.mx-1 div.lx {
 	.padding_left.Hero-contents {
 		padding-left: 27px;
 	}
-	.Hero-contents h1 {
+	.Hero-contents h1,.bannerHead {
 		font-size: 25.4px;
 	}
 	.Hero-p {
@@ -1387,7 +1441,7 @@ div.mx-1 div.lx {
 		padding-left: 19px;
 	}
 	
-	.Hero-contents h1 {
+	.Hero-contents h1, .bannerHead {
 		font-size: 23px;
 	}
 	.Hero-p {
@@ -1476,13 +1530,13 @@ div.mx-1 div.lx {
 	div#transfer_bank .txt {
 	    width: 100% !important;
 	}
-	div#mx_headerText h1 {
+	.pageH1 {
 	    font-size: 24px;
 	}
 	div#mx_headerText p {
 	    font-size: 15.5px;
 	}
-	div#mx_contentList h2 {
+	div#mx_contentList h2, .pageH2 {
 	    font-size: 17px;
 	}
 	div#mx_contentList p {
