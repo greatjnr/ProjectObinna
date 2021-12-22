@@ -1,4 +1,4 @@
-import { respNav, navbar, close, body, navFill, pageFill, clearUsedClass,animateCopyPaste} from "./generic.js"
+import { respNav, navbar, close, body, navFill, pageFill, clearUsedClass, animateCopyPaste} from "./generic.js"
 
 (function() {
 	const box = document.querySelector('#box')

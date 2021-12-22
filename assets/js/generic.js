@@ -29,7 +29,16 @@ export function animateCopyPaste(parent, obj, subj) {
     	subj.classList.add('animate__rubberBand')
     })
 }
-
+function navProp() {
+	const winH = window.innerHeight
+	if (winH <= 600) {
+		console.log('less then' + winH)
+	}
+}
+navProp()
+window.onResize = function(argument) {
+	navProp()
+}
 const ul = document.createElement('ul')
 respNav.querySelector('nav').appendChild(ul)
 

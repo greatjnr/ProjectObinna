@@ -330,14 +330,14 @@ div#mx_contentList p {
 }
 /* Manifesto Section Starts */
 .manifesto {
-    padding-top: 20px;
-    padding-bottom: 38px;
+    padding-top: 2px;
+    padding-bottom: 17px;
     position: relative;
 }
 .manifesto h2{
     padding-bottom: 4px;
     font-size: 32px;
-    margin: 20px 0 12px 0;
+    margin: 18px 0 13px 0;
     position: relative;
    }
 .manifesto-class{
@@ -348,6 +348,7 @@ div#manifesto_content {
     margin: auto;
 }
 .manifesto p{
+	line-height: 1.2 !important;
     font-size: 18px;
     font-weight: 500;
 }
@@ -373,7 +374,7 @@ div#manifesto_content {
     margin-right: 8px;
 }
 .manifesto-list{
-    margin-top: 17px;
+    margin-top: 13px;
 }
 
 h1{
@@ -757,7 +758,7 @@ div.mx-1 div.lx {
 		padding-left: 90px;
 	}
 	.Hero-img {
-        height: 900px;
+        /* height: 900px; */
     }
 	.nav_links li{
 		padding: 0 15px;
@@ -791,7 +792,7 @@ div.mx-1 div.lx {
 	    font-size: 28px;
 	}
 	.manifesto p {
-	    font-size: 17.5px;
+	    font-size: 17.4px;
 	}
 	.other > p {
 		font-size: 15.5px;
@@ -832,7 +833,8 @@ div.mx-1 div.lx {
 		width: 50%;
 	}
    	.Hero-img {
-		height: 824px;
+		/* height: 824px; */
+		top: 100px;
 	}
 	.manifesto h2 {
 	    font-size: 26px;
@@ -889,6 +891,18 @@ div.mx-1 div.lx {
     	top: 81px;    
 	    height: 761px;
 	}
+	.header_txt_props {
+	    line-height: 25px;
+	}
+	.manifesto-list {
+	    margin-top: 5px;
+	}
+	.manifesto h2 {
+	    padding-bottom: 4px;
+	    margin: 15px 0 12px 0;
+	}
+	.manifesto-list .items {
+	    margin: 8px 0;
 	
 	.footer_items > div:not(div#reachout), .footer_items #reachout > div {
 		margin-right: 50px;
@@ -910,12 +924,12 @@ div.mx-1 div.lx {
 	}
 	
 	.Hero-img {
-    	top: 72px;
+    	top: 88px;
     	height: 723px;
- 	}
+  }
  	.manifesto {
-   		padding-bottom: 29px;
- 	}
+   		padding-bottom: 9px;
+  }
  	.manifesto h2 {
 	    font-size: 23.4px;
 	    margin: 10px 0;
@@ -972,9 +986,9 @@ div.mx-1 div.lx {
 	}
 	
 	.Hero-img {
-    	top: 42px;
+    	top: 66px;
     	height: 723px;
- 	}
+  }
  	.nav_links li {
 		padding: 0 5px;
 	}
