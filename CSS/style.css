@@ -1811,8 +1811,8 @@ div.mx-1 div.lx {
 		font-size: 14px;
 	}
 	/*Join*/
-	.banner .img {
-		/* top: 25%; */
+	#mx_joinInner .banner .img {
+		top: 40px !important;
 	}
 }
 @media screen and (max-width: 319px) {
@@ -1845,17 +1845,16 @@ div.mx-1 div.lx {
 	}
 	/**Join**/
 	#mx_joinInner .banner .img {
-		 top: 84px; 
+		 top: 65px !important; 
 	}
 
 }
 @media screen and (max-width: 259px) {
 	#mx_joinInner .banner .img {
-	    height: 140px;
-	    top: 55%;
+	    top: 44% !important;
 	    bottom: 0 !important;
 	}
-	.banner .img {
+	#mx_joinInner .banner .img {
 		width: 56%;
 	}
 }
@@ -1864,7 +1863,7 @@ div.mx-1 div.lx {
 	    width: 300px;
 	}
 	#mx_joinInner .banner .img {
-	    top: 70px;
+	    top: 40px !important;
 	}
 	.fixed_width {
 	    padding-right: 20px;
