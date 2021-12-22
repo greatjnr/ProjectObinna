@@ -416,9 +416,10 @@ h1{
 #mx_hd {
 	width: 100%;
 	height: 300px;
-	margin: 8.5% 0 0 0;
-	padding: 9% 0;
+	/* margin: 17% 0 0 0; */
+	padding: 11% 0;
 	height: auto;
+	overflow: hidden;
 }
 #mx_hdWrap {
     display: flex;
@@ -442,7 +443,7 @@ h1{
     width: 90%;
 }
 .contentHead {
-    padding-bottom: 4em;
+    padding-bottom: 3em;
 }
 .contentHead h2 {
     margin: 0 0 0.3em 0;
@@ -464,19 +465,26 @@ h1{
 .banner .img {
 	position: absolute;
 	width: auto;
-	right: 7%;
+	right: 14%;
 	float: left;
-	width: 35%;
-	bottom: -4px;
+	bottom: -6px;
+	width: 30%;
+	/* top: 10%; */
 }
 .banner .img img {
 	width: 100%;
 }
 /* Join page **/
 #mx_joinInner #mx_hd {
+	overflow-anchor: visible;
 	background: var(--orange_color);
+	/* overflow-clip-margin: 40px; */
+	overflow: clip;
+	padding: 9% 0;
 }
-
+#mx_joinInner .banner .img {
+	top: 25px;
+}
 #mx_joinContent > header h2 {
 	color: var(--green)
 }
@@ -1420,7 +1428,7 @@ div.mx-1 div.lx {
 	     width: 50%; 
 	}
 	.banner .img {
-		width: 40%;
+		width: 38%;
 		right: 5%;
 	}
 }
@@ -1720,7 +1728,7 @@ div.mx-1 div.lx {
 
 	/*Join*/
 	#mx_joinInner #mx_hd {
-	    padding: 4% 0;
+	    padding: 2em 0;
 	}
 	/*#mx_hdWrap {
 	    flex-direction: column-reverse;
@@ -1772,8 +1780,7 @@ div.mx-1 div.lx {
 	}
 	.banner .img {
 	    bottom: -4px;
-	    width: 55%;
-	    right: 0%;
+	    width: 50%;
 	    height: auto;
 	    overflow: hidden;
 	}
@@ -1802,6 +1809,10 @@ div.mx-1 div.lx {
 	}
 	.manifesto-list li {
 		font-size: 14px;
+	}
+	/*Join*/
+	.banner .img {
+		/* top: 25%; */
 	}
 }
 @media screen and (max-width: 319px) {
@@ -1832,5 +1843,31 @@ div.mx-1 div.lx {
 	.cta_donate {
 		margin: 7px 0;
 	}
+	/**Join**/
+	#mx_joinInner .banner .img {
+		 top: 84px; 
+	}
 
+}
+@media screen and (max-width: 259px) {
+	#mx_joinInner .banner .img {
+	    height: 140px;
+	    top: 55%;
+	    bottom: 0 !important;
+	}
+	.banner .img {
+		width: 56%;
+	}
+}
+@media screen and (max-width: 209px) {
+	header.main_header,.footer_main,#mx_hd,.fixed_width {
+	    width: 300px;
+	}
+	#mx_joinInner .banner .img {
+	    top: 70px;
+	}
+	.fixed_width {
+	    padding-right: 20px;
+	    padding-left: 20px;
+	}
 }
