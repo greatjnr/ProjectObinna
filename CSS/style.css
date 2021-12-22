@@ -180,7 +180,7 @@ header.main_header {
     position: sticky;
     top: 0;
 }
-li, a, button{
+a{
     color: #edf0f1;
     text-decoration: none;
 }
@@ -427,7 +427,7 @@ h1{
 #mx_hdTxt .Hero-p {
 	width: 100% !important;
 }
-#mx_abtContent {
+.pageContent {
 	padding: 2em 0;
 }
 #mx_abtText::after {
@@ -435,10 +435,10 @@ h1{
     height: 10px;
     width: 90%;
 }
-#mx_abtText {
+.contentHead {
     padding-bottom: 4em;
 }
-#mx_abtText h2 {
+.contentHead h2 {
     margin: 0 0 0.3em 0;
 }
 #mx_abtText p {
@@ -457,6 +457,72 @@ h1{
 #mx_joinInner #mx_hd {
 	margin: 4.5em 0 0 0;
 	background: var(--orange_color)
+}
+#mx_joinContent > header {
+	width: ;
+}
+#mx_joinContent > header h2 {
+	color: var(--green)
+}
+#sec_form {
+	width: 100%;
+	margin-top: 1em;
+}
+#form_main {
+	width: 100%;
+}
+#form_main legend {
+	display: none;
+}
+#form_main ol {
+	display: block;
+	overflow: hidden;
+	display: flex;
+	margin-bottom: .8em;
+	justify-content: space-around;
+}
+#form_main ol li {
+	width: 40%;
+	float: left;
+	margin-bottom: .5em;
+}
+#form_main ol label {
+	display: block;
+	cursor: pointer;
+	margin-bottom: .4em;
+}
+#form_main ol input {
+	width: 100%;
+	border: 1px solid #00000047;
+	font-size: 17px;
+	height: 34px;
+	background: #f5863205;
+	padding: 10px;
+	border-radius: 5px;
+}
+#form_main ol:last-of-type {
+	justify-content: flex-start;
+	margin-left: 5%;
+}
+#form_main ol button {
+    cursor: pointer;
+    text-align: center;
+    padding: 8px 29px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: .5s ease all;
+}
+#form_main ol button#submit {
+	margin-right: 10px;
+	background: #7a6b64;
+	color: #fff;
+}
+#form_main ol button#cancel{
+	background: #fff;
+	border: 2px solid #7a6b64;
+}
+#form_main ol button#cancel:hover {
+    background: #7a6b64;
 }
 /**/
 
