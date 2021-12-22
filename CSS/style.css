@@ -458,15 +458,24 @@ h1{
 	margin: 4.5em 0 0 0;
 	background: var(--orange_color)
 }
-#mx_joinContent > header {
-	width: ;
-}
+
 #mx_joinContent > header h2 {
 	color: var(--green)
 }
 #sec_form {
 	width: 100%;
-	margin-top: 1em;
+	position: relative;
+	margin: 1em 0;
+}
+#sec_form::after {
+	margin: 0 auto;
+	content: '';
+	border: 1px solid #cbc2ba;
+	/*width: 95%;*/
+	display: block;
+}
+#sec_form form {
+    margin-bottom: 1em;
 }
 #form_main {
 	width: 100%;
@@ -517,13 +526,53 @@ h1{
 	background: #7a6b64;
 	color: #fff;
 }
+#form_main ol button#submit:hover {
+	background: #5e534e;
+}
 #form_main ol button#cancel{
 	background: #fff;
 	border: 2px solid #7a6b64;
 }
 #form_main ol button#cancel:hover {
-    background: #7a6b64;
+    background: #5e534e;
+    color: #fff;
 }
+#ct_ft {
+    overflow: hidden;
+    margin: 0 0 5em 0;
+}
+#ct_ft h3 {
+	font-size: 17px;
+}
+#ct_ft ol {margin-left: 2%;}
+#ct_ft ol li {
+	font-size: 15px;
+	margin: 10px 0;
+	float: left;
+}
+#ct_ft ol li:first-child {
+	margin-right: 80px;
+}
+#ct_ft ol a {
+	color: #000;
+	display: flex;
+	align-items: center;
+}
+#ct_ft ol li:first-child i {
+	background: #444;
+}
+
+#ct_ft ol li i {
+    display: flex;
+    width: 30px;
+    background: #444;
+    border-radius: 20px;
+    height: 30px;
+    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
 /**/
 
 /* About Obinna starts */
