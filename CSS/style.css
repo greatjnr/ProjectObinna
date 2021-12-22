@@ -274,6 +274,7 @@ button.Donate {
 /* Specific styling for manifesto page*/
 .fixed_width {
 	width: calc(100vw - 24vw);
+	margin: 0 auto;
 }
 #sec_page {
 	margin: 0 auto;
@@ -402,12 +403,12 @@ h1{
 }
 
 /**style for about page */
-#mx_abt {
+.mx_pg {
 	width: 100%;
 }
 
-#mx_abt .fixed_width {
-	margin: 0 auto
+.mx_pg .fixed_width {
+	margin: 0 auto !important;
 }
 #mx_hd {
 	width: 100%;
@@ -449,6 +450,13 @@ h1{
 #eduList ul li {
 	color: #000;
 	margin-bottom: .6em;
+}
+/**/
+
+/* Join page **/
+#mx_joinInner #mx_hd {
+	margin: 4.5em 0 0 0;
+	background: var(--orange_color)
 }
 /**/
 
