@@ -32,7 +32,7 @@ export function animateCopyPaste(parent, obj, subj) {
 function navProp() {
 	const winH = window.innerHeight
 	if (winH <= 600) {
-		console.log('less then' + winH)
+		// console.log('less then' + winH)
 	}
 }
 navProp()
