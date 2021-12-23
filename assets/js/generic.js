@@ -29,6 +29,9 @@ export function animateCopyPaste(parent, obj, subj) {
     	subj.classList.add('animate__rubberBand')
     })
 }
+function animateBannerText(argument) {
+	
+}
 function navProp() {
 	const winH = window.innerHeight
 	if (winH <= 600) {
