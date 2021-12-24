@@ -408,6 +408,48 @@ h1{
 .orange_color{
     color: #f58632;
 }
+/** Gallery page **/
+#mx_gallery {
+	padding: 3em 0;
+}
+#mx_galleryInner h1 {
+	color: var(--green);
+	font-size: 31px;
+}
+#gallery_content {
+	width: 100%;
+	padding: 0 0 8% 0;
+	margin-top: 2em;
+}
+#gallery_content #images {
+	display: flex;
+	flex-direction: column;
+}
+#images .row:not(.row:first-child) {
+    margin-top: 3em;
+}
+#images .row {
+    display: flex;
+    justify-content: space-around;
+}
+.row .gallery_box {
+    padding: 18% 0;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 40%;
+    /* opacity: .2; */
+    background: #301a1a;
+    /* outline: solid; */
+    position: relative;
+}
+.gallery_box .gallery_img {
+	width: 95%;
+	position: absolute;
+	top: 0;
+}
+.gallery_img img {
+	width: 100%;
+}
 
 /**style for about page */
 #mx_abtInner #mx_hd {
