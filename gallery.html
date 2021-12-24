@@ -31,8 +31,15 @@
     </noscript>
     <div id="fill"></div>
     <div class="popup_overlay">
-        <div class="popup_main">
-            
+        <div class="popup_main g_flex">
+            <div id="willShow">
+                <div id="close" class="g_flex"><i class="fa fa-times"></i></div>
+                <div id="prev" class="action g_flex"><i class="fa fa-chevron-left"></i></div>
+                <div id="next" class="action g_flex"><i class="fa fa-chevron-right"></i></div>
+            </div>
+            <div class="g_flex" id="popup_imgMain">
+                <img src="img/About img.png">
+            </div>
         </div>
     </div>
     <article class="main">
@@ -64,20 +71,20 @@
                 <h1>Gallery</h1>
                 <section id="gallery_content">
                     <section id="images">
-                        <div class="row">
-                            <div class="gallery_box">
-                                <div class="img_fill"><a href="#"><span>View</span></a></div> <div class="gallery_img"> <img src="img/2.png" alt="Obinna Image"></div>
+                        <div class="row g_flex">
+                            <div class="gallery_box g_flex">
+                                <div class="img_fill"><a href="#" class="g_flex"><span>View</span></a></div> <div class="gallery_img"> <img src="img/donate img.png" alt="Obinna Image"></div>
                             </div>
-                            <div class="gallery_box">
-                                <div class="img_fill"><a href="#"><span>View</span></a></div> <div class="gallery_img"> <img src="img/About img.png" alt="Obinna Image"></div>
+                            <div class="gallery_box g_flex">
+                                <div class="img_fill"><a href="#" class="g_flex"><span>View</span></a></div> <div class="gallery_img"> <img src="img/About img.png" alt="Obinna Image"></div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="gallery_box">
-                              <div class="img_fill"> <a href="#"><span>View</span></a></div> <div class="gallery_img">  <img src="img/donate img.png" alt="Obinna Image"></div>
+                        <div class="row g_flex">
+                            <div class="gallery_box g_flex">
+                              <div class="img_fill"> <a href="#" class="g_flex"><span>View</span></a></div> <div class="gallery_img">  <img src="img/donate img.png" alt="Obinna Image"></div>
                             </div>
-                            <div class="gallery_box">
-                                <div class="img_fill"> <a href="#"><span>View</span></a></div><div class="gallery_img"> <img src="img/hero.png" alt="Obinna Image"></div>
+                            <div class="gallery_box g_flex">
+                                <div class="img_fill"> <a href="#" class="g_flex"><span>View</span></a></div><div class="gallery_img"> <img src="img/hero.png" alt="Obinna Image"></div>
                             </div>
                         </div>
                     </section>
@@ -116,6 +123,7 @@
         </section>
     </article>
     <script src="assets/js/generic.js" type="module"></script>
+    <script src="assets/js/gallery.js" type="module"></script>
     <script src="https://use.fontawesome.com/f57c820a9e.js" defer></script>
 </body>
 </html>
