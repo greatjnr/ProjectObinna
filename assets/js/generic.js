@@ -145,6 +145,13 @@ navbar.addEventListener('click', function () {
 	}//hide the overlay when a link is clicked
 
 })
+
+// Handle the gallery js
+function handleGallery() {
+	
+}
+handleGallery()
+
 export function clearUsedClass(nodes) {
 	if (!Array.isArray(nodes)) {
 		nodes = [nodes]
