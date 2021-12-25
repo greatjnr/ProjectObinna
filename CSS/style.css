@@ -8,6 +8,11 @@
     border: none;
     outline: none;
 }
+@media (any-hover: none) {
+	* {
+		cursor: none !important;
+	}
+}
 *::-webkit-scrollbar {
 	width: 7px;
 }
@@ -1795,11 +1800,18 @@ div.mx-1 div.lx {
 
 	#close i.fa {
 	    font-size: 16px;
+	    color: #999;
 	}
 	#close {
 	    width: 30px;
 	    height: 30px;
 	    margin: 10px 0px;
+	}
+	#close:hover {
+		border-color: #999;
+	}
+	#close:hover i.fa {
+		color: #999;
 	}
 
 }
@@ -2105,15 +2117,7 @@ div.mx-1 div.lx {
 	    top: 26%;
 	}
 	/* Gallery page*/
-	#close i.fa {
-	    color: #999;
-	}
-	#close:hover {
-		border-color: #999;
-	}
-	#close:hover i.fa {
-		color: #999;
-	}
+	
 }
 @media screen and (max-width: 319px) {
 	div#mx_hdTxt {
