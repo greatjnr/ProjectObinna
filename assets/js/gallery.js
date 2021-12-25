@@ -2,13 +2,19 @@ import { clearUsedClass } from './generic.js'
 
 const imgBox = document.querySelectorAll('.img_fill')
 const imgPop = document.querySelector('#popup_imgMain')
-const popup_overlayInner = document.querySelector('.popup_main')
-const imgElt = imgPop.querySelectorAll('img')[0]
-const popupOverlay = document.querySelectorAll('.popup_overlay')[0]
+const popupOverlayInner = document.querySelector('.popup_main')
+const popupImg = imgPop.querySelectorAll('img')[0]
+const popupOverlay = document.querySelector('#popup_wrap')
 const btns = document.querySelector('#willShow')
 const closeBtn = document.querySelector('#willShow #close')
-
-const willAnimate = [btns, popupOverlay]
+const nextIcon = document.querySelector('#next')
+const prevIcon = document.querySelector('#prev')
+var gCount = 0;
+var imgUrl = []
+imgBox.forEach(i => {
+	imgUrl.push(i.nextElementSibling.querySelector('img').src)
+})
+var urls = [...imgUrl]
 
 function assignClassName(elts, name) {
 	for (let i=0; i<elts.length; i+=1) {
@@ -16,7 +22,7 @@ function assignClassName(elts, name) {
 		e.classList.add(name)
 	}
 }
-assignClassName([btns, popupOverlay], 'animate__animated')
+assignClassName([btns, popupOverlay, imgPop], 'animate__animated')
 
 btns.style.animationDuration = '.5s'
 popupOverlay.style.animationDuration = '.5s'
@@ -29,18 +35,18 @@ function showPopupOverlay(e) {
 		i = 2
 	}
 	const clickedImg = e.path[i].querySelectorAll('img')[0];
-	imgElt.src = clickedImg.src
-	popupOverlay.classList.add('animate__fadeIn')
+	popupImg.src = clickedImg.src
 	popupOverlay.style.display = 'flex'
+	popupOverlay.classList.add('animate__fadeIn')
 
-	popup_overlayInner.addEventListener('mouseenter', ()=>{
+	popupOverlayInner.addEventListener('mouseenter', ()=>{
 		btns.classList.add('animate__fadeIn')
 		setTimeout(()=>{
 			clearUsedClass([btns])
 		}, 400)
 		btns.style.opacity = 1
 	})
-	popup_overlayInner.addEventListener('mouseleave', ()=>{
+	popupOverlayInner.addEventListener('mouseleave', ()=>{
 		btns.classList.add('animate__fadeOut')
 		setTimeout(()=>{
 			clearUsedClass([btns])
@@ -50,12 +56,14 @@ function showPopupOverlay(e) {
 }
 
 function hidePopupOverlay() {
-	imgElt.src = ''
+	gCount = 0
+	popupImg.src = ''
+	imgUrl = urls
 	popupOverlay.classList.add('animate__fadeOut')
+
 	setTimeout(()=>{
-		popupOverlay.classList.remove('animate__fadeOut')
 		popupOverlay.style.display = 'none'
-		clearUsedClass(popupOverlay)
+		clearUsedClass([popupOverlay])
 	}, 1000)
 
 	imgBox.forEach((elt, idx)=>{
@@ -64,12 +72,46 @@ function hidePopupOverlay() {
 		})
 	})
 }
+popupOverlay.querySelector('#popBg').addEventListener('click',()=>{
+	hidePopupOverlay()
+})
 closeBtn.addEventListener('click',()=>{
 	hidePopupOverlay()
 })
-
+function shuffleImgUrls(idx) {
+	if (idx === imgUrl.length) {idx = 0}
+	var newUrls = []
+	var numberOfRuns = 0
+	for (let i=idx; i<imgUrl.length + idx; i+=1) {
+		numberOfRuns += 1
+		if (i === imgUrl.length) {i = 0}
+		if (numberOfRuns === imgUrl.length + 1) {break}
+		newUrls.push(imgUrl[i])
+	}
+	imgUrl = newUrls
+}
+document.querySelectorAll('.action').forEach(i => {
+	i.addEventListener('click', ()=>{
+		imgPop.classList.add('animate__fadeIn')
+		setTimeout(()=>{
+			clearUsedClass([imgPop])
+		}, 1000)
+	})
+})
+prevIcon.addEventListener('click', ()=>{
+	if (gCount === 0) {gCount = imgUrl.length}
+	gCount = gCount - 1
+	popupImg.src = imgUrl[gCount]
+})
+nextIcon.addEventListener('click', ()=>{
+	gCount += 1
+	if (gCount === imgUrl.length) {gCount = 0}
+	popupImg.src = imgUrl[gCount]
+})
 imgBox.forEach((elt, idx)=>{
 	elt.addEventListener('click', (e)=>{
+		console.log(gCount)
+		shuffleImgUrls(idx)
 		showPopupOverlay(e)
 	})
 })

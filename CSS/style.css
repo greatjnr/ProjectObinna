@@ -435,15 +435,24 @@ h1{
 	align-items: center;
 	justify-content: center;
 }
+.popup_overlay #popBg {
+    background: #000000bf;
+    z-index: 14;
+    position: absolute;
+    top: 0;
+    width: inherit;
+    height: inherit;
+}
+.popup_overlay {
+	z-index: 15;
+    align-items: center;
+}
 .popup_overlay {
     position: fixed;
-    background: #000000bf;
     height: 100vh;
     top: 0;
     width: 100%;
-    z-index: 15;
     display: none;
-    align-items: center;
 }
 .popup_main {
 	border-radius: 5px;
@@ -453,6 +462,7 @@ h1{
 	margin: 0 auto;
 	align-items: flex-end;
 	position: relative;
+	z-index: 17;
 }
 div#popup_imgMain {
     height: 100%;

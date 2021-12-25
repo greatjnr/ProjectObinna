@@ -153,16 +153,15 @@ function handleGallery() {
 handleGallery()
 
 export function clearUsedClass(nodes) {
-	if (!Array.isArray(nodes)) {
-		nodes = [nodes]
-	}
 	for (let i=0; i<nodes.length; i+=1) {//loop tru the node list
-		const cl = Array.from(nodes[i].classList)//convert to iterable
-		for (let a=0; a<cl.length; a+=1) {//loop tru the current node classlist
-			if (/a*__[^a]/.test(cl[a])) {//check if the current class matches...
-				cl.splice(a,1)
+		var cl = Array.from(nodes[i].classList)//convert to iterable
+		var newCl = []
+		cl.forEach( (i, idx) => {
+			if (!/a*__[^a]/.test(i)) {//check if the current class matches...
+				newCl.push(i)
 			}
-		}
+		})
+		cl = newCl
 		nodes[i].classList = cl.join(' ')//reassign the current node classlist
 	}
 }
