@@ -22,7 +22,7 @@ function assignClassName(elts, name) {
 		e.classList.add(name)
 	}
 }
-assignClassName([btns, popupOverlay, imgPop], 'animate__animated')
+assignClassName([btns, popupOverlay, imgPop, popupOverlayInner], 'animate__animated')
 
 btns.style.animationDuration = '.5s'
 popupOverlay.style.animationDuration = '.5s'
@@ -37,7 +37,7 @@ function showPopupOverlay(e) {
 	const clickedImg = e.path[i].querySelectorAll('img')[0];
 	popupImg.src = clickedImg.src
 	popupOverlay.style.display = 'flex'
-	popupOverlay.classList.add('animate__fadeIn')
+	popupOverlayInner.classList.add('animate__zoomIn')
 
 	popupOverlayInner.addEventListener('mouseenter', ()=>{
 		btns.classList.add('animate__fadeIn')
@@ -63,7 +63,7 @@ function hidePopupOverlay() {
 
 	setTimeout(()=>{
 		popupOverlay.style.display = 'none'
-		clearUsedClass([popupOverlay])
+		clearUsedClass([popupOverlay, popupOverlayInner])
 	}, 1000)
 
 	imgBox.forEach((elt, idx)=>{
@@ -95,7 +95,7 @@ document.querySelectorAll('.action').forEach(i => {
 		imgPop.classList.add('animate__fadeIn')
 		setTimeout(()=>{
 			clearUsedClass([imgPop])
-		}, 1000)
+		}, 500)
 	})
 })
 prevIcon.addEventListener('click', ()=>{
@@ -110,7 +110,6 @@ nextIcon.addEventListener('click', ()=>{
 })
 imgBox.forEach((elt, idx)=>{
 	elt.addEventListener('click', (e)=>{
-		console.log(gCount)
 		shuffleImgUrls(idx)
 		showPopupOverlay(e)
 	})
