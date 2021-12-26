@@ -363,7 +363,7 @@ div#mx_manifestInner .banner .img {
 }
 #mx_manifestInner #mx_content p {
 	font-size: 16.8px;
-	line-height: 1.4 !important;
+	line-height: 1.7 !important;
 }
 /* Manifesto Section Starts */
 .manifesto {
@@ -884,6 +884,11 @@ div#transfer_paystack:before {
 }
 #transfers_inner > div#mx_headerText {
 	margin-bottom: 3em;
+}
+
+#mx_headerText h3{
+	color: #0B9444;
+	font-size: 30px;
 }
 #transfers_inner > div:not(#mx_headerText) {
     grid-auto-flow: column;
