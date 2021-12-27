@@ -22,7 +22,7 @@ function assignClassName(elts, name) {
 		e.classList.add(name)
 	}
 }
-assignClassName([btns, popupOverlay, imgPop, popupOverlayInner], 'animate__animated')
+assignClassName([btns, popupOverlay, popupImg, popupOverlayInner], 'animate__animated')
 
 btns.style.animationDuration = '.5s'
 popupOverlay.style.animationDuration = '.5s'
@@ -92,9 +92,9 @@ function shuffleImgUrls(idx) {
 }
 document.querySelectorAll('.action').forEach(i => {
 	i.addEventListener('click', ()=>{
-		imgPop.classList.add('animate__fadeIn')
+		popupImg.classList.add('animate__fadeIn')
 		setTimeout(()=>{
-			clearUsedClass([imgPop])
+			clearUsedClass([popupImg])
 		}, 500)
 	})
 })
