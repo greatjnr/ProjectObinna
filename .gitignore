@@ -1,3 +1,7 @@
 assets/font-awesome-4.7.0/
 assets/animate.min.css
 # img/
+node_modules
+package.json
+package-lock.json
+server.js

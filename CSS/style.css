@@ -29,8 +29,8 @@ p {
 }
 body{
     font-family: inter, sans-serif;
-    
 }
+
 .generic_sec > .snap {
  	opacity: 0;
 }
@@ -60,6 +60,7 @@ body{
 .fade-out {
 	animation: fade-out 3s forwards;
 }
+
 div#btop, #fill {
     top: 0;
     height: 100vh;
@@ -82,8 +83,9 @@ div#btop, #fill {
     scroll-snap-type: y;
     overscroll-behavior-x: contain;
 }
-
-
+.main.animate__animated, .animate__fadeInDown, #mx_hdTxt .animate__animated {
+    animation-delay: .3s;
+}
 #nav_overlay:active {
 	visibility: visible;
 }
@@ -341,8 +343,8 @@ div#mx_manifestInner #mx_hd {
     padding: 9% 0;
 }
 #mx_manifestInner #mx_hdTxt {
-	/*visibility: hidden;
-	opacity: 0;*/
+	visibility: hidden;
+	opacity: 0;
 }
 div#mx_manifestInner .banner .img {
    top: 9%;
@@ -714,6 +716,7 @@ div#popup_imgMain img {
 #form_main ol:last-of-type {
 	justify-content: flex-start;
 	margin-left: 5%;
+    margin-top: 1.5em;
 }
 #form_main ol:last-of-type li {
 	width: 100%;
@@ -744,7 +747,6 @@ div#popup_imgMain img {
 }
 #ct_ft {
     overflow: hidden;
-    margin: 0 0 5em 0;
 }
 #ct_ft h3 {
 	font-size: 17px;
@@ -832,6 +834,7 @@ section.about-obinna{
 .academics > div.Schools{
    float: left;
    margin-right: 40px;
+   margin-bottom: 1em;
 }
 .Schools h4 {
     margin: 5px 0 3px 0;
@@ -959,6 +962,7 @@ div#transfer_paystack > .txt:last-of-type a {
 	grid-auto-flow: column;
 	overflow: visible;
 	grid-column: 2;
+    justify-items: stretch;
 	display: grid;
 	width: 100%;
 }
@@ -979,7 +983,11 @@ div#transfer_paystack > .txt:last-of-type a {
 	align-items: flex-end;
 	overflow: visible;
 }
-div#box:hover {
+.bank_dets:hover .alertBox {
+    visibility: visible;
+    opacity: 1;
+}
+.alertBox:hover {
     box-shadow: 0px 1px 8px 0px #011b335e;
     -moz-box-shadow: 0px 1px 8px 0px #011b335e;
    -webkit- box-shadow: 0px 1px 8px 0px #011b335e;
@@ -1002,6 +1010,7 @@ div#box:hover {
      font-size: 14px;
      position: absolute;
      border-radius: 10px;
+     transition: .9s ease all;
 }
 div.mx-1 div.lx br {
 	display: none;
@@ -1509,9 +1518,6 @@ div.mx-1 div.lx {
 		font-size: 84.39%;
 	}
 	/**/
-	.fundings {
-		justify-content: space-around;
-	}
 	.fund_sec .other> p {
 		width: 100%;
 		margin-top: 0px;
@@ -1688,10 +1694,6 @@ div.mx-1 div.lx {
 	.padding_left.Hero-contents {
 		padding-left: 35px;
 	}
-	.fundings {
-		justify-content: space-between;
-	}
-	
 	.cta_donate {
 		margin: 0 0 7px 12px;
 	}
@@ -1748,10 +1750,6 @@ div.mx-1 div.lx {
 	.fund_sec {
 		padding-bottom: 40px;
 	}
-	.fundings {
-		justify-content: space-around;
-	}
-	
 	.fundings div.mx-1 {
 		flex-direction: column;
     	align-items: flex-start;
@@ -1850,6 +1848,43 @@ div.mx-1 div.lx {
 	.Hero-contents h1 > span {
 		display: block;
 	}
+    .fundings {
+        display: flex;
+        flex-direction: column;
+    }
+    .fundings div.mx-1 {
+        float: none;
+        margin-right: 0 !important;
+        width: max-content;
+        padding: 0 5px;
+        align-items: flex-end;
+    }
+    .fundings div.mx-1 div.lx:last-of-type {
+        display: flex;
+        text-align: left;
+        font-size: 90%;
+    }
+    .fundings div.mx-1:first-child h4 {
+        margin-right: 10px;
+    }
+    .fundings div.mx-1 div.lx p > strong {
+        display: block;
+    }
+    .fundings div.mx-1#mx-pstack {
+        float: none !important;
+        flex-direction: row;
+        margin-top: 31px;
+    }
+    .mx-1#mx-pstack h4 {
+        margin-bottom: 5px;
+    }
+    #mx-pstack h4 #alt {
+        display: inline;
+    }
+    .cta_donate {
+        margin: 0px 0px 5px 15px;
+        
+    }
 	/*Join*/
 	.bannerHead {
 	    font-size: 20px;
@@ -1929,6 +1964,7 @@ div.mx-1 div.lx {
 		width: 89%;
 		margin: 0 auto
 	}
+
 	/*Join*/
 	#form_main ol {
 		flex-direction: column;
@@ -1973,43 +2009,7 @@ div.mx-1 div.lx {
 	.manifesto-list li {
 	    font-size: 15.2px;
 	}
-	.fundings {
-		display: flex;
-		flex-direction: column;
-	}
-	.fundings div.mx-1 {
-		float: none;
-		margin-right: 0 !important;
-		width: max-content;
-		padding: 0 5px;
-		align-items: flex-end;
-	}
-	.fundings div.mx-1 div.lx:last-of-type {
-		display: flex;
-		text-align: left;
-		font-size: 90%;
-	}
-	.fundings div.mx-1:first-child h4 {
-		margin-right: 10px;
-	}
-	.fundings div.mx-1 div.lx p > strong {
-		display: block;
-	}
-	.fundings div.mx-1#mx-pstack {
-		float: none !important;
-		flex-direction: row;
-		margin-top: 31px;
-	}
-	.mx-1#mx-pstack h4 {
-		margin-bottom: 5px;
-	}
-	#mx-pstack h4 #alt {
-		display: inline;
-	}
-	.cta_donate {
-	    margin: 0px 0px 5px 15px;
-		
-	}
+	
 	.footer_items > div :not(h5) {
 		font-size: 12px;
 	}

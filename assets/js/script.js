@@ -12,31 +12,15 @@ import { respNav, navbar, close, body, navFill, pageFill, clearUsedClass, animat
 
 	animateCopyPaste(bankDets, nodes, box)
 
-	const willAnimate = [body, navbar, respNav, bankDets, heroH1, heroP, hero]
+	const willAnimate = [ navbar, respNav, bankDets]
 	for (let i=0; i<willAnimate.length; i+=1) {
 		willAnimate[i].classList.add('animate__animated')
 	}
 
-	window.addEventListener('DOMContentLoaded', ()=>{
-		initAnimations()
-		handleIntersecting()
-	})
 	function initAnimations() {
-		function animateLev1() {
+		setTimeout(()=>{
 			pageFill.style.visibility = 'hidden'
-			hero.classList.add('animate__fadeIn')
-
-			heroH1.classList.add('animate__fadeInDown')
-			heroP.classList.add('animate__fadeInDown')
-			body.classList.add('animate__fadeIn')
-		}
-		setTimeout(()=>{
-			animateLev1()
-		}, 500)
-
-		setTimeout(()=>{
-			clearUsedClass([header, hero, heroH1, heroP, body])
-		}, 2000)
+		}, 100)
 	}
 
 	/*Refactor*/
@@ -76,5 +60,6 @@ import { respNav, navbar, close, body, navFill, pageFill, clearUsedClass, animat
 			observer.observe(i)
 		})
 	}
+	handleIntersecting()
 
 })()

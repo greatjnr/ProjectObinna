@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="assets/animate.min.css" />
     <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <title>Obinna Nwosu for Abia 2023</title>
 </head>
@@ -30,7 +29,7 @@
         </style>
     </noscript>
     <div id="fill"></div>
-    <article class="main">
+    <article class="main animate__animated animate__fadeIn">
         <header class="main_header padding_left">
             <img class="logo" src="img/logo_main.png" alt="logo image">
             <div id="navbar">
@@ -59,8 +58,8 @@
                 <header id="mx_hd" class="banner">
                     <div id="mx_hdWrap" class="fixed_width">
                         <div id="mx_hdTxt">
-                            <h1 class="bannerHead"><span> Volunteer</span> <br>Team Resuscitate Abia</h1>
-                            <p class="Hero-p">Join Obinna Nwosu team to resuscitate Abia state</p>
+                            <h1 class="bannerHead animate__animated animate__fadeInDown"><span> Volunteer</span> <br>Team Resuscitate Abia</h1>
+                            <p class="Hero-p animate__animated animate__fadeInDown">Join Obinna Nwosu team to resuscitate Abia state</p>
                         </div>
                         <div class="img">
                             <img src="img/join img.png" alt="Obinna img">
@@ -73,28 +72,28 @@
                         <p>Nation-building they say is a collective effort. I may not have the answer to every question, but with our collective strength, we can address every question and proffer solutions to every limitation,Join me lets achieve this. </p>
                     </header>
                     <section id="sec_form">
-                        <form method="post" action="mailto:elijaheze777@gmail.com">
+                        <form method="post" action="mailto:elijaheze777@gmail.com" id="form">
                             <div id="form_main">
                                 <fieldset>
                                     <legend>Contact Information</legend>
                                     <ol>
                                         <li>
                                             <label for="name">Name</label>
-                                            <input type="text" name="name" id="name">
+                                            <input type="text" name="name" id="name" required>
                                         </li>
                                         <li>
                                             <label for="tel">Phone</label>
-                                            <input type="number" name="tel" id="tel">
+                                            <input type="number" name="tel" id="tel" required>
                                         </li>
                                     </ol>
                                     <ol>
                                         <li>
                                             <label for="lga">LGA</label>
-                                            <input type="text" name="lga" id="lga">
+                                            <input type="text" name="lga" id="lga" required>
                                         </li>
                                         <li>
                                             <label for="ward">Ward</label>
-                                            <input type="ward" name="ward" id="ward">
+                                            <input type="ward" name="ward" id="ward" required>
                                         </li>
                                     </ol>
                                     <ol>
@@ -152,6 +151,7 @@
         </section>
     </article>
     <script src="assets/js/generic.js" type="module"></script>
+    <script src="assets/js/contact.js"></script>
     <script src="https://use.fontawesome.com/f57c820a9e.js" defer></script>
 </body>
 </html>

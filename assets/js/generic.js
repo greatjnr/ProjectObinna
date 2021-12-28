@@ -15,11 +15,9 @@ export function animateCopyPaste(parent, obj, subj) {
         navigator.clipboard.writeText(txt)
     }
     parent.addEventListener('mouseenter', ()=>{
-    	subj.style.visibility = 'visible'
+    	subj.textContent = 'Copy'
     })
     parent.addEventListener('mouseleave',()=>{
-    	subj.style.visibility = 'hidden'
-    	subj.textContent = 'Copy'
     	clearUsedClass([subj])
     })
     subj.addEventListener('click', ()=>{
@@ -29,27 +27,13 @@ export function animateCopyPaste(parent, obj, subj) {
     	subj.classList.add('animate__rubberBand')
     })
 }
-function animateBannerText(argument) {
-	
-}
-function navProp() {
-	const winH = window.innerHeight
-	if (winH <= 600) {
-		// console.log('less then' + winH)
-	}
-}
-navProp()
-window.onResize = function(argument) {
-	navProp()
-}
+
 const ul = document.createElement('ul')
 respNav.querySelector('nav').appendChild(ul)
 
 setTimeout(()=>{
 	pageFill.style.visibility = 'hidden'
-	body.classList.add('animate__animated')
-	body.classList.add('animate__fadeIn')
-}, 500)
+}, 100)
 function cloneElements() {
 	const shadw = document.querySelectorAll('.nav_links > li')
 	for (let i = 0; i<shadw.length + 1; i+=1) {
@@ -145,12 +129,6 @@ navbar.addEventListener('click', function () {
 	}//hide the overlay when a link is clicked
 
 })
-
-// Handle the gallery js
-function handleGallery() {
-	
-}
-handleGallery()
 
 export function clearUsedClass(nodes) {
 	for (let i=0; i<nodes.length; i+=1) {//loop tru the node list

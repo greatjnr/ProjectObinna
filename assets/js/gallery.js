@@ -14,6 +14,7 @@ var imgUrl = []
 imgBox.forEach(i => {
 	imgUrl.push(i.nextElementSibling.querySelector('img').src)
 })
+console.log(imgUrl)
 var urls = [...imgUrl]
 
 function assignClassName(elts, name) {
@@ -90,14 +91,14 @@ function shuffleImgUrls(idx) {
 	}
 	imgUrl = newUrls
 }
-document.querySelectorAll('.action').forEach(i => {
-	i.addEventListener('click', ()=>{
-		popupImg.classList.add('animate__fadeIn')
-		setTimeout(()=>{
-			clearUsedClass([popupImg])
-		}, 500)
-	})
-})
+// document.querySelectorAll('.action').forEach(i => {
+// 	i.addEventListener('click', ()=>{
+// 		popupImg.classList.add('animate__fadeIn')
+// 		setTimeout(()=>{
+// 			clearUsedClass([popupImg])
+// 		}, 500)
+// 	})
+// })
 prevIcon.addEventListener('click', ()=>{
 	if (gCount === 0) {gCount = imgUrl.length}
 	gCount = gCount - 1
@@ -112,5 +113,7 @@ imgBox.forEach((elt, idx)=>{
 	elt.addEventListener('click', (e)=>{
 		shuffleImgUrls(idx)
 		showPopupOverlay(e)
+console.log(imgUrl)
+		
 	})
 })
