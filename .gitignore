@@ -1,9 +1,8 @@
 public/assets/font-awesome-4.7.0/
 public/assets/animate.min.css
 # img/
-contact.php
 node_modules
-package.json
+contact.php
 package-lock.json
 server.js
 .env
