@@ -733,10 +733,17 @@ div#popup_imgMain img {
     font-size: 14px;
     transition: .5s ease all;
 }
+#form_main ol button#submit.disabled {
+    background: #95867fad;
+    cursor: not-allowed;
+}
 #form_main ol button#submit {
 	margin-right: 10px;
 	background: #7a6b64;
 	color: #fff;
+}
+#form_main ol button#submit.disabled:hover {
+    background: #95867fad;
 }
 #form_main ol button#submit:hover {
 	background: #5e534e;
