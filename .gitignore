@@ -3,6 +3,7 @@ public/assets/animate.min.css
 # img/
 node_modules
 contact.php
+package.json
 package-lock.json
 server.js
 .env
