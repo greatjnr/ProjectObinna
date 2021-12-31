@@ -720,8 +720,8 @@ ol#select li {
 #form_main ol#select label {
     margin-bottom: .1em;
 }
-#form_main ol#select option {
-
+#form_main ol#select option:hover {
+    background: #444 !important;
 }
 #form_main ol label {
 	display: block;
