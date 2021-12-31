@@ -687,6 +687,12 @@ div#popup_imgMain img {
 #form_main legend {
 	display: none;
 }
+#form_main ol#select {
+    justify-content: space-between;
+    padding-left: 5%;
+    width: 45%;
+    font-size: inherit;
+}
 #form_main ol {
 	display: block;
 	overflow: hidden;
@@ -694,17 +700,35 @@ div#popup_imgMain img {
 	margin-bottom: .8em;
 	justify-content: space-around;
 }
+ol#select li {
+    width: 100% !important;
+}
 #form_main ol li {
 	width: 40%;
 	float: left;
 	margin-bottom: .5em;
+}
+#form_main ol#select select {
+    width: 100%;
+    padding: 3px 10px;
+    border-bottom: 1px solid #958988;
+    border-radius: 5px;
+    font-size: 15.5px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+#form_main ol#select label {
+    margin-bottom: .1em;
+}
+#form_main ol#select option {
+
 }
 #form_main ol label {
 	display: block;
 	cursor: pointer;
 	margin-bottom: .4em;
 }
-#form_main ol input:invalid {
+#form_main ol input:invalid, select:invalid {
     border: 1px solid #b51e1e54;
     outline: 2px solid #ffcc9a7a;
 }
@@ -720,7 +744,7 @@ div#popup_imgMain img {
 #form_main ol:last-of-type {
 	justify-content: flex-start;
 	margin-left: 5%;
-    margin-top: 1.5em;
+    margin-top: 1.7em;
 }
 #form_main ol:last-of-type li {
 	width: 100%;
@@ -1909,6 +1933,9 @@ div.mx-1 div.lx {
 	#form_main ol li {
 	    width: 47%;
 	}
+    #form_main ol#select {
+        padding-left: 0;
+    }
 	#form_main ol:last-of-type {
 		margin-left: 0;
 	}
@@ -1977,6 +2004,9 @@ div.mx-1 div.lx {
 	}
 
 	/*Join*/
+    #form_main ol#select {
+        width: 99%;
+    }
 	#form_main ol {
 		flex-direction: column;
 	}
