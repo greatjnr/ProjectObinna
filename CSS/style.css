@@ -235,7 +235,7 @@ header.main_header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 30px 110px;
+    padding: 16px 110px;
     background: #131212;
     z-index: 30;
     width: 100%;
@@ -248,7 +248,7 @@ a{
 }
 
 .logo{
-    width: 200px;
+    width: 180px;
     cursor: pointer;
     margin-right:auto;
 }
@@ -432,6 +432,7 @@ h1{
     text-align: left;
     color: white;
     font-size: 17.8px;
+    letter-spacing: .5px;
 }
 .orange_color{
     color: #f58632;
@@ -810,6 +811,108 @@ ol#select li {
 }
 /*
 
+/** Thankyou page **/
+#thank_page {
+    margin-top: 2em;
+    margin-bottom: 4em;
+}
+#thank_page header {
+    position: relative;
+}
+#thank_page #img_stack {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10em;
+}
+
+#img_stack > div {
+     float: left;
+     margin-left: -1em;
+}
+#thank_images {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#thank_images div.thank1:first-child img {
+    border: 4px solid var(--orange_color);
+    border-radius: 100%;
+}
+#thank_images div.thank1:first-child {
+    width: 120px;
+}
+#thank_images div.thank1:nth-child(2) {
+    width: 90px;
+    right: 20px;
+}
+#thank_images div.thank1:last-of-type {
+    width: 65px;
+    right: 33px;
+}
+
+#thank_images div.thank1 {
+    width: 50%;
+    position: relative;
+    border-radius: 100%;
+}
+#thank_images div.thank1 img {
+    width: 100%;
+}
+
+#img_stack > div #follow {
+    font-weight: bold;
+    color: #3c3c3cfc;
+    font-size: 15px;
+}
+#thank_content {
+    margin-top: .5em;
+}
+#thank_content h1 {
+    color: #000;
+    position: relative;
+    width: max-content;
+}
+#thank_content h1 > span:first-child {
+    z-index: 6;
+    position: relative;
+}
+#thank_content h1 span#h1_border {
+    background: var(--orange_color);
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    width: 98%;
+    height: 11px;
+    z-index: 2;
+}
+
+#thank_content .thank_content_main {
+    margin-bottom: 1.5em;
+}
+.thank_content_main #thank_txt p {
+    letter-spacing: .5px !important;
+    font-size: 18px;
+}
+.thank_content_main #thank_txt em.theme_txt {
+    padding-bottom: 7px;
+    font-style: normal;
+    border-bottom: 2px solid #8bb5b5;
+}
+.thank_content_main#cta_return {
+    text-align: center;
+    width: 162px;
+}
+.thank_content_main#cta_return a {
+    border-radius: 6px;
+    padding: 9px;
+    font-size: 13px;
+    margin: 10px 0;
+    color: #fff;
+    display: block;
+    background: var(--orange_color);
+}
 #ct_ft ol li i {
     display: flex;
     width: 30px;
@@ -819,15 +922,13 @@ ol#select li {
     margin-right: 10px;
     justify-content: center;
     align-items: center;
-}*/
-
-/**/
+}
 
 /* About Obinna starts */
-section.about-obinna{
+section.about-obinna {
     padding-bottom: 47px;
     padding-top: 20px;
-    background-color: #1B1A1A;
+    background-color: #1B1A1A !important;
     color: #F3F2F2;
     width: 100%;
     z-index: 1;
@@ -897,8 +998,8 @@ section#transfers {
 }
 
 #transfer_bank .txt:last-of-type p {
-    font-size: 14.6px;
-    line-height: 1.3;
+    font-size: 14.4px;
+    line-height: 1.3 !important;
 }
 
 div#transfers_inner > div#transfer_bank{
@@ -1021,6 +1122,9 @@ div#transfer_paystack > .txt:last-of-type a {
 .bank_dets:hover .alertBox {
     visibility: visible;
     opacity: 1;
+}
+.bank_dets p {
+    user-select: auto !important;
 }
 .alertBox:hover {
     box-shadow: 0px 1px 8px 0px #011b335e;
@@ -1214,6 +1318,10 @@ div.mx-1 div.lx {
 	.header_txt_props {
 		margin-right: 70px;
 	}
+    /** Thankyou page */
+    #thank_page #img_stack {
+        padding-right: 0;
+    }
 	
 }
 @media screen and (max-width: 1090px) {
@@ -1686,6 +1794,21 @@ div.mx-1 div.lx {
 	    top: initial;
 	}
 	/**/
+    /** thankyou page**/
+    #img_stack > div {
+        margin-left: -2.5em;
+    }
+    #thank_images div.thank1:first-child {
+        width: 101px;
+    }
+    #thank_images div.thank1:nth-child(2) {
+        width: 73px;
+        right: 30px;
+    }
+    #thank_images div.thank1:last-of-type {
+        width: 57px;
+        right: 48px;
+    }
 }
 @media screen and (max-width: 672px) {
 
@@ -1851,7 +1974,25 @@ div.mx-1 div.lx {
 	#close:hover i.fa {
 		color: #999;
 	}
-
+    /* Thankyou page */
+    #thank_content {
+        margin-top: 1.5em;
+    }
+    #thank_images div.thank1:first-child {
+        width: 77px;
+    }
+    #thank_images div.thank1:nth-child(2) {
+        width: 51px;
+    }
+    #thank_images div.thank1:last-of-type {
+        width: 43px;
+    }
+    #img_stack > div #follow {
+        font-size: 12px;
+    }
+    #thank_content h1 {
+        font-size: 2.5em;
+    }
 }
 @media screen and (max-width: 510px) {
 	.main {
@@ -1920,12 +2061,10 @@ div.mx-1 div.lx {
         margin: 0px 0px 5px 15px;
         
     }
+
 	/*Join*/
 	.bannerHead {
 	    font-size: 20px;
-	}
-	p {
-	    font-size: 15.4px !important;
 	}
 	#form_main ol {
 		justify-content: space-between;
@@ -2075,6 +2214,10 @@ div.mx-1 div.lx {
 	    right: 5%;
 	    width: 40%;
 	}
+    /** thankyou page*/
+    #thank_content {
+        margin-top: 2em;
+    }
 	
 @media screen and (max-width: 375px) {
 	div#transfer_bank .txt {
@@ -2219,6 +2362,16 @@ div.mx-1 div.lx {
 	#mx_manifestInner .Hero-p {
 	    line-height: 1.4 !important;
 	}
+    p {
+        font-size: 14px !important;
+    }
+    /* thankyou page */
+    #thank_content h1 {
+        font-size: 2.2em;
+    }
+    .thank_content_main #thank_txt p {
+        font-size: 15px !important;
+    }
 }
 @media screen and (max-width: 259px) {
 	#mx_joinInner .banner .img {

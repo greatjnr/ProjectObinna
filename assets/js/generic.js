@@ -15,6 +15,7 @@ export function animateCopyPaste(parent, obj, subj) {
         navigator.clipboard.writeText(txt)
     }
     parent.addEventListener('mouseenter', ()=>{
+    	// if ()
     	subj.textContent = 'Copy'
     })
     parent.addEventListener('mouseleave',()=>{
