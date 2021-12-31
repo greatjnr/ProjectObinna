@@ -171,10 +171,8 @@
         </section>
     </article>
      <script>
-        var winLoc = window.location.href
-        var idx = winLoc.indexOf('/j')
-        var sliced = winLoc.substring(0, idx)
-        document.querySelector('#next_').setAttribute('value', sliced + '/thankyou.html')
+        var newHref = window.location.href.replace('join','thankyou')
+        document.querySelector('#next_').setAttribute('value', newHref)
     </script>
     <script src="assets/js/generic.js" type="module"></script>
     <script src="https://use.fontawesome.com/f57c820a9e.js" defer></script> 
