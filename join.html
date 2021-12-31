@@ -74,7 +74,7 @@
                     </header>
                     <section id="sec_form">
                         <form id="form" action="https://formsubmit.co/jonjoh121@gmail.com" method="post" >
-                            <input type="hidden" name="_next" value="ProjectObinna/thankyou.html" id="next_">
+                            <input type="hidden" name="_next" value="thankyou.html" id="next_">
                             <input type="hidden" name="_subject" value="New submission!">
                             <input type="hidden" name="_template" value="table">
                             <input type="hidden" name="_captcha" value="false">
@@ -172,7 +172,9 @@
     </article>
      <script>
         var winLoc = window.location.href
-        document.querySelector('#next_').setAttribute('value', winLoc)
+        var idx = winLoc.indexOf('/j')
+        var sliced = winLoc.substring(0, idx)
+        document.querySelector('#next_').setAttribute('value', sliced + '/thankyou.html')
     </script>
     <script src="assets/js/generic.js" type="module"></script>
     <script src="https://use.fontawesome.com/f57c820a9e.js" defer></script> 
