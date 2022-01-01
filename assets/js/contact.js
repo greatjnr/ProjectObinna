@@ -13,7 +13,7 @@ function stats() {
 }
 
 form.addEventListener('submit', (e)=>{
-
+alert("clicked!!!!")
 	e.preventDefault()
 	fetch("https://formsubmit.co/ajax/de79e464b2347fc58fe0b20fb76e767d", {
 	    method: "POST",
@@ -28,7 +28,8 @@ form.addEventListener('submit', (e)=>{
 	    .then(response => response.json())
 	    .then(data => {
 	    	if (data.success == 'true') {
-	    		window.location.href = 'thankyou.html'
+	    		alert("second!!!!!!")
+window.location.href = 'thankyou.html'
 	    	} 
 	    })
 	    .catch(error => {console.log(error)});
