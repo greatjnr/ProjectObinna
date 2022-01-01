@@ -74,7 +74,7 @@
                     </header>
                     <section id="sec_form">
                         <form id="form" action="https://formsubmit.co/jonjoh121@gmail.com" method="post" >
-                            <input type="hidden" name="_next" value="thankyou.html" id="next_">
+                            <input type="hidden" name="_next" id="next_">
                             <input type="hidden" name="_subject" value="New submission!">
                             <input type="hidden" name="_template" value="table">
                             <input type="hidden" name="_captcha" value="false">
@@ -174,9 +174,9 @@
         var newHref = window.location.href.replace('join','thankyou')
         document.querySelector('#next_').setAttribute('value', newHref)
     </script>
+   
     <script src="assets/js/generic.js" type="module"></script>
     <script src="https://use.fontawesome.com/f57c820a9e.js" defer></script> 
-
     <!-- <script src="assets/js/contact.js"></script> -->
 </body>
 </html>
