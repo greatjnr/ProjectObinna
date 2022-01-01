@@ -1,23 +1,9 @@
-const form = document.querySelector('#form')
-const name = form.querySelector('#name')
-const tel = form.querySelector('#tel')
-const lga = form.querySelector('#lga')
-const ward = form.querySelector('#ward')
-const dept = form.querySelector('#depts')
-const send = form.querySelector('#submit')
-const abort = form.querySelector('#cancel')
-
-const selectedDept = ()=>{
-	const options = dept.querySelectorAll('option')
-	for (let i=0; i<options.length; i+=1) {
-		return options[dept.selectedIndex].text.toUpperCase()
-	}
-}
 
 form.addEventListener('submit', (e)=>{
-	e.preventDefault()
+
+	e.()
 	console.log(name, tel, lga, ward)
-	var xhr = new XMLHttpRequest()
+	 xhr = new XMLHttpRequest()
 	xhr.open('POST', 'https://formsubmit.co/ajax/de79e464b2347fc58fe0b20fb76e767d')
 	xhr.setRequestHeader('content-type', 'application/json')
 	xhr.onload = function () {
@@ -27,8 +13,27 @@ form.addEventListener('submit', (e)=>{
 		}
 	}
 	xhr.send(JSON.stringify({
-		message: `NAME: ${name.value.toUpperCase()} \nPHONE NUMBER: ${tel.value.toUpperCase()} \nLGA: ${lga.value.toUpperCase()} \nWARD: ${ward.value.toUpperCase()} \nDEPARTMENT: ${selectedDept()}`
-	}))
+		message: `NAME: ${name
+alert("clicked!!!!")
+	e.preventDefault()
+	fetch("https://formsubmit.co/ajax/de79e464b2347fc58fe0b20fb76e767d", {
+	    method: "POST",
+	    headers: { 
+	        'Content-Type': 'application/json',
+	        'Accept': 'application/json'
+	    },
+	    body: JSON.stringify({
+	        message: `NAME: ${name} \nPHONE NUMBER: ${tel} \nLGA: ${lga} \nWARD: ${ward}`
+	    })
+	})
+	    .then(response => response.json())
+	    .then(data => {
+	    	if (data.success == 'true') {
+	    		alert("second!!!!!!")
+window.location.href = 'thankyou.html'
+	    	} 
+	    })
+	    .catch(error => {console.log(error)});
 
 	//written for nodejs
 	// let formData = {
