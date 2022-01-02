@@ -105,19 +105,19 @@ navbar.addEventListener('click', function () {
 
 	for (let i = 0; i<navLinks.length;i+=1) {
 		navLinks[i].addEventListener('click', function () {
-			for (let u=0; u<navLinks.length;u+=1) {
-				var link = index=>{
-					return navLinks[index].querySelectorAll('a')[0]
-				}
-				if (u === i && u !== navLinks.length-1) {
-					link(u).style.color = '#fff'
-				} else if (u === navLinks.length-1) {
-					continue
-				} else {
-					link(u).style.color = '#cdcbcb'
-				}
+			// for (let u=0; u<navLinks.length;u+=1) {
+			// 	var link = index=>{
+			// 		return navLinks[index].querySelectorAll('a')[0]
+			// 	}
+			// 	if (u === i && u !== navLinks.length-1) {
+			// 		link(u).style.color = '#fff'
+			// 	} else if (u === navLinks.length-1) {
+			// 		continue
+			// 	} else {
+			// 		link(u).style.color = '#cdcbcb'
+			// 	}
 				
-			}
+			// }
 			setTimeout(()=>{
 				for (let i=0; i<navLinks.length; i+=1) {
 					if (i !== navLinks.length-1) {
