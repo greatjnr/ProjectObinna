@@ -23,7 +23,9 @@ form.addEventListener('submit', (e)=>{
 	xhr.onload = function () {
 		var resp = JSON.parse(xhr.responseText)
 		if (resp.success == 'true') {
-			window.location.href = loc
+			if (document.location.href) {
+				document.location.href = loc
+			} 
 		}
 	}
 	xhr.send(JSON.stringify({
