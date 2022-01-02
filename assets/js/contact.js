@@ -1,37 +1,34 @@
 const form = document.querySelector('#form')
-const name = form.querySelector('#name').value.toUpperCase()
-const tel = form.querySelector('#tel').value.toUpperCase()
-const lga = form.querySelector('#lga').value.toUpperCase()
-const ward = form.querySelector('#ward').value.toUpperCase()
+const name = form.querySelector('#name')
+const tel = form.querySelector('#tel')
+const lga = form.querySelector('#lga')
+const ward = form.querySelector('#ward')
+const dept = form.querySelector('#depts')
 const send = form.querySelector('#submit')
 const abort = form.querySelector('#cancel')
 
-function stats() {
-	window.addEventListener('offline', ()=>{
-	    alert('Email not sent as there are problems with your network connectivity')
-	})
+const selectedDept = ()=>{
+	const options = dept.querySelectorAll('option')
+	for (let i=0; i<options.length; i+=1) {
+		return options[dept.selectedIndex].text.toUpperCase()
+	}
 }
 
 form.addEventListener('submit', (e)=>{
-
 	e.preventDefault()
-	fetch("https://formsubmit.co/ajax/de79e464b2347fc58fe0b20fb76e767d", {
-	    method: "POST",
-	    headers: { 
-	        'Content-Type': 'application/json',
-	        'Accept': 'application/json'
-	    },
-	    body: JSON.stringify({
-	        message: `NAME: ${name} \nPHONE NUMBER: ${tel} \nLGA: ${lga} \nWARD: ${ward}`
-	    })
-	})
-	    .then(response => response.json())
-	    .then(data => {
-	    	if (data.success == 'true') {
-	    		window.location.href = 'thankyou.html'
-	    	} 
-	    })
-	    .catch(error => {console.log(error)});
+	console.log(name, tel, lga, ward)
+	var xhr = new XMLHttpRequest()
+	xhr.open('POST', 'https://formsubmit.co/ajax/de79e464b2347fc58fe0b20fb76e767d')
+	xhr.setRequestHeader('content-type', 'application/json')
+	xhr.onload = function () {
+		var resp = JSON.parse(xhr.responseText)
+		if (resp.success == 'true') {
+			window.location.href = 'thankyou.html'
+		}
+	}
+	xhr.send(JSON.stringify({
+		message: `NAME: ${name.value.toUpperCase()} \nPHONE NUMBER: ${tel.value.toUpperCase()} \nLGA: ${lga.value.toUpperCase()} \nWARD: ${ward.value.toUpperCase()} \nDEPARTMENT: ${selectedDept()}`
+	}))
 
 	//written for nodejs
 	// let formData = {
