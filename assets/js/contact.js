@@ -15,7 +15,6 @@ function stats() {
 form.addEventListener('submit', (e)=>{
 
 	e.preventDefault()
-	name.fontsize(900)
 	fetch("https://formsubmit.co/ajax/de79e464b2347fc58fe0b20fb76e767d", {
 	    method: "POST",
 	    headers: { 
