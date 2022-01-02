@@ -1,12 +1,14 @@
 const form = document.querySelector('#form')
-const name = form.querySelector('#name')
-const tel = form.querySelector('#tel')
-const lga = form.querySelector('#lga')
-const ward = form.querySelector('#ward')
-const dept = form.querySelector('#depts')
+// const name = form.querySelector('#name')
+// const tel = form.querySelector('#tel')
+// const lga = form.querySelector('#lga')
+// const ward = form.querySelector('#ward')
 const send = form.querySelector('#submit')
 const abort = form.querySelector('#cancel')
-const loc = window.location.href.replace('join', 'thankyou')
+const dept = form.querySelector('#depts')
+
+const loc = window.location.href
+var newLoc = loc.replace('join', 'thankyou')
 
 const selectedDept = ()=>{
 	const options = dept.querySelectorAll('option')
@@ -16,23 +18,22 @@ const selectedDept = ()=>{
 }
 
 form.addEventListener('submit', (e)=>{
-	alert('Yaaa', e)
 	e.preventDefault()
-	var xhr = new XMLHttpRequest()
-	xhr.open('POST', 'https://formsubmit.co/ajax/de79e464b2347fc58fe0b20fb76e767d')
-	xhr.setRequestHeader('content-type', 'application/json')
-	xhr.onload = function () {
-			alert('it looadder')
-		var resp = JSON.parse(xhr.responseText)
-		if (resp.success == 'true') {
-			if (document.location.href) {
-				document.location.href = loc
-			} 
-		}
-	}
-	xhr.send(JSON.stringify({
-		message: `NAME: ${name.value.toUpperCase()} \nPHONE NUMBER: ${tel.value.toUpperCase()} \nLGA: ${lga.value.toUpperCase()} \nWARD: ${ward.value.toUpperCase()} \nDEPARTMENT: ${selectedDept()}`
-	}))
+	$.ajax({
+	    method: 'POST',
+	    url: 'https://formsubmit.co/ajax/your@email.com',
+	    dataType: 'json',
+	    accepts: 'application/json',
+	    data: {
+	        name: "FormSubmit",
+	        message: `NAME: ${$('#name').val().toUpperCase()} \nPHONE NUMBER: ${$('#tel').val().toUpperCase()} \nLGA: ${$('#lga').val().toUpperCase()} \nWARD: ${$('#ward').val().toUpperCase()} \nDEPARTMENT: ${selectedDept()}`
+	    },
+	    success: (data) => {
+	    	$(location).attr('href', newLoc)
+	    },
+	    error: (err) => console.log(err)
+	});
+	
 
 	//written for nodejs
 	// let formData = {
