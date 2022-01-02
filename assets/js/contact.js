@@ -6,6 +6,7 @@ const ward = form.querySelector('#ward')
 const dept = form.querySelector('#depts')
 const send = form.querySelector('#submit')
 const abort = form.querySelector('#cancel')
+const loc = window.location.href.replace('join', 'thankyou')
 
 const selectedDept = ()=>{
 	const options = dept.querySelectorAll('option')
@@ -16,14 +17,13 @@ const selectedDept = ()=>{
 
 form.addEventListener('submit', (e)=>{
 	e.preventDefault()
-	console.log(name, tel, lga, ward)
 	var xhr = new XMLHttpRequest()
 	xhr.open('POST', 'https://formsubmit.co/ajax/de79e464b2347fc58fe0b20fb76e767d')
 	xhr.setRequestHeader('content-type', 'application/json')
 	xhr.onload = function () {
 		var resp = JSON.parse(xhr.responseText)
 		if (resp.success == 'true') {
-			window.location.href.replace('join', 'thankyou')
+			window.location.href = loc
 		}
 	}
 	xhr.send(JSON.stringify({
