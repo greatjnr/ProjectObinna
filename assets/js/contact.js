@@ -16,6 +16,7 @@ const selectedDept = ()=>{
 }
 
 form.addEventListener('submit', (e)=>{
+	alert('Yaaa', e)
 	e.preventDefault()
 	var xhr = new XMLHttpRequest()
 	xhr.open('POST', 'https://formsubmit.co/ajax/de79e464b2347fc58fe0b20fb76e767d')
@@ -23,6 +24,7 @@ form.addEventListener('submit', (e)=>{
 	xhr.onload = function () {
 		var resp = JSON.parse(xhr.responseText)
 		if (resp.success == 'true') {
+			alert('it looadder')
 			if (document.location.href) {
 				document.location.href = loc
 			} 
