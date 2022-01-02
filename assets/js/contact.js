@@ -22,9 +22,9 @@ form.addEventListener('submit', (e)=>{
 	xhr.open('POST', 'https://formsubmit.co/ajax/de79e464b2347fc58fe0b20fb76e767d')
 	xhr.setRequestHeader('content-type', 'application/json')
 	xhr.onload = function () {
+			alert('it looadder')
 		var resp = JSON.parse(xhr.responseText)
 		if (resp.success == 'true') {
-			alert('it looadder')
 			if (document.location.href) {
 				document.location.href = loc
 			} 
