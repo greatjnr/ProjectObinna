@@ -23,7 +23,7 @@ form.addEventListener('submit', (e)=>{
 	xhr.onload = function () {
 		var resp = JSON.parse(xhr.responseText)
 		if (resp.success == 'true') {
-			window.location.href = 'thankyou.html'
+			window.location.href.replace('join', 'thankyou')
 		}
 	}
 	xhr.send(JSON.stringify({
