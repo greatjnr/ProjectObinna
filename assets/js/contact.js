@@ -24,10 +24,9 @@ form.addEventListener('submit', (e)=>{
 		var resp = JSON.parse(xhr.responseText)
 		if (resp.success == 'true') {
 			if (document.location.href) {
-				// document.location.href = loc
+				document.location.href = loc
 			} 
 		}
-		console.log(xhr)
 	}
 	xhr.send(JSON.stringify({
 		message: `NAME: ${name.value.toUpperCase()} \nPHONE NUMBER: ${tel.value.toUpperCase()} \nLGA: ${lga.value.toUpperCase()} \nWARD: ${ward.value.toUpperCase()} \nDEPARTMENT: ${selectedDept()}`
