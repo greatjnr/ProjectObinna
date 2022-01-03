@@ -33,7 +33,7 @@ form.addEventListener('submit', (e)=>{
 	// }
 	// xhr.send(JSON.stringify(msg))
 	fetch("https://formsubmit.co/ajax/de79e464b2347fc58fe0b20fb76e767d", {
-	    // method: "POST",
+	    method: "POST",
 	    headers: { 
 	        'Content-Type': 'application/json',
 	        'Accept': 'application/json'
