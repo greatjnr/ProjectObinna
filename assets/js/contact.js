@@ -17,38 +17,20 @@ const selectedDept = ()=>{
 
 form.addEventListener('submit', (e)=>{
 	e.preventDefault()
-	var msg = {
-		message: `NAME: ${name.value.toUpperCase()} \nPHONE NUMBER: ${tel.value.toUpperCase()} \nLGA: ${lga.value.toUpperCase()} \nWARD: ${ward.value.toUpperCase()} \nDEPARTMENT: ${selectedDept()}`
-	}
-	// var xhr = new XMLHttpRequest()
-	// xhr.open('POST', 'https://formsubmit.co/ajax/de79e464b2347fc58fe0b20fb76e767d')
-	// xhr.setRequestHeader('content-type', 'application/json')
-	// xhr.onload = function () {
-	// 	var resp = JSON.parse(xhr.responseText)
-	// 	if (resp.success == 'true') {
-	// 		if (document.location.href) {
-	// 			document.location.href = loc
-	// 		} 
-	// 	}
-	// }
-	// xhr.send(JSON.stringify(msg))
-	fetch("https://formsubmit.co/ajax/de79e464b2347fc58fe0b20fb76e767d", {
-	    method: "POST",
-	    headers: { 
-	        'Content-Type': 'application/json',
-	        'Accept': 'application/json'
-	    },
-	    body: JSON.stringify({
-	        message: msg.message
-	    })
-	})
-	    .then(response => response.json())
-	    .then(data => {
-	    	if (data.success == 'true') {
+	var xhr = new XMLHttpRequest()
+	xhr.open('POST', 'https://formsubmit.co/ajax/de79e464b2347fc58fe0b20fb76e767d')
+	xhr.setRequestHeader('content-type', 'application/json')
+	xhr.onload = function () {
+		var resp = JSON.parse(xhr.responseText)
+		if (resp.success == 'true') {
+			if (document.location.href) {
 				document.location.href = loc
-	    	}
-	    })
-	    .catch(error => console.log(error));
+			} 
+		}
+	}
+	xhr.send(JSON.stringify({
+		message: `NAME: ${name.value.toUpperCase()} \nPHONE NUMBER: ${tel.value.toUpperCase()} \nLGA: ${lga.value.toUpperCase()} \nWARD: ${ward.value.toUpperCase()} \nDEPARTMENT: ${selectedDept()}`
+	}))
 
 	//written for nodejs
 	// let formData = {
