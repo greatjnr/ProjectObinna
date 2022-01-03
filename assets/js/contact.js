@@ -17,6 +17,9 @@ const selectedDept = ()=>{
 
 form.addEventListener('submit', (e)=>{
 	e.preventDefault()
+	var msg = {
+		message: `NAME: ${name.value.toUpperCase()} \nPHONE NUMBER: ${tel.value.toUpperCase()} \nLGA: ${lga.value.toUpperCase()} \nWARD: ${ward.value.toUpperCase()} \nDEPARTMENT: ${selectedDept()}`
+	}
 	var xhr = new XMLHttpRequest()
 	xhr.open('POST', 'https://formsubmit.co/ajax/de79e464b2347fc58fe0b20fb76e767d')
 	xhr.setRequestHeader('content-type', 'application/json')
@@ -28,9 +31,7 @@ form.addEventListener('submit', (e)=>{
 			} 
 		}
 	}
-	xhr.send(JSON.stringify({
-		message: `NAME: ${name.value.toUpperCase()} \nPHONE NUMBER: ${tel.value.toUpperCase()} \nLGA: ${lga.value.toUpperCase()} \nWARD: ${ward.value.toUpperCase()} \nDEPARTMENT: ${selectedDept()}`
-	}))
+	xhr.send(JSON.stringify(msg))
 
 	//written for nodejs
 	// let formData = {
