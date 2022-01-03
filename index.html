@@ -35,6 +35,28 @@
         </style>
     </noscript>
     <div id="fill"></div>
+   <div id="payPopup">
+        <div id="form">
+             <form id="paystackForm" method="post" action=''>
+                <div id="closeTransfer" class="fa fa-times"></div>
+                <fieldset>
+                    <ol>
+                        <li class="payRows">
+                            <label for="payMail">Email Address</label>
+                            <input type="text" name="payMail" id="payMail" placeholder="youremail@gmail.com" required>
+                        </li>
+                         <li class="payRows">
+                            <label for="payAmt">Amount</label>
+                            <input type="number" name="payAmt" id="payAmt" required>
+                        </li>
+                        <li class="payRows">
+                            <button type="Submit">Pay</button>
+                        </li>
+                    </ol>
+                </fieldset>
+            </form>
+        </div>
+    </div>
     <article class="main animate__animated animate__fadeIn">
         <header class="main_header padding_left">
             <img class="logo" src="img/logo_main.png" alt="logo image">
@@ -167,7 +189,7 @@
 </article>
 <script src="assets/js/script.js" type="module"></script>
 <script src="assets/js/pay.js" type="module"></script>
-<script src="https://js.paystack.co/v1/inline.js"></script>
+<script src="https://js.paystack.co/v1/inline.js" defer></script>
  <script src="https://use.fontawesome.com/f57c820a9e.js" defer></script> 
 </body>
 </html>
