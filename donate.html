@@ -34,6 +34,30 @@
         </style>
     </noscript>
     <div id="fill"></div>
+    <div id="payPopup">
+        <div id="">
+            <div id="form">
+                 <form id="paystackForm" method="post" action=''>
+                    <fieldset>
+                        <ol>
+                            <li class="payRows">
+                                <label for="payMail">Email Address</label>
+                                <input type="text" name="payMail" id="payMail" placeholder="youremail@gmail.com">
+                            </li>
+                             <li class="payRows">
+                                <label for="payAmt">Amount</label>
+                                <input type="number" name="payAmt" id="payAmt" required>
+                            </li>
+                            <li class="payRows">
+                                <button type="Submit">Pay</button>
+                            </li>
+                        </ol>
+                    </fieldset>
+                </form>
+            </div>
+            <div id="closeTransfer" class="fa fa-times"></div>
+        </div>
+    </div>
     <article class="main animate__animated animate__fadeIn">
         <header class="main_header padding_left">
             <img class="logo" src="img/logo_main.png" alt="logo image">
@@ -95,7 +119,12 @@
                         </div>
                         <div id="transfer_paystack">
                             <div class="txt"><h2 class="d_heading">Donate via <br> <span> Paystack</span></h2></div>
-                            <div class="txt"><img src="img/paystack.png" width="130" alt="paystack logo"><button id="pay"><a href="#"> Donate here</a></button></div>
+                            <div class="txt">
+                                <img src="img/paystack.png" width="130" alt="paystack logo">
+                                <button id="pay"><a href="#"> Donate here</a></button>
+
+                            </div>
+                           
                         </div>
                     </div>
                 </section>
@@ -143,7 +172,7 @@
     </script>
     <script src="assets/js/generic.js" type="module"></script>
     <script src="assets/js/pay.js" type="module"></script>
-    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="https://js.paystack.co/v1/inline.js" defer></script>
     <script src="https://use.fontawesome.com/f57c820a9e.js" defer></script>
 </body>
 </html>
