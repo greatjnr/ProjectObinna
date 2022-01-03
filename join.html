@@ -10,7 +10,7 @@
    <meta name="keywords" content="Obinna Nwosu , Abia 2023,ADC Nigeria ">
   <meta name="author" content="Wave 8 Technologies">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/logo_main.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css" />
 
     <title>Obinna Nwosu for Abia 2023</title>
+   
 </head>
 <body>
      <noscript>
@@ -77,11 +78,11 @@
                         <p>Nation-building they say is a collective effort. I may not have the answer to every question, but with our collective strength, we can address every question and proffer solutions to every limitation,Join me lets achieve this. </p>
                     </header>
                     <section id="sec_form">
-                        <form method="post" id="form" action="https://formsubmit.co/41e71c223ac7444e506e­b273c6ed4787">
-                            <input type="hidden" name="_next" value="thankyoupage.html">
-                            <input type="hidden" name="_subject" value="New submission!">
-                            <input type="hidden" name="_template" value="table">
-                            <input type="hidden" name="_captcha" value="false">
+                        <form id="form" method="post">
+                            <!-- <input type="hidden" name="_next" id="next_" value=""> -->
+                            <!-- <input type="hidden" name="_subject" value="New submission!"> -->
+                            <!-- <input type="hidden" name="_template" value="table"> -->
+                            <!-- <input type="hidden" name="_captcha" value="false"> -->
 
                             <div id="form_main">
                                 <fieldset>
@@ -89,26 +90,41 @@
                                     <ol>
                                         <li>
                                             <label for="name">Name</label>
-                                            <input type="text" name="name" id="name" required value="">
+                                            <input type="text" name="name" id="name" required>
                                         </li>
                                         <li>
                                             <label for="tel">Phone</label>
-                                            <input type="number" name="tel" id="tel" required value="">
+                                            <input type="number" name="tel" id="tel" required>
                                         </li>
                                     </ol>
                                     <ol>
                                         <li>
                                             <label for="lga">LGA</label>
-                                            <input type="text" name="lga" id="lga" required value="">
+                                            <input type="text" name="lga" id="lga" required>
                                         </li>
                                         <li>
                                             <label for="ward">Ward</label>
-                                            <input type="ward" name="ward" id="ward" required value="">
+                                            <input type="ward" name="ward" id="ward" required>
+                                        </li>
+                                        
+                                    </ol>
+                                    <ol id="select">
+                                        <li>
+                                            <label for="depts">What department would you love to join</label>
+                                            <select id="depts" required>
+                                                <option value="" hidden>-- Select --</option>
+                                                <option value="Media">Media</option>
+                                                <option value="Publicity">Publicity</option>
+                                                <option value="Logistics">Logistics</option>
+                                                <option value="canvasser">Ward canvasser</option>
+                                                <option value="reps">LGA Reps</option>
+                                                <option value="others">Others</option>
+                                            </select>
                                         </li>
                                     </ol>
                                     <ol>
                                         <li>
-                                            <button id="submit"> Submit</button>
+                                            <button id="submit" type="submit"> Submit</button>
                                             <button id="cancel" type="reset">Reset</button>
                                         </li>
                                     </ol>
@@ -159,7 +175,13 @@
             </footer>
         </section>
     </article>
+     <script>
+        // var newHref = window.location.href.replace('join','thankyou')
+        // document.querySelector('#next_').setAttribute('value', newHref)
+    </script>
+   
     <script src="assets/js/generic.js" type="module"></script>
-    <!-- <script src="assets/js/contact.js"></script> -->
+    <script src="assets/js/contact.js"></script>
+    <script src="https://use.fontawesome.com/f57c820a9e.js" defer></script> 
 </body>
 </html>

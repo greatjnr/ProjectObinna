@@ -10,7 +10,7 @@
    <meta name="keywords" content="Obinna Nwosu , Abia 2023,ADC Nigeria ">
   <meta name="author" content="Wave 8 Technologies">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/logo_main.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -95,7 +95,7 @@
                         </div>
                         <div id="transfer_paystack">
                             <div class="txt"><h2 class="d_heading">Donate via <br> <span> Paystack</span></h2></div>
-                            <div class="txt"><img src="img/paystack.png" width="130" alt="paystack logo"><button><a href="#"> Donate here</a></button></div>
+                            <div class="txt"><img src="img/paystack.png" width="130" alt="paystack logo"><button id="pay"><a href="#"> Donate here</a></button></div>
                         </div>
                     </div>
                 </section>
@@ -140,10 +140,10 @@
         
         animateCopyPaste(bds, [bds.querySelectorAll('p')[0].querySelectorAll('strong')[0]],  box)
 
-
-        // import { animateCopyPaste } from './assets/js/script.js'
     </script>
     <script src="assets/js/generic.js" type="module"></script>
+    <script src="assets/js/pay.js" type="module"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
     <script src="https://use.fontawesome.com/f57c820a9e.js" defer></script>
 </body>
 </html>
