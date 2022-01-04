@@ -772,12 +772,12 @@ div#popup_imgMain img {
 #form_main legend {
     display: none;
 }
-#form_main ol#select {
+/*#form_main ol#select {
     justify-content: space-between;
     padding-left: 5%;
     width: 45%;
     font-size: inherit;
-}
+}*/
 #form_main ol {
     display: block;
     overflow: hidden;
@@ -788,12 +788,13 @@ div#popup_imgMain img {
 ol#select li {
     width: 100% !important;
 }
+
 #form_main ol li {
     width: 40%;
     float: left;
     margin-bottom: .5em;
 }
-#form_main ol#select select {
+#form_main select {
     width: 100%;
     padding: 5px 10px;
     border-bottom: 1px solid #958988;
@@ -1961,7 +1962,7 @@ div#reachout {
     }
     #transfers_inner > div .txt:first-child {
         width: 193px;
-        margin-bottom: 1em;
+        margin-bottom: 1.2em;
     }
     #sec_page {
         text-align: left;
@@ -2254,15 +2255,15 @@ div#reachout {
     }
 
     /*Join*/
-    #form_main ol#select {
-        width: 99%;
-    }
+    
     #form_main ol {
         flex-direction: column;
+        margin-bottom: 0;
     }
     #form_main ol li {
         width: 100%;
         float: none;
+        margin-bottom: 15px;
     }
     #form_main ol:last-of-type {
          margin-left: 0; 
