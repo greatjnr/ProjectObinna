@@ -24,7 +24,7 @@
     background: #eee;
 }
 p {
-    line-height: 1.6 !important;
+    line-height: 1.4 !important;
     user-select: none;
 }
 body{
@@ -1039,7 +1039,7 @@ ol#select li {
 
 /* About Obinna starts */
 section.about-obinna {
-    padding-bottom: 47px;
+    padding-bottom: 20px;
     padding-top: 20px;
     background-color: #1B1A1A !important;
     color: #F3F2F2;
@@ -1201,8 +1201,8 @@ div#transfer_paystack > .txt:last-of-type a {
     width: 100%;
     position: relative;
     background: #fff;
-    padding-bottom: 41px;
-    padding-top: 35px;
+    padding-bottom: 21px;
+    padding-top: 14px;
 }
 
 .fund_sec > .other {
@@ -1334,7 +1334,7 @@ div.mx-1 div.lx {
     display: flex;
     margin-bottom: 50px;
     grid-auto-flow: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .footer_items > div:not(div#reachout) , .footer_items #reachout > div {
@@ -1621,7 +1621,7 @@ div#reachout {
     }
    
     .footer_items h5 {
-        font-size: 15.3px;
+        font-size: 14.3px;
     }
     .footer_items > div :not(h5) {
         font-size: 13.19px;
@@ -1703,7 +1703,7 @@ div#reachout {
     }/* This is the border after the header text */
 
     .other > p {
-        margin: 0 auto 50px auto;
+        margin: 0 auto 33px auto;
         width: 100%;
     }
     /**/
@@ -1792,7 +1792,7 @@ div#reachout {
     .footer_main {
         display: block;
         position: relative;
-        padding: 22px 0 0 0;
+        padding: 16px 0 0 0;
     }
     /**/
     .footer_items {
@@ -2192,7 +2192,7 @@ div#reachout {
     .footer_items #reachout {
         flex-direction: column;
         align-items: center;
-        margin-bottom: 1.5em;
+        margin-bottom: 1.3em;
     }
     .footer_items #reachout #adr {
         margin-bottom: 1em;
@@ -2308,6 +2308,10 @@ div#reachout {
     div#mx_manifestInner .banner .img {
         right: 8%;
         top: 7%;
+    }
+    /* about page */
+    #vid {
+        height: initial;
     }
     
 
@@ -2435,10 +2439,10 @@ div#reachout {
         font-size: 22px;
     }
     .manifesto p {
-        font-size: 14.6px;
+        font-size: 15px;
     }
     .manifesto-list li {
-        font-size: 14px;
+        /* font-size: 14px; */
     }
     /*Manifesto page*/
     div#mx_manifestInner .banner .img {
@@ -2489,6 +2493,9 @@ div#reachout {
         align-items: flex-start;
         flex-direction: column;
     }
+    .fundings div.mx-1 div.lx:last-of-type {
+        flex-direction: column;
+    }
     .cta_donate {
         margin: 7px 0;
     }
@@ -2500,9 +2507,7 @@ div#reachout {
     #mx_manifestInner .Hero-p {
         line-height: 1.4 !important;
     }
-    p {
-        font-size: 14px !important;
-    }
+
     /* thankyou page */
     #thank_content h1 {
         font-size: 2.2em;
