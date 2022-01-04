@@ -1291,30 +1291,42 @@ div.mx-1 div.lx {
 }
 .footer_main {
     overflow: hidden;
-    padding: 40px 0;
+    padding: 20px 0 10px 0;
     width: 100%;
     background: #3c3c3c;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 .footer_items {
     width: inherit;
+    display: flex;
+    margin-bottom: 50px;
+    grid-auto-flow: column;
+    justify-content: space-around;
 }
 
 .footer_items > div:not(div#reachout) , .footer_items #reachout > div {
-    margin-right: 90px;
     float: left;
 }
-.footer_items > div:last-of-type {
-    margin-right: 0;
+div#reachout {
+    display: contents;
 }
+.footer_items #author {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 5px;
+}
+.footer_items > div:last-of-type {
+    /*margin-right: 0;*/
+}
+
 .footer_items h5 {
+    margin-bottom: 2px;
     font-style: normal;
     font-weight: 600;
     font-size: 16.5px;
-    line-height: 30px;
 }
 .footer_items #socials ol li:hover {
     background: var(--orange_color);
@@ -1389,9 +1401,7 @@ div.mx-1 div.lx {
     header.main_header {
         padding: 30px 90px;
     }
-    .footer_items > div:not(div#reachout) , .footer_items #reachout > div {
-        margin-right: 70px;
-    }
+    
 }
 @media screen and (max-width: 1132px) {
     .padding_left {
@@ -1505,9 +1515,7 @@ div.mx-1 div.lx {
     #mx-pstack img {
         width: 117px;
     }
-    .footer_items > div:not(div#reachout) , .footer_items #reachout > div {
-        margin-right: 60px;
-    }
+    
     .footer_items h5 {
         font-size: 16.1px;
     }
@@ -1543,9 +1551,7 @@ div.mx-1 div.lx {
     .manifesto-list .items {
         margin: 8px 0;
     }
-    .footer_items > div:not(div#reachout), .footer_items #reachout > div {
-        margin-right: 50px;
-    }
+    
 
 }
 @media screen and (max-width: 940px) {
@@ -1583,9 +1589,7 @@ div.mx-1 div.lx {
     .fundings .lx img {
         width: 50px;
     }
-    .footer_items > div:not(div#reachout) , .footer_items #reachout > div {
-        margin-right: 55px;
-    }
+   
     .footer_items h5 {
         font-size: 15.3px;
     }
@@ -1624,9 +1628,6 @@ div.mx-1 div.lx {
     .nav_links li a {
         font-size: 15.2px;
     }
-    .footer_items > div:not(div#reachout) , .footer_items #reachout > div {
-        margin-right: 50px;
-    }
     #mx_joinInner .banner .img {
         right: 9%;
         width: 34%;
@@ -1635,7 +1636,6 @@ div.mx-1 div.lx {
 
 /*Layout changes from here*/
 @media screen and (max-width: 864px) {
-
     .fixed_width {
         width: 85%;
     }
@@ -1762,18 +1762,19 @@ div.mx-1 div.lx {
     .footer_main {
         display: block;
         position: relative;
-        padding: 10px 0 0 0;
+        padding: 22px 0 0 0;
     }
     /**/
     .footer_items {
         display: flex;
         flex-direction: column;
         height: inherit;
+        margin-bottom: 32px;
         align-items: center;
         justify-content: space-evenly;
     }
     .footer_items > div {
-        margin-bottom: 16px;
+        margin-bottom: 23px;
     }
     .footer_items > div:not(div#reachout), .footer_items #reachout > div {
         margin-right: 0 !important;
@@ -2155,6 +2156,17 @@ div.mx-1 div.lx {
         margin: 0px 0px 5px 15px;
         
     }
+    .footer_main {
+        text-align: center;
+    }
+    .footer_items #reachout {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1.5em;
+    }
+    .footer_items #reachout #adr {
+        margin-bottom: 1em;
+    }
 
     /*Join*/
     .bannerHead {
@@ -2265,7 +2277,7 @@ div.mx-1 div.lx {
     /** Manifesto page */
     div#mx_manifestInner .banner .img {
         right: 8%;
-        top: 25%;
+        top: 7%;
     }
     
 
@@ -2401,8 +2413,7 @@ div.mx-1 div.lx {
     /*Manifesto page*/
     div#mx_manifestInner .banner .img {
         right: 6%;
-        width: 45%;
-        top: 26%;
+        top: 15%;
     }
     /* Gallery page*/
     
@@ -2433,8 +2444,6 @@ div.mx-1 div.lx {
     }
     /* manifesto page */
     div#mx_manifestInner .banner .img {
-        width: 49%;
-        top: 30%;
     }
 }
 @media screen and (max-width: 295px) {
