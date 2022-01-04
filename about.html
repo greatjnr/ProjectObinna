@@ -72,7 +72,26 @@
                         </div>
                     </div>
                 </header>
-               
+                <div id="vid_popup">
+                    <div id="vid" class="fixed_width">
+                        <div id="vid_overlay"></div>
+                        <video controls>
+                          <!-- <source src="vid/about.mp4" type="video/webm"> -->
+                          <source src="video/about.mp4" type="video/mp4">
+                          <p>Your browser doesn't support HTML5 video. Here is
+                             a <a href="myVideo.mp4">link to the video</a> instead.</p>
+                        </video>
+                    </div>
+                </div>
+                <div id="vid" class="fixed_width">
+                    <div id="vid_overlay"></div>
+                    <video controls>
+                      <!-- <source src="vid/about.mp4" type="video/webm"> -->
+                      <source src="video/about.mp4" type="video/mp4">
+                      <p>Your browser doesn't support HTML5 video. Here is
+                         a <a href="myVideo.mp4">link to the video</a> instead.</p>
+                    </video>
+                </div>
                 <section id="mx_abtContent" class="fixed_width pageContent">
                     <section>
                         <div id="mx_abtText" class="contentHead">
@@ -131,6 +150,13 @@
             </footer>
         </section>
     </article>
+    <script>
+        const vid = document.querySelector('video')
+        vid.addEventListener('play', showPopup)
+        function showPopup(e) {
+            
+        }
+    </script>
     <script src="assets/js/generic.js" type="module"></script>
     <script src="https://use.fontawesome.com/f57c820a9e.js" defer></script>
 </body>
