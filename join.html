@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="assets/animate.min.css" />
     <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" /> -->
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script> -->
 
     <title>Obinna Nwosu for Abia 2023</title>
    
@@ -35,6 +37,7 @@
         </style>
     </noscript>
     <div id="fill"></div>
+    
     <article class="main animate__animated animate__fadeIn">
         <header class="main_header padding_left">
             <img class="logo" src="img/logo_main.png" alt="logo image">
@@ -43,14 +46,14 @@
             </div>
             <nav>
                 <ul class="nav_links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="manifesto.html">Visions</a>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="index">Home</a></li>
+                    <li><a href="manifesto">Visions</a>
+                    <li><a href="about">About</a></li>
                     <li><a href="#" class="active">Join</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="gallery">Gallery</a></li>
                 </ul>
             </nav>
-            <a href="donate.html" class="active"><button class="Donate">Donate</button></a>
+            <a href="donate" class="active"><button class="Donate">Donate</button></a>
             <div id="nav_overlay">
                 <div id="nav_close">
                     <i class="fa fa-times" aria-hidden="true"></i>
@@ -91,27 +94,27 @@
                                     <ol>
                                         <li>
                                             <label for="name">Name</label>
-                                            <input type="text" name="name" id="name" required>
+                                            <input type="text" name="name" id="name" required value="Jaja">
                                         </li>
                                         <li>
                                             <label for="tel">Phone</label>
-                                            <input type="number" name="tel" id="tel" required>
+                                            <input type="tel" name="number" id="tel" required value="08190929121">
                                         </li>
                                     </ol>
                                     <ol>
                                         <li>
                                             <label for="lga">LGA</label>
-                                            <input type="text" name="lga" id="lga" required>
+                                            <input type="text" name="lga" id="lga" required value="Oyigbo">
                                         </li>
                                         <li>
                                             <label for="ward">Ward</label>
-                                            <input type="ward" name="ward" id="ward" required>
+                                            <input type="ward" name="ward" id="ward" required value="5">
                                         </li>
                                     </ol>
                                     <ol>
                                         <li>
                                             <label for="mail">Email Address</label>
-                                            <input type="mail" name="mail" id="mail" required="">
+                                            <input type="email" name="mail" id="mail" value="jaja@gmail.com">
                                         </li>
                                         <li>
                                             <label for="depts">What department would you love to join</label>
@@ -119,7 +122,7 @@
                                                 <option value="" hidden>-- Select --</option>
                                                 <option value="Media">Media</option>
                                                 <option value="Publicity">Publicity</option>
-                                                <option value="Logistics">Logistics</option>
+                                                <option value="Logistics" selected>Logistics</option>
                                                 <option value="canvasser">Ward canvasser</option>
                                                 <option value="reps">LGA Reps</option>
                                                 <option value="others">Others</option>
@@ -141,8 +144,12 @@
                     <footer id="ct_ft">
                         <h3 class="items">Join us via our social media groups</h3>
                         <ol>
-                            <li><a href="#"><img src="img/logo-facebookpng-32202.png" width="30"> Join Our Facebook Group</a></li>
-                            <li><a href="#"><img src="img/whatsapp-logo-png-2263.png" width="30">Join Our Whatsapp Group</a></li>
+                            <li><a href="https://www.facebook.com/PrinceObinnaNwosu"><img src="img/logo-facebookpng-32202.png" width="30"> Join Our Facebook Group</a></li>
+                            <li id="cta_whatsapp"><a href="#"><img src="img/whatsapp-logo-png-2263.png" width="30">Join Our Whatsapp Group</a>
+                                <div id="cta_modal">
+                                    <div>Coming soon. <br><!-- We'll notify you as soon as possible. --> <div id="tip"></div></div>
+                                </div>
+                            </li>
                         </ol>
                     </footer>
                 </section>
@@ -154,8 +161,8 @@
                 <div id="socials">
                     <h5 class="white_color">Obinna Nwosu 2021</h5>
                     <ol>
-                        <li><a href="twitter.com/obi_Nwosu"><i class='fa fa-twitter'></i></a></li>
-                            <li><a href="instagram.com/obinnalawrencenwosu"><i class='fa fa-instagram'></i></a></li>
+                        <li><a href="https://twitter.com/obi_Nwosu"><i class='fa fa-twitter'></i></a></li>
+                            <li><a href="https://instagram.com/obinnalawrencenwosu"><i class='fa fa-instagram'></i></a></li>
                             <li><a href="https://www.facebook.com/PrinceObinnaNwosu"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                     </ol>
                 </div>
@@ -179,13 +186,22 @@
             </footer>
         </section>
     </article>
-     <script>
-        // var newHref = window.location.href.replace('join','thankyou')
-        // document.querySelector('#next_').setAttribute('value', newHref)
-    </script>
-   
+   <script>
+    const li = document.querySelector('#cta_whatsapp')
+    const modal = document.querySelector('#cta_modal')
+    li.addEventListener('mouseenter', ()=>{
+        var int = setTimeout(()=>{
+            modal.style.display = 'block'
+        }, 500)
+        li.addEventListener('mouseleave', ()=>{
+            modal.style.display = 'none'
+            window.clearTimeout(int)
+        })
+    })
+
+   </script>
     <script src="assets/js/generic.js" type="module"></script>
-    <script src="assets/js/contact.js"></script>
+    <script src="assets/js/contact.js" type="module"></script>
     <script src="https://use.fontawesome.com/f57c820a9e.js" defer></script> 
 </body>
 </html>

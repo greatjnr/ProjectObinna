@@ -41,7 +41,7 @@ import { respNav, navbar, close, body, navFill, pageFill, clearUsedClass, animat
 		var options = {
 			root: body,
 			rootMargin: '0px',
-			threshold: .2
+			threshold: .1
 		}
 		
 		function callback(e) {

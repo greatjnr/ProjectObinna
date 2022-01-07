@@ -12,6 +12,9 @@
     * {
         cursor: none !important;
     }
+    *::-webkit-scrollbar {
+        display: none;
+    }
 }
 *::-webkit-scrollbar {
     width: 7px;
@@ -271,7 +274,7 @@ form#paystackForm ol li button {
 
 /** Generic styles for manifesto, about, join, donate page **/
 .sec_page {
-    padding-bottom: 4.6em;
+    padding-bottom: 2.6em;
 }
 header#mx_hd {
     padding: 9% 0;
@@ -414,23 +417,16 @@ button.Donate {
 div#mx_manifest {
     padding-bottom: 2em;
 }
+#mx_manifestInner > div {
+    position: relative;
+}
 div#mx_manifestInner #mx_hd {
     background: var(--orange_color);
     padding: 9% 0;
 }
-#mx_manifestInner #mx_hdTxt {
-    /*visibility: hidden;*/
-    /*opacity: 0;*/
-}
-#mx_manifestInner #mx_hdTxt > h1 {
-    /*font-size: 30px !important;*/
-}
-#mx_manifestInner #mx_hdTxt > p{
-    visibility: hidden;
-    opacity: 0;
-}
+
 div#mx_manifestInner .banner .img {
-   top: 6%;
+   top: 10%;
    width: 24%;
 }
 #mx_manifestInner #mx_content h3 {
@@ -448,8 +444,7 @@ div#mx_manifestInner .banner .img {
     font-size: 19px;
 }
 #mx_manifestInner #mx_content p {
-    font-size: 16.8px;
-    line-height: 1.7 !important;
+    /*font-size: 16.8px;*/
 }
 /* Manifesto Section Starts */
 .manifesto {
@@ -742,8 +737,12 @@ div#popup_imgMain img {
     height: 10px;
     width: 90%;
 }
+
 .contentHead {
-    padding-bottom: 3em;
+    padding-bottom: 1.2em;
+}
+#mx_abtInner .contentHead h2 {
+    color: var(--green)
 }
 .contentHead h2 {
     margin: 0 0 0.3em 0;
@@ -767,6 +766,18 @@ div#popup_imgMain img {
 }
 
 /* Join page **/
+/*#cta_modal {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background: #00000073;
+    display: flex;
+    align-items: center;
+    z-index: 29;
+    justify-content: center;
+}*/
+
 #mx_joinInner #mx_hd {
     background: var(--orange_color);
     margin-top: 3em;
@@ -825,6 +836,7 @@ ol#select li {
 }
 #form_main select {
     width: 100%;
+    background: #fff;
     padding: 5px 10px;
     border-bottom: 1px solid #958988;
     border-radius: 5px;
@@ -842,9 +854,22 @@ ol#select li {
     display: block;
     margin-bottom: .4em;
 }
+#form_main ol label[for='depts'] {
+    margin-bottom: 0;
+}
 #form_main ol input:invalid, select:invalid {
     border: 1px solid #b51e1e54;
     outline: 2px solid #ffcc9a7a;
+}
+.iti {
+    width: 100%;
+}
+#form_main ol input#tel {
+    /*padding-left: 46px;*/
+}
+#form_main ol input:focus {
+    outline: solid #f586322e;
+
 }
 #form_main ol input {
     width: 100%;
@@ -858,7 +883,7 @@ ol#select li {
 #form_main ol:last-of-type {
     justify-content: flex-start;
     margin-left: 5%;
-    margin-top: 1.7em;
+    margin-top: 0.7em;
 }
 #form_main ol:last-of-type li {
     width: 100%;
@@ -895,15 +920,20 @@ ol#select li {
     color: #fff;
 }
 #ct_ft {
-    overflow: hidden;
+    /* overflow: hidden; */
+    z-index: 999;
+    padding: 1% 0;
+    min-height: 83px;
 }
 #ct_ft h3 {
-    font-size: 17px;
+    font-size: 16px;
 }
 #ct_ft ol {margin-left: 2%;}
 #ct_ft ol li {
+    position: relative;
     font-size: 15px;
-    margin: 10px 0 0 0;
+    z-index: 5;
+    padding: 10px 0 0 0;
     float: left;
 }
 #ct_ft ol li:first-child {
@@ -921,6 +951,43 @@ ol#select li {
 }
 #ct_ft ol a img {
     margin-right: 3px;
+}
+#ct_ft ol li #cta_modal {
+    position: absolute;
+    z-index: 29;
+    right: -102px;
+    bottom: 34px;
+    display: none;
+}
+#cta_modal > div:hover {
+    background: #55c763;
+}
+
+#cta_modal > div {
+    font-size: 15px;
+    width: 248px;
+    box-shadow: -2px 1px 4px #0000007a;
+    text-align: left;
+    padding: 10px 15px;
+    color: white;
+    position: relative;
+    /* height: 40px; */
+    cursor: pointer;
+    background: #42c352;
+    transition: .3s ease all;
+}
+
+#ct_ft ol li #cta_modal div #tip {
+    color: green;
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    width: 0;
+    height: 0;
+    display: none;
+    border-left: 3px solid transparent;
+    border-right: 19px solid transparent;
+    border-top: 19px solid #42c352;
 }
 /*
 
@@ -1398,6 +1465,10 @@ div#reachout {
 .footer_items > div :not(h5) {
     font-size: 14px;
 }
+#author img {
+    margin-left: 10px;
+    width: 20px;
+}
 .footer_items #adr address {
     font-style: normal;
     line-height: 20px;
@@ -1732,9 +1803,6 @@ div#reachout {
     .Hero-contents h1,.bannerHead {
         font-size: 27px;
     }
-    .Hero-p {
-        width: 45%;
-    }
     .Hero-img {
         height: 553px;
         top: 0;
@@ -1880,30 +1948,16 @@ div#reachout {
     .Hero-contents {
         padding-top: 98px;
     }
-    .Hero-p {
-        width: 46%;
-    }
+   
     .Hero-contents h1, .bannerHead {
         font-size: 24px;
     }
-    /*Join 
-    #mx_hd {
-        margin: 0;
-        padding: 12.5% 0;
-    }
-    #mx_joinInner .banner .img {
-        right: 9%;
-        width: 36%;
-    }
+    
     /** Gallery page */
     #mx_galleryInner.fixed_width {
         width: 97%;
     }
-    .popup_main {
-        /* width: 100%; */
-    }
-    div#willShow {
-    }
+    
     .row .gallery_box {
         padding: 18% 0;
         width: 40%;
@@ -1913,6 +1967,9 @@ div#reachout {
         top: initial;
     }
     /**/
+    div#mx_manifestInner .banner .img {
+        top: 10%;
+    }
     /** thankyou page**/
     #img_stack > div {
         margin-left: -2.5em;
@@ -1928,6 +1985,13 @@ div#reachout {
         width: 57px;
         right: 48px;
     }
+    #ct_ft ol li #cta_modal {
+        right: -32px;
+    }
+    .fixed_width {
+        font-size: 96% !important;
+    }
+
 }
 @media screen and (max-width: 672px) {
 
@@ -1941,6 +2005,10 @@ div#reachout {
     }
     #mx_abtInner .banner .img {
         right: 8%;
+    }
+    div#mx_manifestInner .banner .img {
+        width: 30%;
+        right: 5%;
     }
     
 }
@@ -2058,7 +2126,8 @@ div#reachout {
         width: 100% !important;
     }
     #mx_donateInner .banner .img {
-        right: 8%;
+        right: 5%;
+        width: 35%;
     }
     #mx_abtInner #mx_hd {
         padding: 13% 0;
@@ -2111,6 +2180,9 @@ div#reachout {
     }
     #thank_content h1 {
         font-size: 2.5em;
+    }
+    #ct_ft {
+        min-height: 114px;
     }
 }
 @media screen and (max-width: 510px) {
@@ -2197,6 +2269,9 @@ div#reachout {
     .footer_items #reachout #adr {
         margin-bottom: 1em;
     }
+    #author img {
+        width: 19px;
+    }
 
     /*Join*/
     .bannerHead {
@@ -2222,9 +2297,7 @@ div#reachout {
         padding: 13% 0;
     }
     div#mx_manifestInner .banner .img {
-        width: 40%;
-        top: 12%;
-        right: 7%;
+        top: 27%;
     }
     /** Gallery page */
     #images .row:not(.row:first-child) {
@@ -2306,8 +2379,8 @@ div#reachout {
     }
     /** Manifesto page */
     div#mx_manifestInner .banner .img {
-        right: 8%;
-        top: 7%;
+        top: 25%;
+        width: 32%;
     }
     /* about page */
     #vid {
@@ -2351,8 +2424,8 @@ div#reachout {
         margin: 0;
     }
     #mx_donateInner .banner .img {
-        right: 6%;
-        width: 33%;
+        right: 5%;
+        width: 38%;
     }
     /** About page */
     #mx_abtInner .banner .img {
@@ -2363,19 +2436,32 @@ div#reachout {
     #thank_content {
         margin-top: 2em;
     }
+    div#mx_manifestInner .banner .img {
+        top: 29%;
+    }
     
 @media screen and (max-width: 375px) {
     div#transfer_bank .txt {
         width: 100% !important;
     }
+    #mx_manifestInner #mx_hd.banner {
+        position: initial;
+    }
     .pageH1 {
         font-size: 21.4px;
+    }
+    div#mx_hdTxt {
+        width: 50%;
     }
     #mx_manifestInner .items, .pageH2 {
         font-size: 17px;
     }
     #mx_manifestInner p{
         letter-spacing: .6px !important;
+    }
+    
+    div#mx_manifestInner .banner .img {
+        top: initial;
     }
     #nav_overlay {
         width: 65%;
@@ -2446,10 +2532,12 @@ div#reachout {
     }
     /*Manifesto page*/
     div#mx_manifestInner .banner .img {
-        right: 6%;
-        top: 15%;
+        right: 4%;
+        width: 40%;
     }
-    /* Gallery page*/
+    #ct_ft {
+        min-height: 144px;
+    }
     
 }
 @media screen and (max-width: 319px) {
@@ -2477,8 +2565,7 @@ div#reachout {
         width: 48%;
     }
     /* manifesto page */
-    div#mx_manifestInner .banner .img {
-    }
+
 }
 @media screen and (max-width: 295px) {
     .Hero-img {
@@ -2524,7 +2611,6 @@ div#reachout {
         width: 45%;
     }
     div#mx_manifestInner .banner .img {
-        top: 39%;
     }
 }
 @media screen and (max-width: 209px) {
