@@ -12,6 +12,7 @@ const firebaseConfig = {
   storageBucket: "bucket.appspot.com"
 };
 
+import { clearUsedClass } from './generic.js'
 const app = initializeApp(firebaseConfig);
 const db = getDatabase()
 let write = 'true'
@@ -19,7 +20,10 @@ const form = document.querySelector('#form')
 const dept = form.querySelector('#depts')
 const send = form.querySelector('#submit')
 const abort = form.querySelector('#cancel')
+const errModal = document.querySelector('#err_modal')
+const main = document.querySelectorAll('.main')[0];
 
+let pos = form.getBoundingClientRect().top;
 const loc = window.location.href.replace('join', 'thankyou')
 
 function writeData(dept, name, tel, lga, ward, mail) {
@@ -29,7 +33,31 @@ function writeData(dept, name, tel, lga, ward, mail) {
 	set(ref(db, `depts/${dept}/${tel.value}`), {
 		name: name, lga: lga, ward: ward, mail: mail
 	})
-	document.location.href = loc
+	// document.location.href = loc
+}
+function showErrorModal(state) {
+	if (state == 'true') {
+		var telPos = errModal.parentElement.getBoundingClientRect().top
+		// if (String(telPos).includes('-')) {
+		main.scrollTop = 350
+		// }
+		errModal.textContent = 'This number is already assigned a department'
+		errModal.classList.add('animate__animated')
+		errModal.classList.add('animate__shakeX')
+		errModal.style.display = 'block'
+
+		setTimeout(()=>{
+			errModal.classList.add('animated__fadeOut')
+			setTimeout(()=>{
+				errModal.style.display = 'none'
+				clearUsedClass([errModal])
+				// form.reset()
+			}, 3000)
+		}, 2000)
+	} else {
+		errModal.textContent = ''
+		errModal.style.display = 'none'
+	}
 }
 function avoidTelDupl(newDept, name, newtel, lga, ward, mail) {
 	const dbRef = ref(getDatabase())
@@ -43,8 +71,8 @@ function avoidTelDupl(newDept, name, newtel, lga, ward, mail) {
 				if (caseVal == newDept) {
 					writeData(newDept, name, tel, lga, ward, mail)
 				} else {
-					console.log('You have join before using this number')
-					form.reset()
+					showErrorModal('true')
+					// console.log('You have join before using this number')
 				}
 			} else {
 				writeData(newDept, name, tel, lga, ward, mail)

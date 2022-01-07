@@ -85,6 +85,7 @@ div#btop, #fill {
     height: 100vh;
     scroll-snap-type: y;
     overscroll-behavior-x: contain;
+    scroll-behavior: smooth;
 }
 .main.animate__animated, .animate__fadeInDown, #mx_hdTxt .animate__animated {
     animation-delay: .3s;
@@ -820,9 +821,9 @@ div#popup_imgMain img {
 }*/
 #form_main ol {
     display: block;
-    overflow: hidden;
+    /* overflow: hidden; */
     display: flex;
-    margin-bottom: .8em;
+    margin-bottom: 1em;
     justify-content: space-around;
 }
 ol#select li {
@@ -833,6 +834,18 @@ ol#select li {
     width: 40%;
     float: left;
     margin-bottom: .5em;
+    position: relative;
+}
+#form_main #err_modal {
+    color: #fff;
+    bottom: 100%;
+    position: absolute;
+    z-index: 2;
+    padding: 9px 10px;
+    font-size: 14px;
+    box-shadow: -1px 2px 4px 0px #e5e5e5;
+    background: #f58632;
+    display: none;
 }
 #form_main select {
     width: 100%;
@@ -844,6 +857,7 @@ ol#select li {
     margin: 5px 0;
     cursor: pointer;
 }
+
 #form_main ol#select label {
     margin-bottom: .1em;
 }
@@ -857,9 +871,8 @@ ol#select li {
 #form_main ol label[for='depts'] {
     margin-bottom: 0;
 }
-#form_main ol input:invalid, select:invalid {
-    border: 1px solid #b51e1e54;
-    outline: 2px solid #ffcc9a7a;
+#form_main ol input:invalid, select:invalid, .invalid {
+    box-shadow: 0 0 4px #f58632;
 }
 .iti {
     width: 100%;
@@ -869,7 +882,6 @@ ol#select li {
 }
 #form_main ol input:focus {
     outline: solid #f586322e;
-
 }
 #form_main ol input {
     width: 100%;
@@ -883,7 +895,7 @@ ol#select li {
 #form_main ol:last-of-type {
     justify-content: flex-start;
     margin-left: 5%;
-    margin-top: 0.7em;
+    margin-top: 1.7em;
 }
 #form_main ol:last-of-type li {
     width: 100%;
