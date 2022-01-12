@@ -18,8 +18,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="assets/animate.min.css" />
     <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css" />
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" /> -->
-   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
     <title>Obinna Nwosu for Abia 2023</title>
    
@@ -100,6 +100,7 @@
                                             <div id="err_modal"></div>
                                             <label for="tel">Phone</label>
                                             <input type="tel" name="number" id="tel" required>
+                                            <div class="alert alert-info" style="display: none;"></div>
                                         </li>
                                     </ol>
                                     <ol>
@@ -190,6 +191,9 @@
    <script>
     const li = document.querySelector('#cta_whatsapp')
     const modal = document.querySelector('#cta_modal')
+    const phoneInputField = document.querySelector('#tel')
+    const info = document.querySelector(".alert-info");
+
     li.addEventListener('mouseenter', ()=>{
         var int = setTimeout(()=>{
             modal.style.display = 'block'
@@ -199,6 +203,32 @@
             window.clearTimeout(int)
         })
     })
+    
+    function process(event) {
+        event.preventDefault();
+        const phoneNumber = phoneInput.getNumber();
+        info.style.display = "";
+        info.innerHTML = `Phone number in E.164 format: <strong>${phoneNumber}</strong>`;
+    }
+    function getIp(callback) {
+        fetch('https://ipinfo.io/json?token=397fa4664086d1', { headers: { 'Accept': 'application/json' }})
+       .then((resp) => resp.json())
+       .then((resp) => callback(resp.country))
+       .catch((err) => {
+        console.log(err)
+         // return {
+         //   country: 'us',
+         // }
+       });
+    }
+    const phoneInput = window.intlTelInput(phoneInputField, {
+        preferredCountries: ["NG", "us", "co", "in", "de"],
+        initialCountry: "NG",
+        geoIpLookup: getIp,
+        utilsScript:
+       "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+
 
    </script>
     <script src="assets/js/generic.js" type="module"></script>

@@ -14,7 +14,6 @@ var imgUrl = []
 imgBox.forEach(i => {
 	imgUrl.push(i.nextElementSibling.querySelector('img').src)
 })
-console.log(imgUrl)
 var urls = [...imgUrl]
 
 function assignClassName(elts, name) {
@@ -113,7 +112,5 @@ imgBox.forEach((elt, idx)=>{
 	elt.addEventListener('click', (e)=>{
 		shuffleImgUrls(idx)
 		showPopupOverlay(e)
-console.log(imgUrl)
-		
 	})
 })

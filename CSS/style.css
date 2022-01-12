@@ -829,8 +829,14 @@ div#popup_imgMain img {
 ol#select li {
     width: 100% !important;
 }
+.iti__country-list {
+    width: inherit !important;
+}
+.iti__flag-container {
+    width: 100% !important;
+}
 
-#form_main ol li {
+#form_main fieldset > ol > li {
     width: 40%;
     float: left;
     margin-bottom: .5em;
@@ -844,7 +850,7 @@ ol#select li {
     padding: 9px 10px;
     font-size: 14px;
     box-shadow: -1px 2px 4px 0px #e5e5e5;
-    background: #f58632;
+    background: #f53232;
     display: none;
 }
 #form_main select {
@@ -872,16 +878,17 @@ ol#select li {
     margin-bottom: 0;
 }
 #form_main ol input:invalid, select:invalid, .invalid {
-    box-shadow: 0 0 4px #f58632;
+    outline: solid #f586322e;
+
 }
 .iti {
     width: 100%;
 }
 #form_main ol input#tel {
-    /*padding-left: 46px;*/
+    padding-left: 46px;
 }
 #form_main ol input:focus {
-    outline: solid #f586322e;
+    box-shadow: 0 0 3px #f58632;
 }
 #form_main ol input {
     width: 100%;
@@ -963,6 +970,7 @@ ol#select li {
 }
 #ct_ft ol a img {
     margin-right: 3px;
+    width: 26px;
 }
 #ct_ft ol li #cta_modal {
     position: absolute;
@@ -1088,7 +1096,7 @@ ol#select li {
     font-size: 18px;
 }
 .thank_content_main #thank_txt em.theme_txt {
-    padding-bottom: 7px;
+    padding-bottom: 3px;
     font-style: normal;
     border-bottom: 2px solid #8bb5b5;
 }
@@ -1142,7 +1150,7 @@ section.about-obinna {
 }
 
 .other > p {
-    width: 70%;
+    width: 84%;
     line-height: 23px;
     margin-bottom: 42px;
     letter-spacing: .5px !important;
@@ -1220,6 +1228,7 @@ div#transfer_paystack:before {
 }
 #transfers_inner > div#mx_headerText {
     margin-bottom: 3em;
+    /* padding: 0 30% 0 0; */
 }
 
 #mx_headerText h3{
@@ -1280,7 +1289,7 @@ div#transfer_paystack > .txt:last-of-type a {
     width: 100%;
     position: relative;
     background: #fff;
-    padding-bottom: 21px;
+    padding-bottom: 22px;
     padding-top: 14px;
 }
 
@@ -1289,7 +1298,7 @@ div#transfer_paystack > .txt:last-of-type a {
 }
 .fund_sec .other > p {
     width: 85%;
-    margin: 0 0 52px 0;
+    margin: 0 0 29px 0;
 }
 .fundings {
     grid-auto-flow: column;
@@ -1479,7 +1488,7 @@ div#reachout {
 }
 #author img {
     margin-left: 10px;
-    width: 20px;
+    width: 19px;
 }
 .footer_items #adr address {
     font-style: normal;
@@ -1493,7 +1502,8 @@ div#reachout {
 }
 .footer_items #author h5 {
     color: #979595;
-    line-height: 25px;
+    font-size: 15px;
+    line-height: 18px;
 }
 /*
 */
@@ -1562,7 +1572,7 @@ div#reachout {
         font-size: 17.4px;
     }
     .other > p {
-        font-size: 15.5px;
+        font-size: 15.4px;
     }
     
 }
@@ -2071,7 +2081,7 @@ div#reachout {
     }
     #transfers_inner > div .txt:first-child {
         width: 193px;
-        margin-bottom: 1.2em;
+        margin-bottom: 1em;
     }
     #sec_page {
         text-align: left;

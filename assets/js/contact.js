@@ -1,6 +1,3 @@
-// const keyDede = '41e71c223ac7444e506eb273c6ed4787'
-// const keyMy = 'de79e464b2347fc58fe0b20fb76e767d'
-// const mailDede = 'ukaegbugreatjunior@gmail.com'
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
 import { getDatabase, ref, set, onValue, get, child } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
@@ -8,14 +5,18 @@ import { getDatabase, ref, set, onValue, get, child } from "https://www.gstatic.
 const firebaseConfig = {
   apiKey: "AIzaSyAg1fTif0myGlTlUKYEDr4hf41Lzz1acOQ",
   authDomain: "contact-form-8071a.firebaseapp.com",
-  databaseURL: "https://contact-form-8071a-default-rtdb.firebaseio.com/",
-  storageBucket: "bucket.appspot.com"
+  databaseURL: "https://contact-form-8071a-default-rtdb.firebaseio.com",
+  projectId: "contact-form-8071a",
+  storageBucket: "contact-form-8071a.appspot.com",
+  messagingSenderId: "975587172934",
+  appId: "1:975587172934:web:40ce5b92b2169f4820e047"
 };
 
-import { clearUsedClass } from './generic.js'
 const app = initializeApp(firebaseConfig);
 const db = getDatabase()
-let write = 'true'
+
+import { clearUsedClass } from './generic.js'
+
 const form = document.querySelector('#form')
 const dept = form.querySelector('#depts')
 const send = form.querySelector('#submit')
@@ -23,25 +24,50 @@ const abort = form.querySelector('#cancel')
 const errModal = document.querySelector('#err_modal')
 const main = document.querySelectorAll('.main')[0];
 
+let name = form.querySelector('#name')
+let tel = form.querySelector('#tel')
+let lga = form.querySelector('#lga')
+let mail = form.querySelector('#mail')
+let ward = form.querySelector('#ward')
+
 let pos = form.getBoundingClientRect().top;
 const loc = window.location.href.replace('join', 'thankyou')
 
+function sendToMail(dept, name, phone, lga, ward, mail) {
+	var xhr = new XMLHttpRequest()
+	xhr.open('POST', 'https://formsubmit.co/ajax/41e71c223ac7444e506eb273c6ed47')
+	xhr.setRequestHeader('content-type', 'application/json')
+	xhr.onload = function () {
+		var resp = JSON.parse(xhr.responseText)
+		if (resp.success == 'true') {
+			console.log(resp)
+			// if (document.location.href) {
+			// 	document.location.href = loc
+			// } 
+		}
+	}
+	xhr.send(JSON.stringify({
+		message: `NAME: ${name.toUpperCase()} \nPHONE NUMBER: ${tel.toUpperCase()} \nLGA: ${lga.toUpperCase()} \nMAIL: ${mail.toUpperCase()} \nWARD: ${ward.toUpperCase()} \nDEPARTMENT: ${selectedDept()}`
+	}))
+}
 function writeData(dept, name, tel, lga, ward, mail) {
-	set(ref(db, `verifiedtel/${tel.value}`), {
+	set(ref(db, `verifiedtel/${tel}`), {
 		dept
 	})
-	set(ref(db, `depts/${dept}/${tel.value}`), {
+	set(ref(db, `depts/${dept}/${tel}`), {
 		name: name, lga: lga, ward: ward, mail: mail
 	})
+	// sendToMail(dept, name, tel, lga, ward, mail)
 	// document.location.href = loc
+	form.reset()
 }
-function showErrorModal(state) {
+function showErrorModal(state) {	
 	if (state == 'true') {
 		var telPos = errModal.parentElement.getBoundingClientRect().top
 		// if (String(telPos).includes('-')) {
 		main.scrollTop = 350
 		// }
-		errModal.textContent = 'This number is already assigned a department'
+		errModal.textContent = 'This number is already assigned to a department'
 		errModal.classList.add('animate__animated')
 		errModal.classList.add('animate__shakeX')
 		errModal.style.display = 'block'
@@ -50,6 +76,7 @@ function showErrorModal(state) {
 			errModal.classList.add('animated__fadeOut')
 			setTimeout(()=>{
 				errModal.style.display = 'none'
+				errModal.textContent = ''
 				clearUsedClass([errModal])
 				// form.reset()
 			}, 3000)
@@ -60,7 +87,7 @@ function showErrorModal(state) {
 	}
 }
 function avoidTelDupl(newDept, name, newtel, lga, ward, mail) {
-	const dbRef = ref(getDatabase())
+	const dbRef = ref(db)
 	get(child(dbRef, `verifiedtel/`)).then((snapshot) => {
 		if (snapshot.exists()) {
 			const returnedObj = snapshot.val()
@@ -69,16 +96,16 @@ function avoidTelDupl(newDept, name, newtel, lga, ward, mail) {
 			if (idx !== -1) {
 				var caseVal = returnedObj[telsArray[idx]].dept
 				if (caseVal == newDept) {
-					writeData(newDept, name, tel, lga, ward, mail)
+					writeData(newDept, name, newtel, lga, ward, mail)
 				} else {
 					showErrorModal('true')
 					// console.log('You have join before using this number')
 				}
 			} else {
-				writeData(newDept, name, tel, lga, ward, mail)
+				writeData(newDept, name, newtel, lga, ward, mail)
 			}
 		} else {
-			writeData(newDept, name, tel, lga, ward, mail)
+			writeData(newDept, name, newtel, lga, ward, mail)
 		}
 	}).catch((err)=>{
 		console.log(err)
@@ -94,47 +121,12 @@ const selectedDept = ()=>{
 form.addEventListener('submit', (e)=>{
 	e.preventDefault()
 
-	const name = form.querySelector('#name').value
-	const tel = form.querySelector('#tel').value
-	const lga = form.querySelector('#lga').value
-	const mail = form.querySelector('#mail').value
-	const ward = form.querySelector('#ward').value
+	name = form.querySelector('#name').value
+	tel = form.querySelector('#tel').value
+	lga = form.querySelector('#lga').value
+	mail = form.querySelector('#mail').value
+	ward = form.querySelector('#ward').value
 
 	avoidTelDupl(selectedDept(), name, tel, lga, ward, mail)
 
-	// var xhr = new XMLHttpRequest()
-	// xhr.open('POST', 'https://formsubmit.co/ajax/41e71c223ac7444e506eb273c6ed47')
-	// xhr.setRequestHeader('content-type', 'application/json')
-	// xhr.onload = function () {
-	// 	var resp = JSON.parse(xhr.responseText)
-	// 	if (resp.success == 'true') {
-	// 		if (document.location.href) {
-	// 			document.location.href = loc
-	// 		} 
-	// 	}
-	// }
-	// xhr.send(JSON.stringify({
-	// 	message: `NAME: ${name.value.toUpperCase()} \nPHONE NUMBER: ${tel.value.toUpperCase()} \nLGA: ${lga.value.toUpperCase()} \nWARD: ${ward.value.toUpperCase()} \nDEPARTMENT: ${selectedDept()}`
-	// }))
-
 })
-
-
-// const inputTel = document.querySelector('#tel');
-// function getIp(callback) {
-//  fetch('https://ipinfo.io/json?token=<397fa4664086d1>', { headers: { 'Accept': 'application/json' }})
-//    .then((resp) => resp.json())
-//    .catch(() => {
-//      return {
-//        country: 'us',
-//      };
-//    })
-//    .then((resp) => callback(resp.country));
-// }
-// const phoneInput = window.intlTelInput(inputTel, {
-//  initialCountry: "auto",
-//  preferredCountries: ["us", "co", "in", "de"],
-//  geoIpLookup: getIp,
-//  utilsScript:
-//    "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-// });
